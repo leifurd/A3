@@ -1,0 +1,1160 @@
+<!DOCTYPE HTML>
+<html lang="en-gb" class="no-js">
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=2.5,user-scalable=yes">
+    <meta name="citation_publisher" content="Baltzer Science Publishers, Baarn/Kluwer Academic Publishers"/>
+    <meta name="citation_title" content="Genetic algorithms for the traveling salesman problem"/>
+    <meta name="citation_doi" content="10.1007/BF02125403"/>
+    <meta name="citation_language" content="en"/>
+    <meta name="citation_abstract_html_url" content="https://link.springer.com/article/10.1007/BF02125403"/>
+    <meta name="citation_fulltext_html_url" content="https://link.springer.com/article/10.1007/BF02125403"/>
+    <meta name="citation_pdf_url" content="https://link.springer.com/content/pdf/10.1007%2FBF02125403.pdf"/>
+    <meta name="citation_springer_api_url" content="http://api.springer.com/metadata/pam?q=doi:10.1007/BF02125403&amp;api_key="/>
+    <meta name="citation_firstpage" content="337"/>
+    <meta name="citation_lastpage" content="370"/>
+    <meta name="citation_author" content="Jean-Yves Potvin"/>
+    <meta name="citation_author_institution" content="Université de Montréal"/>
+    <meta name="dc.identifier" content="10.1007/BF02125403"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" content="This paper is a survey of genetic algorithms for the traveling salesman problem. Genetic algorithms are randomized search techniques that simulate some of the processes observed in natural evolution...."/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="Genetic algorithms for the traveling salesman problem"/>
+    <meta name="twitter:image" content="https://static-content.springer.com/cover/journal/10479/63/3.jpg"/>
+    <meta name="twitter:image:alt" content="Content cover image"/>
+    <meta name="twitter:site" content="SpringerLink"/>
+    <meta name="twitter:description" content="This paper is a survey of genetic algorithms for the traveling salesman problem. Genetic algorithms are randomized search techniques that simulate some of the processes observed in natural evolution...."/>
+    <meta name="citation_journal_title" content="Annals of Operations Research"/>
+    <meta name="citation_journal_abbrev" content="Ann Oper Res"/>
+    <meta name="citation_volume" content="63"/>
+    <meta name="citation_issue" content="3"/>
+    <meta name="citation_issn" content="0254-5330"/>
+    <meta name="citation_issn" content="1572-9338"/>
+    <meta name="citation_cover_date" content="1996/06/01"/>
+    <meta name="citation_article_type" content="Genetic Algorithms"/>
+    <meta property="og:title" content="Genetic algorithms for the traveling salesman problem"/>
+    <meta property="og:type" content="Article"/>
+    <meta property="og:url" content="https://link.springer.com/article/10.1007/BF02125403"/>
+    <meta property="og:image" content="https://static-content.springer.com/cover/journal/10479/63/3.jpg"/>
+    <meta property="og:site_name" content="SpringerLink"/>
+    <meta property="og:description" content="This paper is a survey of genetic algorithms for the traveling salesman problem. Genetic algorithms are randomized search techniques that simulate some of the processes observed in natural evolution...."/>
+
+        <title>Genetic algorithms for the traveling salesman problem | SpringerLink</title>
+        <link rel="canonical" href="https://link.springer.com/article/10.1007/BF02125403"/>
+        <link rel="shortcut icon" href="/springerlink-static/1863137807/images/favicon/favicon.ico">
+<link rel="icon" sizes="16x16 32x32 48x48" href="/springerlink-static/1863137807/images/favicon/favicon.ico">
+<link rel="icon" sizes="16x16" type="image/png" href="/springerlink-static/1863137807/images/favicon/favicon-16x16.png">
+<link rel="icon" sizes="32x32" type="image/png" href="/springerlink-static/1863137807/images/favicon/favicon-32x32.png">
+<link rel="icon" sizes="48x48" type="image/png" href="/springerlink-static/1863137807/images/favicon/favicon-48x48.png">
+<link rel="apple-touch-icon" href="/springerlink-static/1863137807/images/favicon/app-icon-iphone@3x.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/springerlink-static/1863137807/images/favicon/ic_launcher_hdpi.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/springerlink-static/1863137807/images/favicon/app-icon-ipad.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/springerlink-static/1863137807/images/favicon/app-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/springerlink-static/1863137807/images/favicon/app-icon-iphone@2x.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/springerlink-static/1863137807/images/favicon/ic_launcher_xxhdpi.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/springerlink-static/1863137807/images/favicon/app-icon-ipad@2x.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/springerlink-static/1863137807/images/favicon/app-icon-iphone@3x.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/springerlink-static/1863137807/images/favicon/ic_launcher_xxhdpi.png">
+        <link rel="dns-prefetch" href="//fonts.gstatic.com">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//google-analytics.com">
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+<link rel="dns-prefetch" href="//www.googletagservices.com">
+<link rel="dns-prefetch" href="//www.googletagmanager.com">
+<link rel="dns-prefetch" href="//static-content.springer.com">
+        <link rel="stylesheet" href="/springerlink-static/1863137807/css/basic.css" media="screen">
+<link rel="stylesheet" href="/springerlink-static/1863137807/css/styles.css" class="js-ctm" media="only screen and (-webkit-min-device-pixel-ratio:0) and (min-color-index:0), (-ms-high-contrast: none), only all and (min--moz-device-pixel-ratio:0) and (min-resolution: 3e1dpcm)">
+<link rel="stylesheet" href="/springerlink-static/1863137807/css/print.css" media="print">
+
+
+            <script type="text/javascript">
+        window.Krux||((Krux=function(){Krux.q.push(arguments);}).q=[]);
+        var dataLayer = [{
+                'GA Key':"UA-26408784-1",
+                'Features':["leaderboardadverts","eventtracker","trackingpixel"],
+                'Event Category':"Article",
+                'Open Access':"N",
+                'Labs':"Y",
+                'DOI':"10.1007/BF02125403",
+                'VG Wort Identifier':"pw-vgzm.415900-10.1007-BF02125403",
+                'hasAccess':"N",
+                'Full HTML':"N",
+                'Has Body':"N",
+                'Static Hash':"1863137807",
+                'Has Preview':"Y",
+                'user':{"license":{"businessPartnerID":[],"businessPartnerIDString":""}},
+                'content':{"serial":{"eissn":"1572-9338","pissn":"0254-5330"},"type":"Article","category":{"pmc":{"primarySubject":"Business and Management","primarySubjectCode":"5","secondarySubjects":{"1":"Operations Research/Decision Theory","2":"Combinatorics","3":"Theory of Computation"},"secondarySubjectCodes":{"1":"521000","2":"M29010","3":"I16005"}},"sucode":"SC16"}},
+                'Access Type':"noaccess",
+                'Page':"article",
+                'Bpids':"",
+                'Bpnames':"",
+                'SubjectCodes':"SC5, SC521000, SCM29010, SCI16005",
+                'session':{"authentication":{"loginStatus":"N"},"attributes":{"edition":"academic"}},
+                'eventTrackerBaseUrl':"https://event-tracker.springernature.com",
+                'Keywords':"Traveling salesman problem, genetic algorithms, stochastic search",
+                'Country':"SE",
+                'Journal Id':"10479",
+                'Journal Title':"Annals of Operations Research",
+
+                    'doi': "10.1007-BF02125403",
+                    'kwrd': ["Traveling_salesman_problem","genetic_algorithms","stochastic_search"],
+                    'pmc': ["5","521000","M29010","I16005"],
+                    'BPID': ["1"],
+                    'ksg': Krux.segments,
+                    'kuid': Krux.uid,
+
+        }];
+    </script>
+
+<script type="text/javascript" src="/springerlink-static/1863137807/js/jquery-3.3.1.min.js"></script>
+
+        <script type="text/javascript" src="https://cdn.cookielaw.org/consent/6b2ec9cd-5ace-4387-96d2-963e596401c6.js" charset="UTF-8"></script>
+
+<script type="text/javascript">
+    function OptanonWrapper() {
+        dataLayer.push({
+            'event' : 'onetrustActive'
+        });
+    }
+</script>
+
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WCF9Z9');</script>
+
+    </head>
+    <body>
+        <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WCF9Z9"
+                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <div class="skip-to">
+    <a class="skip-to__link pseudo-focus" href="#main-content">Skip to main content</a>
+</div>
+        <div class="page-wrapper">
+            <noscript>
+    <div class="nojs-banner u-interface">
+        <p>This service is more advanced with JavaScript available, learn more at <a
+                href="http://activatejavascript.org" target="_blank" rel="noopener">http://activatejavascript.org</a>
+        </p>
+    </div>
+</noscript>
+                        <div id="leaderboard" class="leaderboard u-hide" data-component="SpringerLink.GoogleAds" data-namespace="leaderboard">
+            <div class="leaderboard__wrapper">
+                <p class="leaderboard__label">Advertisement</p>
+                <button class="leaderboard__hide" title="Hide this advertisement"  data-track="click" data-track-action="Hide advertisement" data-track-label="">Hide</button>
+                <div id="doubleclick-leaderboard-ad" class="leaderboard__ad u-pt-24"></div>
+            </div>
+        </div>
+
+
+                <header id="header" class="header u-interface">
+        <div class="header__content">
+            <div class="header__menu-container">
+                    <a id="logo" class="site-logo" href="/" title="Go to homepage">
+                <div class="u-screenreader-only">SpringerLink</div>
+    <svg class="site-logo__springer" width="148" height="30" role="img" focusable="false" aria-hidden="true">
+        <image width="148" height="30" alt="" src="/springerlink-static/1863137807/images/png/springerlink.png" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/springerlink-static/1863137807/images/svg/springerlink.svg"></image>
+    </svg>
+
+    </a>
+
+
+                    <nav id="search-container" class="u-inline-block">
+                        <div class="search">
+                            <div class="search__content">
+                                <form class="u-form-single-input" action="/search" method="get" role="search">
+    <label for="search-springerlink">Search SpringerLink</label>
+    <div class="u-relative">
+        <input id="search-springerlink" name="query" type="text" autocomplete="off" value="">
+        <input class="u-hide-text" type="submit" value="Submit" title="Submit">
+        <svg class="u-vertical-align-absolute" width="13" height="13" viewBox="222 151 13 13" version="1.1" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true" role="presentation">
+            <path d="M227 159C228.7 159 230 157.7 230 156 230 154.3 228.7 153 227 153 225.3 153 224 154.3 224 156 224 157.7 225.3 159 227 159L227 159 227 159 227 159ZM230 160.1L231.1 159 233.9 161.7C234.2 162.1 234.2 162.6 233.9 162.9 233.6 163.2 233.1 163.2 232.7 162.9L230 160.1 230 160.1 230 160.1 230 160.1ZM227 161L227 161C224.2 161 222 158.8 222 156 222 153.2 224.2 151 227 151 229.8 151 232 153.2 232 156 232 158.8 229.8 161 227 161L227 161 227 161 227 161 227 161Z" stroke="none" fill-rule="evenodd"/>
+        </svg>
+    </div>
+</form>
+                            </div>
+                        </div>
+                    </nav>
+
+                    <nav class="nav-container u-interface">
+    <div class="global-nav__wrapper">
+        <div class="search-button">
+            <a class="search-button__label" href="#search-container">
+                <span class="search-button__title">Search</span><svg width="12" height="12" viewBox="222 151 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true" role="presentation">
+                    <path d="M227 159C228.7 159 230 157.7 230 156 230 154.3 228.7 153 227 153 225.3 153 224 154.3 224 156 224 157.7 225.3 159 227 159L227 159 227 159 227 159ZM230 160.1L231.1 159 233.9 161.7C234.2 162.1 234.2 162.6 233.9 162.9 233.6 163.2 233.1 163.2 232.7 162.9L230 160.1 230 160.1 230 160.1 230 160.1ZM227 161L227 161C224.2 161 222 158.8 222 156 222 153.2 224.2 151 227 151 229.8 151 232 153.2 232 156 232 158.8 229.8 161 227 161L227 161 227 161 227 161 227 161Z" stroke="none" fill-rule="evenodd"></path>
+                </svg>
+            </a>
+        </div>
+
+        <ul class="global-nav" data-component="SV.Menu" data-title="Navigation menu" data-text="Menu">
+            <li>
+                <a href="/">
+                    <span class="u-overflow-ellipsis">Home</span>
+                </a>
+            </li>
+
+                <li class="global-nav__logged-out">
+                    <a class="test-login-link" href="//link.springer.com/signup-login?previousUrl=https%3A%2F%2Flink.springer.com%2Farticle%2F10.1007%2FBF02125403">
+                        <span class="u-overflow-ellipsis">Log in</span>
+                    </a>
+                </li>
+
+        </ul>
+    </div> 
+</nav> 
+            </div>
+
+        </div>
+    </header>
+
+            
+            <main id="main-content" class="main-wrapper" tabindex="-1">
+                <div class="main-container uptodate-recommendations-off">
+                    <aside class="main-sidebar-left">
+                        <div class="main-sidebar-left__content">
+                            <div class="cover-image test-cover" itemscope>
+                                    <a class="test-cover-link" href="/journal/10479">
+        <span class="u-screenreader-only">Annals of Operations Research</span>
+        <img class="test-cover-image" src="https://media.springernature.com/w306/springer-static/cover/journal/10479/63/3.jpg" itemprop="image" alt=""/>
+    </a>
+
+
+                            </div>
+                        </div>
+                    </aside>
+                    <div class="main-body" data-role="NavigationContainer">
+                        
+
+
+                        <article class="main-body__content">
+                            <div xmlns="http://www.w3.org/1999/xhtml" class="FulltextWrapper"><div class="ArticleHeader main-context"><div id="enumeration" class="enumeration"><p><a href="/journal/10479" title="Annals of Operations Research" data-track="click" data-track-action="Journal title" data-track-label=""><span class="JournalTitle">Annals of Operations Research</span></a></p><p class="icon--meta-keyline"><span class="ArticleCitation_Year"><time datetime="1996-06">June 1996</time>, </span><span class="ArticleCitation_Volume">Volume 63, </span><a class="ArticleCitation_Issue" href="/journal/10479/63/3/page/1" data-track="click" data-track-action="Article issue" data-track-label="">Issue 3</a>,
+                       <span class="ArticleCitation_Pages"> pp 337–370</span><span class="u-inline-block u-ml-4"> | <a href="#citeas" data-track="click" data-track-action="Cite as link" data-track-label="Enumeration section">Cite as</a></span></p></div><div class="MainTitleSection"><h1 class="ArticleTitle" lang="en">Genetic algorithms for the traveling salesman problem</h1></div><div class="authors u-clearfix" data-component="SpringerLink.Authors"><ul class="u-interface u-inline-list authors__title" data-role="AuthorsNavigation"><li><span>Authors</span></li><li><a href="#authorsandaffiliations" data-track="click" data-track-action="Authors and affiliations tab" data-track-label="">Authors and affiliations</a></li></ul><div class="authors__list" data-role="AuthorsList"><ul class="test-contributor-names"><li itemscope="" itemtype="http://schema.org/Person" class="u-mb-2 u-pt-4 u-pb-4"><span itemprop="name" class="authors__name">Jean-Yves Potvin</span></li></ul></div></div><div class="main-context__container" data-component="SpringerLink.ArticleMetrics"><div class="main-context__column"><span><span class="test-render-category">Genetic Algorithms</span></span></div><div class="main-context__column">    <ul id="book-metrics" class="article-metrics u-sansSerif">
+            <li class="article-metrics__item">
+                     <span class="article-metrics__views">1.4k</span>
+                     <span class="article-metrics__label">Downloads</span>
+            </li>
+            <li class="article-metrics__item">
+                    <a class="article-metrics__link gtm-citations-count" href="https://citations.springer.com/item?doi&#x3D;10.1007/BF02125403" target="_blank" rel="noopener"
+                       title="Visit Springer Citations for full citation details" id="citations-link">
+                            <span id="citations-count-number" class="test-metric-count c-button-circle gtm-citations-count">130</span>
+                       <span class="test-metric-name article-metrics__label gtm-citations-count">Citations</span>
+                    </a>
+            </li>
+    </ul>
+</div></div></div><section class="Abstract" id="Abs1" tabindex="-1" lang="en"><h2 class="Heading">Abstract</h2><p class="Para">This paper is a survey of genetic algorithms for the traveling salesman problem. Genetic algorithms are randomized search techniques that simulate some of the processes observed in natural evolution. In this paper, a simple genetic algorithm is introduced, and various extensions are presented to solve the traveling salesman problem. Computational results are also reported for both random and classical problems taken from the operations research literature.</p></section><div class="KeywordGroup" lang="en"><h2 class="Heading">Keywords</h2><span class="Keyword">Traveling salesman problem </span><span class="Keyword">genetic algorithms </span><span class="Keyword">stochastic search </span></div><div class="note test-pdf-link" id="cobranding-and-download-availability-text"><div id="article_no_access_banner">This is a preview of subscription content, <a id="test-login-banner-link" href="/signup-login?previousUrl=https%3A%2F%2Flink.springer.com%2Farticle%2F10.1007%2FBF02125403" data-track="click" data-track-action="Preview banner - Log in" data-track-label="">log in</a> to check access.</div></div><div class="article-actions--inline" id="article-actions--inline" data-component="article-actions--inline"></div><section id="Sample" class="pdf-preview"><h2 class="Heading">Preview</h2><object id="test-pdf-preview" class="pdf-preview__embed pdf-preview__embed--height" data="//page-one.springer.com/pdf/preview/10.1007/BF02125403" type="application/pdf" width="100%" data-component="SpringerLink.PdfPreview"><p class="u-interface" data-fallback-text="true">Unable to display preview.&nbsp;<a href="//page-one.springer.com/pdf/preview/10.1007/BF02125403" target="_blank" rel="noopener">Download preview PDF.</a></p></object><p class="pdf-preview__info u-interface">Unable to display preview.&nbsp;<a href="//page-one.springer.com/pdf/preview/10.1007/BF02125403" target="_blank" rel="noopener">Download preview PDF.</a></p></section><section class="Section1 RenderAsSection1" id="Bib1" tabindex="-1"><h2 class="Heading">References</h2><div class="content"><ol class="BibliographyWrapper"><li class="Citation"><div class="CitationNumber">[1]</div><div class="CitationContent" id="CR1">E.H.L. Aarts, J.H.M. Korst and P.J.M. van Laarhoven, A quantitative analysis of the simulated annealing algorithm: A case study for the traveling salesman problem, J. Statist. Phys. 50(1988)189–206.<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener" href="https://doi.org/10.1007/BF01022991"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=A%20quantitative%20analysis%20of%20the%20simulated%20annealing%20algorithm%3A%20A%20case%20study%20for%20the%20traveling%20salesman%20problem&amp;author=E.H.L..%20Aarts&amp;author=J.H.M..%20Korst&amp;author=P.J.M..%20Laarhoven&amp;journal=J.%20Statist.%20Phys.&amp;volume=50&amp;pages=189-206&amp;publication_year=1988"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[2]</div><div class="CitationContent" id="CR2">J.D. Bagley, The behavior of adaptive systems which employ genetic and correlation algorithms, Doctoral Dissertation, University of Michigan, Dissertation Abstracts International 28(12), 5106B (1967).<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=J.D.%20Bagley%2C%20The%20behavior%20of%20adaptive%20systems%20which%20employ%20genetic%20and%20correlation%20algorithms%2C%20Doctoral%20Dissertation%2C%20University%20of%20Michigan%2C%20Dissertation%20Abstracts%20International%2028%2812%29%2C%205106B%20%281967%29."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[3]</div><div class="CitationContent" id="CR3">J. Bentley, Fast algorithms for geometric salesman problems, ORSA J. Comp. 4(1992)387–411.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Fast%20algorithms%20for%20geometric%20salesman%20problems&amp;author=J..%20Bentley&amp;journal=ORSA%20J.%20Comp.&amp;volume=4&amp;pages=387-411&amp;publication_year=1992"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[4]</div><div class="CitationContent" id="CR4">J.L. Blanton and R.L. Wainwright, Multiple vehicle routing with time and capacity constraints using genetic algorithms, in:<em class="EmphasisTypeItalic ">Proc. 5th Int. Conf. on Genetic Algorithms (ICGA '93)</em>, University of Illinois at Urbana-Champaign, Champaign, IL (1993) pp. 452–459.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Multiple%20vehicle%20routing%20with%20time%20and%20capacity%20constraints%20using%20genetic%20algorithms&amp;author=J.L..%20Blanton&amp;author=R.L..%20Wainwright&amp;pages=452-459&amp;publication_year=1993"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[5]</div><div class="CitationContent" id="CR5">L. Bodin, B.L. Golden, A. Assad and M. Ball, Routing and scheduling of vehicles and crews: The state of the art, Comp. Oper. Res. 10(1983)63–211.<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener" href="https://doi.org/10.1016/0305-0548(83)90030-8"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Routing%20and%20scheduling%20of%20vehicles%20and%20crews%3A%20The%20state%20of%20the%20art&amp;author=L..%20Bodin&amp;author=B.L..%20Golden&amp;author=A..%20Assad&amp;author=M..%20Ball&amp;journal=Comp.%20Oper.%20Res.&amp;volume=10&amp;pages=63-211&amp;publication_year=1983"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[6]</div><div class="CitationContent" id="CR6">R.M. Brady, Optimization strategies gleaned from biological evolution, Nature 317(1985)804–806.<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener" href="https://doi.org/10.1038/317804a0"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Optimization%20strategies%20gleaned%20from%20biological%20evolution&amp;author=R.M..%20Brady&amp;journal=Nature&amp;volume=317&amp;pages=804-806&amp;publication_year=1985"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[7]</div><div class="CitationContent" id="CR7">H. Braun, On solving travelling salesman problems by genetic algorithms, in:<em class="EmphasisTypeItalic ">Parallel Problem-Solving from Nature</em>, ed. H.P. Schwefel and R. Manner, Lecture Notes in Computer Science 496 (Springer) pp. 129–133.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=H.%20Braun%2C%20On%20solving%20travelling%20salesman%20problems%20by%20genetic%20algorithms%2C%20in%3AParallel%20Problem-Solving%20from%20Nature%2C%20ed.%20H.P.%20Schwefel%20and%20R.%20Manner%2C%20Lecture%20Notes%20in%20Computer%20Science%20496%20%28Springer%29%20pp.%20129%E2%80%93133."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[8]</div><div class="CitationContent" id="CR8">V. Cerny, Thermodynamical approach to the traveling salesman problem: An efficient simulation algorithm, J. Optim. Theory Appl. 45(1985)41–55.<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener" href="https://doi.org/10.1007/BF00940812"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Thermodynamical%20approach%20to%20the%20traveling%20salesman%20problem%3A%20An%20efficient%20simulation%20algorithm&amp;author=V..%20Cerny&amp;journal=J.%20Optim.%20Theory%20Appl.&amp;volume=45&amp;pages=41-55&amp;publication_year=1985"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[9]</div><div class="CitationContent" id="CR9">L. Davis, Applying adaptive algorithms to epistactic domains, in:<em class="EmphasisTypeItalic ">Proc. Int. Joint Conf. on Artificial Intelligence</em> (<em class="EmphasisTypeItalic ">IJCAI '85</em>), Los Angeles, CA (1985) pp. 162–164.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=L.%20Davis%2C%20Applying%20adaptive%20algorithms%20to%20epistactic%20domains%2C%20in%3AProc.%20Int.%20Joint%20Conf.%20on%20Artificial%20Intelligence%20%28IJCAI%20%2785%29%2C%20Los%20Angeles%2C%20CA%20%281985%29%20pp.%20162%E2%80%93164."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[10]</div><div class="CitationContent" id="CR10">K.A. De Jong, An analysis of the behavior of a class of genetic adaptive systems, Doctoral Dissertation, University of Michigan, Dissertation Abstracts International 36(10), 5140B (1975).<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=K.A.%20De%20Jong%2C%20An%20analysis%20of%20the%20behavior%20of%20a%20class%20of%20genetic%20adaptive%20systems%2C%20Doctoral%20Dissertation%2C%20University%20of%20Michigan%2C%20Dissertation%20Abstracts%20International%2036%2810%29%2C%205140B%20%281975%29."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[11]</div><div class="CitationContent" id="CR11">C.N. Fiechter, A parallel tabu search algorithm for large scale traveling salesman problems, Working paper 90/1, Department of Mathematics, Ecole Polytechnique Fédérale de Lausanne, Switzerland (1990).<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=A%20parallel%20tabu%20search%20algorithm%20for%20large%20scale%20traveling%20salesman%20problems&amp;author=C.N..%20Fiechter&amp;publication_year=1990"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[12]</div><div class="CitationContent" id="CR12">L.J. Fogel, A.J. Owens and M.J. Walsh,<em class="EmphasisTypeItalic ">Artificial Intelligence through Simulated Evolution</em> (Wiley, 1966).<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=L.J.%20Fogel%2C%20A.J.%20Owens%20and%20M.J.%20Walsh%2CArtificial%20Intelligence%20through%20Simulated%20Evolution%20%28Wiley%2C%201966%29."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[13]</div><div class="CitationContent" id="CR13">B.R. Fox and M.B. McMahon, Genetic operators for sequencing problems, in:<em class="EmphasisTypeItalic ">Foundations of Genetic Algorithms</em>, ed. J.E. Rawlins (Morgan Kaufmann, 1991) pp. 284–300.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=B.R.%20Fox%20and%20M.B.%20McMahon%2C%20Genetic%20operators%20for%20sequencing%20problems%2C%20in%3AFoundations%20of%20Genetic%20Algorithms%2C%20ed.%20J.E.%20Rawlins%20%28Morgan%20Kaufmann%2C%201991%29%20pp.%20284%E2%80%93300."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[14]</div><div class="CitationContent" id="CR14">P.S. Gabbert, D.E. Brown, C.L. Huntley, B.P. Markowitz and D.E. Sappington, A system for learning routes and schedules with genetic algorithms, in:<em class="EmphasisTypeItalic ">Proc. 4th Int. Conf. on Genetic Algorithms (ICGA '91)</em>, University of California at San Diego, San Diego, CA (1991) pp. 430–436.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=A%20system%20for%20learning%20routes%20and%20schedules%20with%20genetic%20algorithms&amp;author=P.S..%20Gabbert&amp;author=D.E..%20Brown&amp;author=C.L..%20Huntley&amp;author=B.P..%20Markowitz&amp;author=D.E..%20Sappington&amp;pages=430-436&amp;publication_year=1991"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[15]</div><div class="CitationContent" id="CR15">M. Gendreau, A. Hertz and G. Laporte, New insertion and post-optimization procedures for the traveling salesman problem, Oper. Res. 40(1992)1086–1094.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=New%20insertion%20and%20post-optimization%20procedures%20for%20the%20traveling%20salesman%20problem&amp;author=M..%20Gendreau&amp;author=A..%20Hertz&amp;author=G..%20Laporte&amp;journal=Oper.%20Res.&amp;volume=40&amp;pages=1086-1094&amp;publication_year=1992"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[16]</div><div class="CitationContent" id="CR16">F. Glover, Tabu search, Part I, ORSA J. Comp. 1(1989)190–206.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Tabu%20search%2C%20Part%20I&amp;author=F..%20Glover&amp;journal=ORSA%20J.%20Comp.&amp;volume=1&amp;pages=190-206&amp;publication_year=1989"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[17]</div><div class="CitationContent" id="CR17">F. Glover, Tabu Search, Part II, ORSA J. Comp. 2(1990)4–32.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Tabu%20Search%2C%20Part%20II&amp;author=F..%20Glover&amp;journal=ORSA%20J.%20Comp.&amp;volume=2&amp;pages=4-32&amp;publication_year=1990"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[18]</div><div class="CitationContent" id="CR18">D.E. Goldberg and R. Lingle, Alleles, loci and the traveling salesman problem, in:<em class="EmphasisTypeItalic ">Proc. Ist Int. Conf. on Genetic Algorithms (ICGA '85)</em>, Carnegie-Mellon University, Pittsburg, PA (1985) pp. 154–159.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Alleles%2C%20loci%20and%20the%20traveling%20salesman%20problem&amp;author=D.E..%20Goldberg&amp;author=R..%20Lingle&amp;pages=154-159&amp;publication_year=1985"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[19]</div><div class="CitationContent" id="CR19">B.L. Golden and W.R. Stewart, Empirical analysis of heuristics, in:<em class="EmphasisTypeItalic ">The Traveling Salesman Problem. A Guided Tour of Combinatorial Optimization</em>, ed. E.L. Lawler, J.K. Lenstra, A.H.G. Rinnooy Kan and D.B. Shmoys (Wiley, 1985).<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=B.L.%20Golden%20and%20W.R.%20Stewart%2C%20Empirical%20analysis%20of%20heuristics%2C%20in%3AThe%20Traveling%20Salesman%20Problem.%20A%20Guided%20Tour%20of%20Combinatorial%20Optimization%2C%20ed.%20E.L.%20Lawler%2C%20J.K.%20Lenstra%2C%20A.H.G.%20Rinnooy%20Kan%20and%20D.B.%20Shmoys%20%28Wiley%2C%201985%29."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[20]</div><div class="CitationContent" id="CR20">D.E. Goldberg,<em class="EmphasisTypeItalic ">Genetic Algorithms in Search, Optimization and Machine Learning</em> (Addison-Wesley, 1989).<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=D.E.%20Goldberg%2CGenetic%20Algorithms%20in%20Search%2C%20Optimization%20and%20Machine%20Learning%20%28Addison-Wesley%2C%201989%29."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[21]</div><div class="CitationContent" id="CR21">M. Gorges-Schleuter, ASPARAGOS: An asynchronous parallel genetic optimization strategy, in:<em class="EmphasisTypeItalic ">Proc. 3rd Int. Conf. on Genetic Algorithms (ICGA '89)</em>, George Mason University, Fairfax, VA (1989) pp. 422–427.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=ASPARAGOS%3A%20An%20asynchronous%20parallel%20genetic%20optimization%20strategy&amp;author=M..%20Gorges-Schleuter&amp;pages=422-427&amp;publication_year=1989"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[22]</div><div class="CitationContent" id="CR22">J. Grefenstette, R. Gopal, B.J. Rosmaita and D.V. Gucht, Genetic algorithms for the traveling salesman problem, in:<em class="EmphasisTypeItalic ">Proc. 1st. Int. Conf. on Genetic Algorithms (ICGA '85)</em>, Carnegie-Mellon University, Pittsburgh, PA (1985) pp. 160–168.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Genetic%20algorithms%20for%20the%20traveling%20salesman%20problem&amp;author=J..%20Grefenstette&amp;author=R..%20Gopal&amp;author=B.J..%20Rosmaita&amp;author=D.V..%20Gucht&amp;pages=160-168&amp;publication_year=1985"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[23]</div><div class="CitationContent" id="CR23">J. Grefenstette, Incorporating problem specific knowledge into genetic algorithms, in:<em class="EmphasisTypeItalic ">Genetic Algorithms and Simulated Annealing</em>, ed. L. Davis (Morgan Kaufmann, 1987) pp. 42–60.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=J.%20Grefenstette%2C%20Incorporating%20problem%20specific%20knowledge%20into%20genetic%20algorithms%2C%20in%3AGenetic%20Algorithms%20and%20Simulated%20Annealing%2C%20ed.%20L.%20Davis%20%28Morgan%20Kaufmann%2C%201987%29%20pp.%2042%E2%80%9360."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[24]</div><div class="CitationContent" id="CR24">M. Grötschel and O. Holland, Solution of large-scale symmetric traveling salesman problems, Report 73, Institut für Mathematik, Universität Augsburg (1988).<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=M.%20Gr%C3%B6tschel%20and%20O.%20Holland%2C%20Solution%20of%20large-scale%20symmetric%20traveling%20salesman%20problems%2C%20Report%2073%2C%20Institut%20f%C3%BCr%20Mathematik%2C%20Universit%C3%A4t%20Augsburg%20%281988%29."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[25]</div><div class="CitationContent" id="CR25">M. Held and R.M. Karp, The traveling salesman problem and minimum spanning trees, Oper. Res. 18(1970)1138–1162.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=The%20traveling%20salesman%20problem%20and%20minimum%20spanning%20trees&amp;author=M..%20Held&amp;author=R.M..%20Karp&amp;journal=Oper.%20Res.&amp;volume=18&amp;pages=1138-1162&amp;publication_year=1970"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[26]</div><div class="CitationContent" id="CR26">J.H. Holland,<em class="EmphasisTypeItalic ">Adaptation in Natural and Artificial Systems</em> (The University of Michigan Press, Ann Arbor, 1975); reprinted by MIT Press, 1992.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Adaptation%20in%20Natural%20and%20Artificial%20Systems&amp;author=J.H..%20Holland&amp;publication_year=1975"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[27]</div><div class="CitationContent" id="CR27">A. Homaifar, S. Guan and G. Liepins, A new approach to the traveling salesman problem by genetic algorithms, in:<em class="EmphasisTypeItalic ">Proc. 5th Int. Conf. on Genetic Algorithms (ICGA '93)</em>, University of Illinois at Urbana-Champaign, Champaign, IL (1993) pp. 460–466.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=A%20new%20approach%20to%20the%20traveling%20salesman%20problem%20by%20genetic%20algorithms&amp;author=A..%20Homaifar&amp;author=S..%20Guan&amp;author=G..%20Liepins&amp;pages=460-466&amp;publication_year=1993"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[28]</div><div class="CitationContent" id="CR28">J.J. Hopfield and D.W. Tank, Neural computation of decisions in optimization problems, Biol. Cybern. 52(1985)141–152.<span class="Occurrences"><span class="Occurrence OccurrencePID"><a class="gtm-reference" data-reference-type="PubMed" target="_blank" rel="noopener" href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=PubMed&amp;dopt=Abstract&amp;list_uids=4027280"><span><span>PubMed</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Neural%20computation%20of%20decisions%20in%20optimization%20problems&amp;author=J.J..%20Hopfield&amp;author=D.W..%20Tank&amp;journal=Biol.%20Cybern.&amp;volume=52&amp;pages=141-152&amp;publication_year=1985"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[29]</div><div class="CitationContent" id="CR29">P. Jog, J.Y. Suh and D.V. Gucht, The effects of population size, heuristic crossover and local improvement on a genetic algorithm for the traveling salesman problem, in:<em class="EmphasisTypeItalic ">Proc. 3rd Int. Conf. on Genetic Algorithms (ICGA '89)</em>, George Mason University, Fairfax, VA (1989) pp. 110–115.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=The%20effects%20of%20population%20size%2C%20heuristic%20crossover%20and%20local%20improvement%20on%20a%20genetic%20algorithm%20for%20the%20traveling%20salesman%20problem&amp;author=P..%20Jog&amp;author=J.Y..%20Suh&amp;author=D.V..%20Gucht&amp;pages=110-115&amp;publication_year=1989"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[30]</div><div class="CitationContent" id="CR30">D.S. Johnson, Local optimization and the traveling salesman problem, in:<em class="EmphasisTypeItalic ">Automata, Languages and Programming</em>, ed. G. Goos and J. Hartmanis, Lecture Notes in Computer Science 443 (Springer, 1990) pp. 446–461.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=D.S.%20Johnson%2C%20Local%20optimization%20and%20the%20traveling%20salesman%20problem%2C%20in%3AAutomata%2C%20Languages%20and%20Programming%2C%20ed.%20G.%20Goos%20and%20J.%20Hartmanis%2C%20Lecture%20Notes%20in%20Computer%20Science%20443%20%28Springer%2C%201990%29%20pp.%20446%E2%80%93461."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[31]</div><div class="CitationContent" id="CR31">R.L. Karg and G.L. Thompson, A heuristic approach to solving traveling salesman problems, Manag. Sci. 10(1964)225–248.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=A%20heuristic%20approach%20to%20solving%20traveling%20salesman%20problems&amp;author=R.L..%20Karg&amp;author=G.L..%20Thompson&amp;journal=Manag.%20Sci.&amp;volume=10&amp;pages=225-248&amp;publication_year=1964"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[32]</div><div class="CitationContent" id="CR32">S. Kirkpatrick, C.D. Gelatt and M.P. Vecchi, Optimization by simulated annealing, Science 220(1983)671–680.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Optimization%20by%20simulated%20annealing&amp;author=S..%20Kirkpatrick&amp;author=C.D..%20Gelatt&amp;author=M.P..%20Vecchi&amp;journal=Science&amp;volume=220&amp;pages=671-680&amp;publication_year=1983"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[33]</div><div class="CitationContent" id="CR33">P.D. Krolak, W. Felts and G. Marble, A man-machine approach toward solving the traveling salesman problem, Commun. ACM 14(1971)327–334.<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener" href="https://doi.org/10.1145/362588.362593"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=A%20man-machine%20approach%20toward%20solving%20the%20traveling%20salesman%20problem&amp;author=P.D..%20Krolak&amp;author=W..%20Felts&amp;author=G..%20Marble&amp;journal=Commun.%20ACM&amp;volume=14&amp;pages=327-334&amp;publication_year=1971"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[34]</div><div class="CitationContent" id="CR34">G. Laporte, The traveling salesman problem: An overview of exact and approximate algorithms, Euro. J. Oper. Res. 59(1992)231–247.<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener" href="https://doi.org/10.1016/0377-2217(92)90138-Y"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=The%20traveling%20salesman%20problem%3A%20An%20overview%20of%20exact%20and%20approximate%20algorithms&amp;author=G..%20Laporte&amp;journal=Euro.%20J.%20Oper.%20Res.&amp;volume=59&amp;pages=231-247&amp;publication_year=1992"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[35]</div><div class="CitationContent" id="CR35">E.L. Lawler, J.K. Lenstra, A.H.G. Rinnooy Kan and D.B. Shmoys,<em class="EmphasisTypeItalic ">The Traveling Salesman Problem: A Guided Tour of Combinatorial Optimization</em> (Wiley, 1985).<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=E.L.%20Lawler%2C%20J.K.%20Lenstra%2C%20A.H.G.%20Rinnooy%20Kan%20and%20D.B.%20Shmoys%2CThe%20Traveling%20Salesman%20Problem%3A%20A%20Guided%20Tour%20of%20Combinatorial%20Optimization%20%28Wiley%2C%201985%29."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[36]</div><div class="CitationContent" id="CR36">G.E. Liepins, M.R. Hilliard, M. Palmer and M. Morrow, Greedy genetics, in:<em class="EmphasisTypeItalic ">Proc. 2nd Int. Conf. on Genetic Algorithms (ICGA '87)</em>, Massachusetts Institute of Technology, Cambridge, MA (1987) pp. 90–99.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Greedy%20genetics&amp;author=G.E..%20Liepins&amp;author=M.R..%20Hilliard&amp;author=M..%20Palmer&amp;author=M..%20Morrow&amp;pages=90-99&amp;publication_year=1987"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[37]</div><div class="CitationContent" id="CR37">G.E. Liepins, M.R. Hilliard, J. Richardson and M. Palmer, Genetic algorithm applications to set covering and traveling salesman problems, in:<em class="EmphasisTypeItalic ">Operations Research and Artificial Intelligence: The Integration of Problem Solving Strategies</em>, ed. Brown and White (Kluwer Academic, 1990) pp. 29–57.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=G.E.%20Liepins%2C%20M.R.%20Hilliard%2C%20J.%20Richardson%20and%20M.%20Palmer%2C%20Genetic%20algorithm%20applications%20to%20set%20covering%20and%20traveling%20salesman%20problems%2C%20in%3AOperations%20Research%20and%20Artificial%20Intelligence%3A%20The%20Integration%20of%20Problem%20Solving%20Strategies%2C%20ed.%20Brown%20and%20White%20%28Kluwer%20Academic%2C%201990%29%20pp.%2029%E2%80%9357."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[38]</div><div class="CitationContent" id="CR38">S. Lin, Computer solutions of the traveling salesman problem, Bell Syst. Tech. J. 44(1965) 2245–2269.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Computer%20solutions%20of%20the%20traveling%20salesman%20problem&amp;author=S..%20Lin&amp;journal=Bell%20Syst.%20Tech.%20J.&amp;volume=44&amp;pages=2245-2269&amp;publication_year=1965"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[39]</div><div class="CitationContent" id="CR39">S. Lin and B. Kernighan, An effective heuristic algorithm for the traveling salesman problem, Oper. Res. 21(1973)498–516.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=An%20effective%20heuristic%20algorithm%20for%20the%20traveling%20salesman%20problem&amp;author=S..%20Lin&amp;author=B..%20Kernighan&amp;journal=Oper.%20Res.&amp;volume=21&amp;pages=498-516&amp;publication_year=1973"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[40]</div><div class="CitationContent" id="CR40">M. Malek, M. Guruswamy, M. Pandya and H. Owens, Serial and parallel simulated annealing and tabu search algorithms for the traveling salesman problem, Ann. Oper. Res. 21(1989)59–84.<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener" href="https://doi.org/10.1007/BF02022093"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Serial%20and%20parallel%20simulated%20annealing%20and%20tabu%20search%20algorithms%20for%20the%20traveling%20salesman%20problem&amp;author=M..%20Malek&amp;author=M..%20Guruswamy&amp;author=M..%20Pandya&amp;author=H..%20Owens&amp;journal=Ann.%20Oper.%20Res.&amp;volume=21&amp;pages=59-84&amp;publication_year=1989"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[41]</div><div class="CitationContent" id="CR41">Z. Michalewicz and C.Z. Janikow, Handling constraints in genetic algorithms, in:<em class="EmphasisTypeItalic ">Proc. 4th Int. Conf. on Genetic Algorithms (ICGA '91)</em>, University of California at San Diego, San Diego, CA (1991) pp. 151–157.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Handling%20constraints%20in%20genetic%20algorithms&amp;author=Z..%20Michalewicz&amp;author=C.Z..%20Janikow&amp;pages=151-157&amp;publication_year=1991"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[42]</div><div class="CitationContent" id="CR42">Z. Michalewicz, G.A. Vigaux and M. Hobbs, A nonstandard genetic algorithm for the nonlinear transportation problem, ORSA J. Comp. 3(1991)307–316.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=A%20nonstandard%20genetic%20algorithm%20for%20the%20nonlinear%20transportation%20problem&amp;author=Z..%20Michalewicz&amp;author=G.A..%20Vigaux&amp;author=M..%20Hobbs&amp;journal=ORSA%20J.%20Comp.&amp;volume=3&amp;pages=307-316&amp;publication_year=1991"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[43]</div><div class="CitationContent" id="CR43">H. Mulhenbein, M. Gorges-Schleuter and O. Kramer, New solutions to the mapping problem of parallel systems — the evolution approach, Parallel Comp. 4(1987)269–279.<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener" href="https://doi.org/10.1016/0167-8191(87)90026-3"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=New%20solutions%20to%20the%20mapping%20problem%20of%20parallel%20systems%20%E2%80%94%20the%20evolution%20approach&amp;author=H..%20Mulhenbein&amp;author=M..%20Gorges-Schleuter&amp;author=O..%20Kramer&amp;journal=Parallel%20Comp.&amp;volume=4&amp;pages=269-279&amp;publication_year=1987"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[44]</div><div class="CitationContent" id="CR44">H. Mulhenbein, M. Gorges-Schleuter and O. Kramer, Evolution algorithms in combinatorial optimization, Parallel Comp. 7(1988)65–85.<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener" href="https://doi.org/10.1016/0167-8191(88)90098-1"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Evolution%20algorithms%20in%20combinatorial%20optimization&amp;author=H..%20Mulhenbein&amp;author=M..%20Gorges-Schleuter&amp;author=O..%20Kramer&amp;journal=Parallel%20Comp.&amp;volume=7&amp;pages=65-85&amp;publication_year=1988"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[45]</div><div class="CitationContent" id="CR45">H. Mulhenbein, Evolution in time and space — the parallel genetic algorithm, in:<em class="EmphasisTypeItalic ">Foundations of genetic algorithms</em>, ed. G.J.E. Rawlins (Morgan Kaufmann, 1991) pp. 316–337.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=H.%20Mulhenbein%2C%20Evolution%20in%20time%20and%20space%20%E2%80%94%20the%20parallel%20genetic%20algorithm%2C%20in%3AFoundations%20of%20genetic%20algorithms%2C%20ed.%20G.J.E.%20Rawlins%20%28Morgan%20Kaufmann%2C%201991%29%20pp.%20316%E2%80%93337."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[46]</div><div class="CitationContent" id="CR46">K.E. Nygard and C.H. Yang, Genetic algorithms for the traveling salesman problem with time windows, in:<em class="EmphasisTypeItalic ">Computer Science and Operations research: New Developments in their Interfaces</em>, ed. O. Balci, R. Sharda and S.A. Zenios (Pergamon, 1992) pp. 411–423.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=K.E.%20Nygard%20and%20C.H.%20Yang%2C%20Genetic%20algorithms%20for%20the%20traveling%20salesman%20problem%20with%20time%20windows%2C%20in%3AComputer%20Science%20and%20Operations%20research%3A%20New%20Developments%20in%20their%20Interfaces%2C%20ed.%20O.%20Balci%2C%20R.%20Sharda%20and%20S.A.%20Zenios%20%28Pergamon%2C%201992%29%20pp.%20411%E2%80%93423."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[47]</div><div class="CitationContent" id="CR47">I.M. Oliver, D.J. Smith and J.R.C. Holland, A study of permutation crossover operators on the traveling salesman problem, in:<em class="EmphasisTypeItalic ">Proc. 2nd Int. Conf. on Genetic Algorithms (ICGA '87)</em>, Massachusetts Institute of Technology, Cambridge, MA (1987) pp. 224–230.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=A%20study%20of%20permutation%20crossover%20operators%20on%20the%20traveling%20salesman%20problem&amp;author=I.M..%20Oliver&amp;author=D.J..%20Smith&amp;author=J.R.C..%20Holland&amp;pages=224-230&amp;publication_year=1987"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[48]</div><div class="CitationContent" id="CR48">I. Or, Traveling salesman-type combinatorial optimization problems and their relation to the logistics of regional blood banking, Ph.D. Dissertation, Northwestern University, Evanston, IL (1976).<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Traveling%20salesman-type%20combinatorial%20optimization%20problems%20and%20their%20relation%20to%20the%20logistics%20of%20regional%20blood%20banking&amp;author=I..%20Or&amp;publication_year=1976"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[49]</div><div class="CitationContent" id="CR49">M. Padberg and G. Rinaldi, Optimization of a 532-city symmetric traveling salesman problem by branch-and-cut, Oper. Res. Lett. 6(1987)1–7.<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener" href="https://doi.org/10.1016/0167-6377(87)90002-2"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceAMSID"><a class="gtm-reference" data-reference-type="MathSciNet" target="_blank" rel="noopener" href="http://www.ams.org/mathscinet-getitem?mr=MR891600"><span><span>MathSciNet</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Optimization%20of%20a%20532-city%20symmetric%20traveling%20salesman%20problem%20by%20branch-and-cut&amp;author=M..%20Padberg&amp;author=G..%20Rinaldi&amp;journal=Oper.%20Res.%20Lett.&amp;volume=6&amp;pages=1-7&amp;publication_year=1987"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[50]</div><div class="CitationContent" id="CR50">M. Padberg and G. Rinaldi, A branch-and-cut algorithm for the resolution of large-scale symmetric traveling salesman problems, Technical Report R-247, Instituto di Analisi dei Sistemi ed Informatica. Consiglio Nazionale delle Ricerche, Roma (1988).<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=A%20branch-and-cut%20algorithm%20for%20the%20resolution%20of%20large-scale%20symmetric%20traveling%20salesman%20problems&amp;author=M..%20Padberg&amp;author=G..%20Rinaldi&amp;publication_year=1988"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[51]</div><div class="CitationContent" id="CR51">M. Padberg and G. Rinaldi, Facet identification for the symmetric traveling salesman problem, Math. Progr. 47(1990)219–257.<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener" href="https://doi.org/10.1007/BF01580861"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Facet%20identification%20for%20the%20symmetric%20traveling%20salesman%20problem&amp;author=M..%20Padberg&amp;author=G..%20Rinaldi&amp;journal=Math.%20Progr.&amp;volume=47&amp;pages=219-257&amp;publication_year=1990"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[52]</div><div class="CitationContent" id="CR52">J.T. Richardson, M. Palmer, G.E. Liepins and M. Hilliard, Some guidelines for genetic algorithms with penalty functions, in:<em class="EmphasisTypeItalic ">Proc. 3rd Int. Conf. on Genetic Algorithms (ICGA '89)</em>, George Mason University, Fairfax, VA (1989) pp. 191–197.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Some%20guidelines%20for%20genetic%20algorithms%20with%20penalty%20functions&amp;author=J.T..%20Richardson&amp;author=M..%20Palmer&amp;author=G.E..%20Liepins&amp;author=M..%20Hilliard&amp;pages=191-197&amp;publication_year=1989"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[53]</div><div class="CitationContent" id="CR53">D. Rosenkrantz, R. Sterns and P. Lewis, An analysis of several heuristics for the traveling salesman problem, SIAM J. Comp. 6(1977)563–581.<span class="Occurrences"><span class="Occurrence OccurrenceDOI"><a class="gtm-reference" data-reference-type="CrossRef" target="_blank" rel="noopener" href="https://doi.org/10.1137/0206041"><span><span>CrossRef</span></span></a></span><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=An%20analysis%20of%20several%20heuristics%20for%20the%20traveling%20salesman%20problem&amp;author=D..%20Rosenkrantz&amp;author=R..%20Sterns&amp;author=P..%20Lewis&amp;journal=SIAM%20J.%20Comp.&amp;volume=6&amp;pages=563-581&amp;publication_year=1977"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[54]</div><div class="CitationContent" id="CR54">W. Siedlecki and J. Sklansky, Constrained genetic optimization via dynamic reward-penalty balancing and its use in pattern recognition, in:<em class="EmphasisTypeItalic ">Proc. 3rd Int. Conf. on Genetic Algorithms (ICGA '89)</em>, George Mason University, Fairfax, VA (1989) pp. 141–150.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Constrained%20genetic%20optimization%20via%20dynamic%20reward-penalty%20balancing%20and%20its%20use%20in%20pattern%20recognition&amp;author=W..%20Siedlecki&amp;author=J..%20Sklansky&amp;pages=141-150&amp;publication_year=1989"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[55]</div><div class="CitationContent" id="CR55">T. Starkweather, S. McDaniel, K. Mathias, D. Whitley and C. Whitley, A comparison of genetic sequencing operators, in:<em class="EmphasisTypeItalic ">Proc. 4th Int. Conf. on Genetic Algorithms (ICGA '91)</em>, University of California at San Diego, San Diego, CA (1991) pp. 69–76.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=A%20comparison%20of%20genetic%20sequencing%20operators&amp;author=T..%20Starkweather&amp;author=S..%20McDaniel&amp;author=K..%20Mathias&amp;author=D..%20Whitley&amp;author=C..%20Whitley&amp;pages=69-76&amp;publication_year=1991"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[56]</div><div class="CitationContent" id="CR56">J.Y. Suh and D.V. Gucht, Incorporating heuristic information into genetic search, in:<em class="EmphasisTypeItalic ">Proc. 2nd Int. Conf. on Genetic Algorithms (ICGA '87)</em>, Massachusetts Institute of Technology, Cambridge, MA (1987) pp. 100–107.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Incorporating%20heuristic%20information%20into%20genetic%20search&amp;author=J.Y..%20Suh&amp;author=D.V..%20Gucht&amp;pages=100-107&amp;publication_year=1987"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[57]</div><div class="CitationContent" id="CR57">G. Syswerda, Uniform crossover in genetic algorithms, in:<em class="EmphasisTypeItalic ">Proc. 3rd Int. Conf. on Genetic Algorithms (ICGA '89)</em>, George Mason University, Fairfax, VA (1989) pp. 2–9.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Uniform%20crossover%20in%20genetic%20algorithms&amp;author=G..%20Syswerda&amp;pages=2-9&amp;publication_year=1989"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[58]</div><div class="CitationContent" id="CR58">G. Syswerda, Schedule optimization using genetic algorithms, in:<em class="EmphasisTypeItalic ">Handbook of Genetic Algorithms</em>, ed. L. Davis (Van Nostrand Reinhold, 1990) pp. 332–349.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=G.%20Syswerda%2C%20Schedule%20optimization%20using%20genetic%20algorithms%2C%20in%3AHandbook%20of%20Genetic%20Algorithms%2C%20ed.%20L.%20Davis%20%28Van%20Nostrand%20Reinhold%2C%201990%29%20pp.%20332%E2%80%93349."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[59]</div><div class="CitationContent" id="CR59">S.R. Thangiah, K.E. Nygard and P. Juell, GIDEON: A genetic algorithm system for vehicle routing problems with time windows, in:<em class="EmphasisTypeItalic ">Proc. 7th IEEE Conf. on Applications of Artificial Intelligence</em>, Miami, FL (1991) pp. 322–328.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=S.R.%20Thangiah%2C%20K.E.%20Nygard%20and%20P.%20Juell%2C%20GIDEON%3A%20A%20genetic%20algorithm%20system%20for%20vehicle%20routing%20problems%20with%20time%20windows%2C%20in%3AProc.%207th%20IEEE%20Conf.%20on%20Applications%20of%20Artificial%20Intelligence%2C%20Miami%2C%20FL%20%281991%29%20pp.%20322%E2%80%93328."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[60]</div><div class="CitationContent" id="CR60">S.R. Thangiah and K.E. Nygard, School bus routing using genetic algorithms, in:<em class="EmphasisTypeItalic ">Proc. Applications of Artificial Intelligence X: Knowledge Based Systems</em>, Orlando, FL (1992) pp. 387–397.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=S.R.%20Thangiah%20and%20K.E.%20Nygard%2C%20School%20bus%20routing%20using%20genetic%20algorithms%2C%20in%3AProc.%20Applications%20of%20Artificial%20Intelligence%20X%3A%20Knowledge%20Based%20Systems%2C%20Orlando%2C%20FL%20%281992%29%20pp.%20387%E2%80%93397."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[61]</div><div class="CitationContent" id="CR61">S.R. Thangiah and A.V. Gubbi, Effect of genetic sectoring on vehicle routing problems with time windows, in:<em class="EmphasisTypeItalic ">Proc. IEEE Int. Conf. on Developing and Managing Intelligent System Projects</em>, Washington, DC (1993) pp. 146–153.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=S.R.%20Thangiah%20and%20A.V.%20Gubbi%2C%20Effect%20of%20genetic%20sectoring%20on%20vehicle%20routing%20problems%20with%20time%20windows%2C%20in%3AProc.%20IEEE%20Int.%20Conf.%20on%20Developing%20and%20Managing%20Intelligent%20System%20Projects%2C%20Washington%2C%20DC%20%281993%29%20pp.%20146%E2%80%93153."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[62]</div><div class="CitationContent" id="CR62">S.R. Thangiah and K.E. Nygard, Dynamic trajectory routing using an adaptive search strategy, in:<em class="EmphasisTypeItalic ">Proc. ACM Symp. on Applied Computing</em>, Indianapolis, IN (1993) pp. 131–138.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=S.R.%20Thangiah%20and%20K.E.%20Nygard%2C%20Dynamic%20trajectory%20routing%20using%20an%20adaptive%20search%20strategy%2C%20in%3AProc.%20ACM%20Symp.%20on%20Applied%20Computing%2C%20Indianapolis%2C%20IN%20%281993%29%20pp.%20131%E2%80%93138."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[63]</div><div class="CitationContent" id="CR63">S.R. Thangiah, R. Vinayagamoorty and A.V. Gubbi, Vehicle routing and time deadlines using genetic and local algorithms, in:<em class="EmphasisTypeItalic ">Proc. 5th Int. Conf. on Genetic Algorithms (ICGA '93)</em>, University of Illinois at Urbana-Champaign, Champaign, IL (1993) pp. 506–515.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Vehicle%20routing%20and%20time%20deadlines%20using%20genetic%20and%20local%20algorithms&amp;author=S.R..%20Thangiah&amp;author=R..%20Vinayagamoorty&amp;author=A.V..%20Gubbi&amp;pages=506-515&amp;publication_year=1993"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[64]</div><div class="CitationContent" id="CR64">N.L.J. Ulder, E.H.L. Aarts, H.J. Bandelt, P.J.M. van Laarhoven and E. Pesch, Genetic local search algorithms for the traveling salesman problem, in:<em class="EmphasisTypeItalic ">Parallel Problem-Solving from Nature</em>, ed. H.P. Schwefel and R. Manner, Lecture Notes in Computer Science 496 (Springer, 1991) pp. 109–116.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=N.L.J.%20Ulder%2C%20E.H.L.%20Aarts%2C%20H.J.%20Bandelt%2C%20P.J.M.%20van%20Laarhoven%20and%20E.%20Pesch%2C%20Genetic%20local%20search%20algorithms%20for%20the%20traveling%20salesman%20problem%2C%20in%3AParallel%20Problem-Solving%20from%20Nature%2C%20ed.%20H.P.%20Schwefel%20and%20R.%20Manner%2C%20Lecture%20Notes%20in%20Computer%20Science%20496%20%28Springer%2C%201991%29%20pp.%20109%E2%80%93116."><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[65]</div><div class="CitationContent" id="CR65">G.A Vigaux and Z. Michalewicz, A genetic algorithm for the linear transportation problem, IEEE Trans. Syst., Man, Cybern. 21(1991)445–452.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=A%20genetic%20algorithm%20for%20the%20linear%20transportation%20problem&amp;author=G.A.%20Vigaux&amp;author=Z..%20Michalewicz&amp;journal=IEEE%20Trans.%20Syst.%2C%20Man%2C%20Cybern.&amp;volume=21&amp;pages=445-452&amp;publication_year=1991"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[66]</div><div class="CitationContent" id="CR66">D. Whitley, The genitor algorithm and selection pressure: Why rankbased allocation of reproductive trials is best, in:<em class="EmphasisTypeItalic ">Proc. 3rd Int. Conf. on Genetic Algorithms (ICGA '89)</em>, George Mason University, Fairfax, VA (1989) pp. 116–121.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=The%20genitor%20algorithm%20and%20selection%20pressure%3A%20Why%20rankbased%20allocation%20of%20reproductive%20trials%20is%20best&amp;author=D..%20Whitley&amp;pages=116-121&amp;publication_year=1989"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[67]</div><div class="CitationContent" id="CR67">D. Whitley, T. Starkweather and D. Fuquay, Scheduling problems and traveling salesmen: The genetic edge recombination operator, in:<em class="EmphasisTypeItalic ">Proc. 3rd Int. Conf. on Genetic Algorithms (ICGA '89)</em>, George Mason University, Fairfax, VA (1989) pp. 133–140.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="http://scholar.google.com/scholar_lookup?title=Scheduling%20problems%20and%20traveling%20salesmen%3A%20The%20genetic%20edge%20recombination%20operator&amp;author=D..%20Whitley&amp;author=T..%20Starkweather&amp;author=D..%20Fuquay&amp;pages=133-140&amp;publication_year=1989"><span><span>Google Scholar</span></span></a></span></span></div></li><li class="Citation"><div class="CitationNumber">[68]</div><div class="CitationContent" id="CR68">D. Whitley, T. Starkweather and D. Shaner, Traveling saleman and sequence scheduling: Quality solutions using genetic edge recombination, in:<em class="EmphasisTypeItalic ">Handbook of Genetic Algorithms</em>, ed. L. Davis (Van Nostrand Reinhold, 1990) pp. 350–372.<span class="Occurrences"><span class="Occurrence OccurrenceGS"><a target="_blank" rel="noopener" class="google-scholar-link gtm-reference" data-reference-type="Google Scholar" href="https://scholar.google.com/scholar?q=D.%20Whitley%2C%20T.%20Starkweather%20and%20D.%20Shaner%2C%20Traveling%20saleman%20and%20sequence%20scheduling%3A%20Quality%20solutions%20using%20genetic%20edge%20recombination%2C%20in%3AHandbook%20of%20Genetic%20Algorithms%2C%20ed.%20L.%20Davis%20%28Van%20Nostrand%20Reinhold%2C%201990%29%20pp.%20350%E2%80%93372."><span><span>Google Scholar</span></span></a></span></span></div></li></ol></div></section><section class="Section1 RenderAsSection1"><h2 class="Heading" id="copyrightInformation">Copyright information</h2><div class="ArticleCopyright content"><div class="ArticleCopyright">© J.C. Baltzer AG, Science Publishers 1996</div></div></section><section id="authorsandaffiliations" class="Section1 RenderAsSection1"><h2 class="Heading">Authors and Affiliations</h2><div class="content authors-affiliations u-interface"><ul class="test-contributor-names"><li itemscope="" itemtype="http://schema.org/Person" class="u-mb-2 u-pt-4 u-pb-4"><span itemprop="name" class="authors-affiliations__name">Jean-Yves Potvin</span><ul class="authors-affiliations__indexes u-inline-list" data-role="AuthorsIndexes"><li data-affiliation="affiliation-1">1</li></ul></li></ul><ol class="test-affiliations"><li class="affiliation" data-test="affiliation-1" data-affiliation-highlight="affiliation-1" itemscope="" itemtype="http://schema.org/Organization"><span class="affiliation__count">1.</span><span class="affiliation__item"><span itemprop="department" class="affiliation__department">Centre de Recherche sur les Transports</span><span itemprop="name" class="affiliation__name">Université de Montréal</span><span itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress" class="affiliation__address"><span itemprop="addressRegion" class="affiliation__city">Montréal</span><span itemprop="addressCountry" class="affiliation__country">Canada</span></span></span></li></ol></div></section></div>
+                        </article>
+                        <aside class="section section--collapsible" id="AboutThisContent">
+    <h2 class="section__heading" id="aboutcontent">About this article</h2>
+    <div class="section__content bibliographic-information">
+        
+        <div class="crossmark__adjacent">
+            <dl class="citation-info u-highlight-target u-mb-16" id="citeas" tabindex="-1">
+    <dt class="test-cite-heading">
+        Cite this article as:
+    </dt>
+    <dd id="citethis-text">Potvin, JY. Ann Oper Res (1996) 63: 337. https://doi.org/10.1007/BF02125403</dd>
+</dl>
+                <ul class="bibliographic-information__list bibliographic-information__list--inline">
+        <li class="bibliographic-information__item">
+            <span class="bibliographic-information__title">DOI</span>
+            <span class="bibliographic-information__value u-overflow-wrap" id="doi-url">https://doi.org/10.1007/BF02125403</span>
+        </li>
+            <li class="bibliographic-information__item">
+                <span class="bibliographic-information__title">Publisher Name</span>
+                <span class="bibliographic-information__value" id="publisher-name">Baltzer Science Publishers, Baarn/Kluwer Academic Publishers</span>
+            </li>
+            <li class="bibliographic-information__item">
+                <span class="bibliographic-information__title">Print ISSN</span>
+                <span class="bibliographic-information__value" id="print-issn">0254-5330</span>
+            </li>
+            <li class="bibliographic-information__item">
+                <span class="bibliographic-information__title">Online ISSN</span>
+                <span class="bibliographic-information__value" id="electronic-issn">1572-9338</span>
+            </li>
+
+        
+    </ul>
+
+            <ul class="bibliographic-information__list">
+        <li class="bibliographic-information__item">
+            <a id="about-journal" class="bibliographic-information__misc-links"
+               title="Visit Springer.com for information about this article&#39;s journal"
+               href="//www.springer.com/journal/10479/about">About this journal</a>
+        </li>
+        <li class="bibliographic-information__item">
+            <a id="reprintsandpermissions-link" target="_blank" rel="noopener" href="https://s100.copyright.com/AppDispatchServlet?publisherName&#x3D;SpringerNature&amp;orderBeanReset&#x3D;true&amp;orderSource&#x3D;SpringerLink&amp;copyright&#x3D;J.C.+Baltzer+AG%2C+Science+Publishers&amp;author&#x3D;Jean-Yves+Potvin&amp;issueNum&#x3D;3&amp;contentID&#x3D;10.1007%2FBF02125403&amp;endPage&#x3D;370&amp;publicationDate&#x3D;1996&amp;startPage&#x3D;337&amp;volumeNum&#x3D;63&amp;title&#x3D;Genetic+algorithms+for+the+traveling+salesman+problem&amp;imprint&#x3D;J.C.+Baltzer+AG%2C+Science+Publishers&amp;publication&#x3D;0254-5330" title="Visit RightsLink for information about reusing this article" data-track="click" data-track-action="Reprints and Permissions" data-track-label="">Reprints and Permissions</a>
+        </li>
+</ul>
+
+
+
+        </div>
+      
+      
+          
+    </div>
+</aside>
+
+                        <div class="section section--collapsible uptodate-recommendations gtm-recommendations">
+    <h2 class="uptodate-recommendations__title section__heading gtm-recommendations__title" id="uptodaterecommendations">Personalised recommendations</h2>
+    <div class="section__content">
+        <div class="uptodate-recommendations__container">
+             <link rel="uptodate-inline" href="/springerlink-static/1863137807/css/recommendations.css"/>
+        </div>
+    </div>
+</div>
+                                <div id="doubleclick-native-ad" data-component="SpringerLink.GoogleAds" data-namespace="native"></div>
+
+                        
+
+    <div class="sticky-banner sticky-banner--buybox u-interface u-hide" data-component="SpringerLink.StickyBanner" data-namespace="hasLink">
+        <div class="sticky-banner__container">
+                <div class="citations" data-component="SV.Dropdown" data-namespace="citationsSticky">
+        <h3 class="u-h4" data-role="button-dropdown__title">
+    <span>Cite</span>
+    <span class="hide-text-small">article</span>
+</h3>
+<ul class="citations__content" data-role="button-dropdown__content">
+    <li>
+        <a href="#citeas" data-track="click" data-track-action="Cite as link" data-track-label="Cite dropdown">How to cite?</a>
+    </li>
+        <li>
+            <a href="//citation-needed.springer.com/v2/references/10.1007/BF02125403?format&#x3D;refman&amp;flavour&#x3D;citation"
+               title="Download this article&#39;s citation as a .RIS file" data-track="click" data-track-action="Export citation" data-track-label="RIS">
+                <span class="citations__extension" data-gtmlabel="RIS">
+                    <svg class="u-vertical-align-absolute" width="12" height="14" viewBox="0 0 12 14" xmlns="http://www.w3.org/2000/svg"><path d="M7 7.269v-6.271c0-.551-.448-.998-1-.998-.556 0-1 .447-1 .998v6.271l-1.5-1.547c-.375-.387-1.01-.397-1.401-.006l.016-.016c-.397.397-.391 1.025-.001 1.416l3.178 3.178c.392.392 1.024.391 1.415 0l3.178-3.178c.392-.392.391-1.025-.001-1.416l.016.016c-.397-.397-1.018-.388-1.401.006l-1.5 1.547zm-7 5.731c0-.552.456-1 1.002-1h9.995c.554 0 1.002.444 1.002 1 0 .552-.456 1-1.002 1h-9.995c-.554 0-1.002-.444-1.002-1z" fill="#004aa7"/></svg>
+                    .RIS
+                </span>
+                <span class="citations__types">
+                        <span>
+                            Papers
+                        </span>
+                        <span>
+                            Reference Manager
+                        </span>
+                        <span>
+                            RefWorks
+                        </span>
+                        <span>
+                            Zotero
+                        </span>
+                </span>
+            </a>
+        </li>
+        <li>
+            <a href="//citation-needed.springer.com/v2/references/10.1007/BF02125403?format&#x3D;endnote&amp;flavour&#x3D;citation"
+               title="Download this article&#39;s citation as a .ENW file" data-track="click" data-track-action="Export citation" data-track-label="ENW">
+                <span class="citations__extension" data-gtmlabel="ENW">
+                    <svg class="u-vertical-align-absolute" width="12" height="14" viewBox="0 0 12 14" xmlns="http://www.w3.org/2000/svg"><path d="M7 7.269v-6.271c0-.551-.448-.998-1-.998-.556 0-1 .447-1 .998v6.271l-1.5-1.547c-.375-.387-1.01-.397-1.401-.006l.016-.016c-.397.397-.391 1.025-.001 1.416l3.178 3.178c.392.392 1.024.391 1.415 0l3.178-3.178c.392-.392.391-1.025-.001-1.416l.016.016c-.397-.397-1.018-.388-1.401.006l-1.5 1.547zm-7 5.731c0-.552.456-1 1.002-1h9.995c.554 0 1.002.444 1.002 1 0 .552-.456 1-1.002 1h-9.995c-.554 0-1.002-.444-1.002-1z" fill="#004aa7"/></svg>
+                    .ENW
+                </span>
+                <span class="citations__types">
+                        <span>
+                            EndNote
+                        </span>
+                </span>
+            </a>
+        </li>
+        <li>
+            <a href="//citation-needed.springer.com/v2/references/10.1007/BF02125403?format&#x3D;bibtex&amp;flavour&#x3D;citation"
+               title="Download this article&#39;s citation as a .BIB file" data-track="click" data-track-action="Export citation" data-track-label="BIB">
+                <span class="citations__extension" data-gtmlabel="BIB">
+                    <svg class="u-vertical-align-absolute" width="12" height="14" viewBox="0 0 12 14" xmlns="http://www.w3.org/2000/svg"><path d="M7 7.269v-6.271c0-.551-.448-.998-1-.998-.556 0-1 .447-1 .998v6.271l-1.5-1.547c-.375-.387-1.01-.397-1.401-.006l.016-.016c-.397.397-.391 1.025-.001 1.416l3.178 3.178c.392.392 1.024.391 1.415 0l3.178-3.178c.392-.392.391-1.025-.001-1.416l.016.016c-.397-.397-1.018-.388-1.401.006l-1.5 1.547zm-7 5.731c0-.552.456-1 1.002-1h9.995c.554 0 1.002.444 1.002 1 0 .552-.456 1-1.002 1h-9.995c-.554 0-1.002-.444-1.002-1z" fill="#004aa7"/></svg>
+                    .BIB
+                </span>
+                <span class="citations__types">
+                        <span>
+                            BibTeX
+                        </span>
+                        <span>
+                            JabRef
+                        </span>
+                        <span>
+                            Mendeley
+                        </span>
+                </span>
+            </a>
+        </li>
+</ul>
+    </div>
+
+                
+
+
+
+                <div class="sticky-banner__buybox-link sticky-banner__buybox-link--sticky">
+        <a href="#buy" class="gtm-buybox-anchor">
+            Buy options
+        </a>
+    </div>
+
+        </div>
+    </div>
+
+
+                    </div>
+                    <aside class="main-sidebar-right u-interface">
+                        <div data-role="sticky-wrapper">
+                            <div class="main-sidebar-right__content u-composite-layer" data-component="SpringerLink.StickySidebar">
+                                <div class="article-actions" id="article-actions">
+                                    <h2 class="u-screenreader-only" aria-hidden="true">Actions</h2>
+
+                                        <div id="buy">
+                                            
+<style type="text/css">
+    .buybox {
+        margin: 16px 0 0;
+        position: relative;
+    }
+    .buybox {
+        font-family: Source Sans Pro, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        font-size: 1.4rem;
+    }
+    .buybox {
+        zoom: 1;
+    }
+    .buybox:after,
+    .buybox:before {
+        content: '';
+        display: table;
+    }
+    .buybox:after {
+        clear: both;
+    }
+    /*---------------------------------*/
+    .buybox .buybox__header {
+        border: 1px solid #b3b3b3;
+        border-bottom: 0;
+        padding: 8px;
+        position: relative;
+        background-color: #f2f2f2;
+    }
+    .buybox__header .buybox__login {
+        font-family: Source Sans Pro, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        font-size: 1.4rem;
+        letter-spacing: .017em;
+        display: inline-block;
+        line-height: 1.2;
+        padding: 0;
+    }
+    .buybox__header .buybox__login:before {
+        position: absolute;
+        top: 50%;
+        -webkit-transform: perspective(1px) translateY(-50%);
+        transform: perspective(1px) translateY(-50%);
+        content: '\A';
+        width: 34px;
+        height: 34px;
+        left: 10px;
+    }
+    /*---------------------------------*/
+    .buybox .buybox__body {
+        padding: 0;
+        padding-bottom: 16px;
+        position: relative;
+        text-align: center;
+        background-color: #fcfcfc;
+        border: 1px solid #b3b3b3;
+    }
+    /******/
+    .buybox__body .buybox__section {
+        padding: 16px 12px 0 12px;
+        text-align: left;
+    }
+    .buybox__section .buybox__buttons {
+        text-align: center;
+        width: 100%;
+    }
+    /********** mycopy buybox specific **********/
+    .buybox.mycopy__buybox .buybox__body {
+        background-color: transparent;
+    }
+    .buybox.mycopy__buybox .buybox__section .buybox__buttons {
+        border-top: 0;
+        padding-top: 0;
+    }
+    /******/
+    .buybox__section:nth-child(2) .buybox__buttons {
+        border-top: 1px solid #b3b3b3;
+        padding-top: 20px;
+    }
+    .buybox__buttons .buybox__buy-button {
+        display: inline-block;
+        text-align: center;
+        margin-bottom: 5px;
+        padding: 6px 12px;
+        max-width: 180px
+    }
+    .buybox__buttons .buybox__price {
+        white-space: nowrap;
+        text-align: center;
+        font-size: larger;
+        padding-top: 6px;
+    }
+    .buybox__section .buybox__meta {
+        letter-spacing: 0;
+        padding-top: 12px;
+    }
+    .buybox__section .buybox__meta:only-of-type {
+        padding-top: 0;
+        position: relative;
+        bottom: 6px;
+    }
+    /********** mycopy buybox specific **********/
+    .buybox.mycopy__buybox .buybox__section .buybox__meta {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    /******/
+    .buybox__meta .buybox__product-title {
+        display: inline;
+        font-weight: bold;
+    }
+    .buybox__meta .buybox__list {
+        line-height: 1.3;
+    }
+    .buybox__meta .buybox__list li {
+        position: relative;
+        padding-left: 1em;
+        list-style: none;
+        margin-bottom: 5px;
+    }
+    .buybox__meta .buybox__list li:before {
+        font-size: 1em;
+        content: '\2022';
+        float: left;
+        position: relative;
+        top: .1em;
+        font-family: serif;
+        font-weight: 600;
+        text-align: center;
+        line-height: inherit;
+        color: #666;
+        width: auto;
+        margin-left: -1em;
+    }
+    .buybox__meta .buybox__list li:last-child {
+        margin-bottom: 0;
+    }
+    /********** chapter buybox specific **********/
+    .buybox.chapter__buybox .buybox__section .buybox__meta {
+        border-top: 1px solid #d3d3d3;
+        padding-top: 12px;
+    }
+    .buybox.chapter__buybox .buybox__section .buybox__buy-ebook {
+        margin-bottom: 12px;
+    }
+    /******/
+    /*---------------------------------*/
+    .buybox .buybox__footer {
+        border: 1px solid #b3b3b3;
+        border-top: 0;
+        padding: 8px;
+        position: relative;
+        border-style: dashed;
+        line-height: 1.3;
+    }
+    .buybox .deepdyve {
+        display: none;
+        text-align: left;
+        margin: 8px 12px 0 12px;
+        padding-top: 5px;
+        border-top: 1px solid #d3d3d3;
+    }
+    /*-----------------------------------------------------------------*/
+    @media screen and (min-width: 460px) and (max-width: 1074px) {
+        .buybox__body .buybox__section {
+            display: inline-block;
+            vertical-align: top;
+            padding: 12px 12px;
+            padding-bottom: 0;
+            text-align: left;
+            width: 48%;
+        }
+        .buybox__body .buybox__section {
+            padding-top: 16px;
+            padding-left: 0;
+        }
+        .buybox__section:nth-of-type(2) .buybox__meta {
+            border-left: 1px solid #d3d3d3;
+            padding-left: 28px;
+        }
+        .buybox__section:nth-of-type(2) .buybox__buttons {
+            border-top: 0;
+            padding-top: 0;
+            padding-left: 16px ;
+        }
+        .buybox__buttons .buybox__buy-button {
+        }
+        /********** article buybox specific **********/
+        .buybox.article__buybox .buybox__section:nth-of-type(2) {
+            margin-top: 16px;
+            padding-top: 0;
+        }
+        .buybox.article__buybox .buybox__section:nth-of-type(2) .buybox__meta {
+            margin-top: 40px;
+            padding-top: 0;
+            padding-bottom: 45px;
+        }
+        .buybox.article__buybox .buybox__section:nth-of-type(2) .buybox__meta:only-of-type {
+            margin-top: 8px;
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+        /********** mycopy buybox specific **********/
+        .buybox.mycopy__buybox .buybox__section:first-child {
+            width: 69%;
+            padding-left: 12px ;
+        }
+        .buybox.mycopy__buybox .buybox__section:last-child {
+            width: 29%;
+        }
+        /********** chapter buybox specific **********/
+        .buybox.chapter__buybox .buybox__body {
+            display: flex;
+            align-items: stretch;
+            padding-left: 12px;
+            padding-top: 12px;
+        }
+        .buybox.chapter__buybox .buybox__section .buybox__meta {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            border-top: 0;
+            padding-top: 0;
+        }
+        /******/
+    }
+    /*-----------------------------------------------------------------*/
+    @media screen and (max-width: 459px) {
+        /********** mycopy buybox specific **********/
+        .buybox.mycopy__buybox .buybox__body {
+            padding-bottom: 5px;
+        }
+        .buybox.mycopy__buybox .buybox__section:last-child {
+            text-align: center;
+            width: 100%;
+        }
+        .buybox.mycopy__buybox .buybox__buttons {
+            display: inline-block;
+            width: 150px ;
+        }
+        /******/
+    }
+    /*-----------------------------------------------------------------*/
+</style>
+
+<div class="buybox article__buybox" data-webtrekkTrackId="196033507532344" data-webtrekkContentId="SL-article">
+    <div class="buybox__header">
+        <span class="buybox__login">Log in to check access</span>
+    </div>
+    <div class="buybox__body">
+        
+
+
+
+
+
+
+
+<div class="buybox__section buybox__article">
+    <div class="buybox__buttons">
+        <form class="buybox__form buybox__article" action="https://order.springer.com/public/checkout?utm_source=springerlink&amp;utm_medium=referral&amp;utm_campaign=sl-buybox_articlePage_article" method="POST">
+            
+                <input type="hidden" name="type" value="article"/>
+            
+                <input type="hidden" name="doi" value="10.1007/BF02125403"/>
+            
+                <input type="hidden" name="isxn" value="1572-9338"/>
+            
+                <input type="hidden" name="contenttitle" value="Genetic algorithms for the traveling salesman problem"/>
+            
+                <input type="hidden" name="copyrightyear" value="1996"/>
+            
+                <input type="hidden" name="year" value=""/>
+            
+                <input type="hidden" name="authors" value="Jean-Yves Potvin"/>
+            
+                <input type="hidden" name="title" value="Annals of Operations Research"/>
+            
+                <input type="hidden" name="mac" value="3262c44741c33221db32d87591e44053"/>
+            
+                <input type="hidden" name="returnurl" value="http://link.springer.com/article/10.1007/BF02125403"/>
+            
+            <button
+            class="buybox__buy-button c-button c-button--blue"
+            data-product-id="10.1007/BF02125403_Genetic algorithms for the traveli"
+            data-tracking-category="ppv"
+            data-eCommerceParam_11="article-page"
+            data-gtm="buybox__buy-button">
+                <span class="buybox__buy" data-gtm="buybox__buy-button">Buy article (PDF)</span>
+            </button>
+            <div class="buybox__price" data-gtm="buybox__buy-button">
+                EUR&nbsp;43.69
+            </div>
+        </form>
+    </div>
+    <div class="buybox__meta">
+        <ul class="buybox__list">
+            <li>Unlimited access to the article</li>
+            <li>Instant PDF download</li>
+        </ul>
+    </div>
+</div>
+
+        
+
+
+
+
+
+
+    <div class="buybox__section buybox__journal">
+    
+        
+            <div class="buybox__buttons">
+    <form class="buybox__form buybox__journal" action="https://order.springer.com/public/checkout?utm_source=springerlink&amp;utm_medium=referral&amp;utm_campaign=sl-buybox_articlePage_journal" method="POST">
+        
+            <input type="hidden" name="type" value="journal"/>
+        
+            <input type="hidden" name="contenttitle" value="Genetic algorithms for the traveling salesman problem"/>
+        
+            <input type="hidden" name="journalnumber" value="10479"/>
+        
+            <input type="hidden" name="pricetype" value="PSE"/>
+        
+        <button
+        class="buybox__buy-button c-button c-button--blue"
+        data-product-id="10.1007/BF02125403_Genetic algorithms for the traveli"
+        data-tracking-category="journal"
+        data-eCommerceParam_11="article-page"
+        data-gtm="buybox__buy-button-subscription">
+            <span class="buybox__buy" data-gtm="buybox__buy-button">Buy journal subscription</span>
+        </button>
+
+        <div class="buybox__price buybox__subscription-price" data-gtm="buybox__buy-button">
+            EUR&nbsp;149.00
+        </div>
+    </form>
+</div>
+<div class="buybox__meta">
+    <ul class="buybox__list">
+        <li>Immediate access to your online only subscription</li>
+        <li>Includes issues from January to December 2019</li>
+        <li>Automatic annual renewal</li>
+    </ul>
+</div>
+
+         
+    
+    </div>
+
+
+        <div id="deepdyve" class="deepdyve">
+    <a id="deepdyve-link" href="#" target="deepdyve" data-event="Article__rent_article">Rent this article via DeepDyve</a>
+</div>
+<script type="text/javascript">
+    function deepDyveResponse(data) {
+        if(data.status === "ok") {
+            document.getElementById("deepdyve").style.display = "inline-block";
+            document.getElementById("deepdyve-link").setAttribute("href", data.url);
+        }
+    }
+    var script = document.createElement('script');
+    script.src = "//www.deepdyve.com/rental-link?docId=10.1007/BF02125403&journal=1572-9338&fieldName=journal_doi&affiliateId=springer&format=jsonp&callback=deepDyveResponse";
+    document.body.appendChild(script);
+</script>
+    </div>
+    <div class="buybox__footer">
+    <a class="js-buybox__inst-sub-link" data-gtm="buybox__inst-sub-link" href="https://www.springernature.com/gp/librarians/licensing/license-options?utm_source=springerlink&utm_medium=referral&utm_campaign=sl-buybox_articlePage_institutionalCustomers">
+        Learn about institutional subscriptions</a>
+</div>
+</div>
+
+<script>
+(function () {
+    var forEach = function (array, callback, scope) {
+        for (var i = 0; i < array.length; i++) {
+            callback.call(scope, i, array[i]);
+        }
+    };
+
+    var trackDomain = 'springergmbh01.webtrekk.net';
+    var domain = 'link.springer.com';
+    var loadEventSent = false;
+
+    var buyboxRoot = document.getElementsByClassName('buybox')[0];
+    var webtrekkTrackId = buyboxRoot.getAttribute('data-webtrekkTrackId');
+    var webtrekkContentId = buyboxRoot.getAttribute('data-webtrekkContentId');
+
+    function LinkTrack(webtrekkTrackId) {
+        if (!webtrekkTrackId) return;
+
+        var data = {
+            trackDomain: trackDomain,
+            trackId: webtrekkTrackId,
+            domain: domain,
+            contentId: 'springer_com.buybox',
+            customSessionParameter: {
+                2: getBusinessPartnerIds()
+            }
+        };
+
+        if (!window.webtrekkV3 && console) {
+            console.log('No webtrekk found.', data);
+            return;
+        }
+
+        return new webtrekkV3(data);
+    }
+
+    function Track(product, webtrekkTrackId, eCommerceParam_11, action) {
+        if (!product) return;
+
+        var data = {
+            trackDomain: trackDomain,
+            trackId: webtrekkTrackId,
+            domain: domain,
+            contentId: webtrekkContentId,
+            product: product.id,
+            productStatus: action,
+            productCategory: {
+                1: product.trackingCategory
+            },
+            customEcommerceParameter: {
+                9: domain,
+                11: eCommerceParam_11
+            },
+            customSessionParameter: {
+                2: getBusinessPartnerIds()
+            }
+        };
+
+        if (!window.webtrekkV3 && console) {
+            console.log('No webtrekk found.', data);
+            return;
+        }
+
+        return new webtrekkV3(data);
+    }
+
+    function track(trackingConfig) {
+        return function(payload) {
+            if (!trackingConfig) return
+            if (payload) {
+                trackingConfig.sendinfo(payload)
+            } else {
+                trackingConfig.sendinfo()
+            }
+            return true
+        }
+    }
+
+    function trackAddToCart(trackingConfig) {
+        return track(trackingConfig)()
+    }
+
+    function trackOnLoad(trackingConfig) {
+        if (loadEventSent) return;
+        loadEventSent = true;
+        return track(trackingConfig)()
+    }
+
+    function trackSubscription(trackingConfig) {
+        return track(trackingConfig)({linkId: 'inst. subscription info'})
+    }
+
+    function trackDeepDyve(trackingConfig) {
+        return track(trackingConfig)({linkId: 'Rent Article'})
+    }
+
+    function getBusinessPartnerIds() {
+        var businessPartnerIDs = [];
+        try {
+            var ids = window.dataLayer[0]["user"]["license"]["businessPartnerID"];
+            if(ids && ids.length) businessPartnerIDs = ids;
+        } catch(e) {}
+        return businessPartnerIDs.join(";");
+    }
+
+    var bindClickLinkHandle = function (link) {
+        if (!link) return;
+
+        link.addEventListener('click', function (event) {
+            trackSubscription(LinkTrack(webtrekkTrackId));
+        });
+    };
+
+    var bindLoadButtonHandle = function (button) {
+        if (!button) return;
+
+        var productId = button.getAttribute('data-product-id');
+        var trackingCategory = button.getAttribute('data-tracking-category');
+        var eCommerceParam_11 = button.getAttribute('data-eCommerceParam_11');
+
+        window.addEventListener('load', function (event) {
+            trackOnLoad(Track({
+                id: productId,
+                trackingCategory: trackingCategory
+            }, webtrekkTrackId, eCommerceParam_11, 'view'));
+        });
+    };
+
+    var bindClickButtonHandle = function (button) {
+        if (!button) return;
+
+        var productId = button.getAttribute('data-product-id');
+        var trackingCategory = button.getAttribute('data-tracking-category');
+        var eCommerceParam_11 = button.getAttribute('data-eCommerceParam_11');
+
+        button.addEventListener('click', function (event) {
+            trackAddToCart(Track({
+                id: productId,
+                trackingCategory: trackingCategory
+            }, webtrekkTrackId, eCommerceParam_11, 'add'));
+        });
+    };
+
+    var buyButtons = document.getElementsByClassName('buybox__buy-button');
+    forEach(buyButtons, function (index, button) {
+        bindLoadButtonHandle(button);
+        bindClickButtonHandle(button);
+    });
+
+    var sublinks = document.getElementsByClassName('js-buybox__inst-sub-link');
+    forEach(sublinks, function (index, link) {
+        bindClickLinkHandle(link);
+    });
+
+    var bindDeepDyveClickHandle = function (link) {
+        if (!link) return
+
+        link.addEventListener('click', function (event) {
+            trackDeepDyve(LinkTrack(webtrekkTrackId))
+        })
+    }
+
+    var deepDyveLink = document.getElementById('deepdyve-link')
+    bindDeepDyveClickHandle(deepDyveLink)
+})();
+</script>
+
+                                        </div>
+
+                                    <div class="u-js-hide u-js-show-two-col">
+                                        
+
+
+
+                                            <div class="citations" data-component="SV.Dropdown" data-namespace="citations">
+        <h3 class="u-h4" data-role="button-dropdown__title">
+    <span>Cite</span>
+    <span class="hide-text-small">article</span>
+</h3>
+<ul class="citations__content" data-role="button-dropdown__content">
+    <li>
+        <a href="#citeas" data-track="click" data-track-action="Cite as link" data-track-label="Cite dropdown">How to cite?</a>
+    </li>
+        <li>
+            <a href="//citation-needed.springer.com/v2/references/10.1007/BF02125403?format&#x3D;refman&amp;flavour&#x3D;citation"
+               title="Download this article&#39;s citation as a .RIS file" data-track="click" data-track-action="Export citation" data-track-label="RIS">
+                <span class="citations__extension" data-gtmlabel="RIS">
+                    <svg class="u-vertical-align-absolute" width="12" height="14" viewBox="0 0 12 14" xmlns="http://www.w3.org/2000/svg"><path d="M7 7.269v-6.271c0-.551-.448-.998-1-.998-.556 0-1 .447-1 .998v6.271l-1.5-1.547c-.375-.387-1.01-.397-1.401-.006l.016-.016c-.397.397-.391 1.025-.001 1.416l3.178 3.178c.392.392 1.024.391 1.415 0l3.178-3.178c.392-.392.391-1.025-.001-1.416l.016.016c-.397-.397-1.018-.388-1.401.006l-1.5 1.547zm-7 5.731c0-.552.456-1 1.002-1h9.995c.554 0 1.002.444 1.002 1 0 .552-.456 1-1.002 1h-9.995c-.554 0-1.002-.444-1.002-1z" fill="#004aa7"/></svg>
+                    .RIS
+                </span>
+                <span class="citations__types">
+                        <span>
+                            Papers
+                        </span>
+                        <span>
+                            Reference Manager
+                        </span>
+                        <span>
+                            RefWorks
+                        </span>
+                        <span>
+                            Zotero
+                        </span>
+                </span>
+            </a>
+        </li>
+        <li>
+            <a href="//citation-needed.springer.com/v2/references/10.1007/BF02125403?format&#x3D;endnote&amp;flavour&#x3D;citation"
+               title="Download this article&#39;s citation as a .ENW file" data-track="click" data-track-action="Export citation" data-track-label="ENW">
+                <span class="citations__extension" data-gtmlabel="ENW">
+                    <svg class="u-vertical-align-absolute" width="12" height="14" viewBox="0 0 12 14" xmlns="http://www.w3.org/2000/svg"><path d="M7 7.269v-6.271c0-.551-.448-.998-1-.998-.556 0-1 .447-1 .998v6.271l-1.5-1.547c-.375-.387-1.01-.397-1.401-.006l.016-.016c-.397.397-.391 1.025-.001 1.416l3.178 3.178c.392.392 1.024.391 1.415 0l3.178-3.178c.392-.392.391-1.025-.001-1.416l.016.016c-.397-.397-1.018-.388-1.401.006l-1.5 1.547zm-7 5.731c0-.552.456-1 1.002-1h9.995c.554 0 1.002.444 1.002 1 0 .552-.456 1-1.002 1h-9.995c-.554 0-1.002-.444-1.002-1z" fill="#004aa7"/></svg>
+                    .ENW
+                </span>
+                <span class="citations__types">
+                        <span>
+                            EndNote
+                        </span>
+                </span>
+            </a>
+        </li>
+        <li>
+            <a href="//citation-needed.springer.com/v2/references/10.1007/BF02125403?format&#x3D;bibtex&amp;flavour&#x3D;citation"
+               title="Download this article&#39;s citation as a .BIB file" data-track="click" data-track-action="Export citation" data-track-label="BIB">
+                <span class="citations__extension" data-gtmlabel="BIB">
+                    <svg class="u-vertical-align-absolute" width="12" height="14" viewBox="0 0 12 14" xmlns="http://www.w3.org/2000/svg"><path d="M7 7.269v-6.271c0-.551-.448-.998-1-.998-.556 0-1 .447-1 .998v6.271l-1.5-1.547c-.375-.387-1.01-.397-1.401-.006l.016-.016c-.397.397-.391 1.025-.001 1.416l3.178 3.178c.392.392 1.024.391 1.415 0l3.178-3.178c.392-.392.391-1.025-.001-1.416l.016.016c-.397-.397-1.018-.388-1.401.006l-1.5 1.547zm-7 5.731c0-.552.456-1 1.002-1h9.995c.554 0 1.002.444 1.002 1 0 .552-.456 1-1.002 1h-9.995c-.554 0-1.002-.444-1.002-1z" fill="#004aa7"/></svg>
+                    .BIB
+                </span>
+                <span class="citations__types">
+                        <span>
+                            BibTeX
+                        </span>
+                        <span>
+                            JabRef
+                        </span>
+                        <span>
+                            Mendeley
+                        </span>
+                </span>
+            </a>
+        </li>
+</ul>
+    </div>
+
+                                            
+
+
+
+                                    </div>
+                                </div>
+                                
+
+                            </div>
+                                <div class="skyscraper-ad u-hide" data-component="SpringerLink.GoogleAds" data-namespace="skyscraper">
+        <div class="skyscraper-ad__wrapper">
+            <p class="skyscraper-ad__label">Advertisement</p>
+            <button class="skyscraper-ad__hide" title="Hide this advertisement" data-track="click" data-track-action="Hide advertisement" data-track-label="">Hide</button>
+            <div id="doubleclick-ad" class="skyscraper-ad__ad"></div>
+        </div>
+    </div>
+
+                        </div>
+                    </aside>
+                </div>
+            </main>
+                <footer class="footer u-interface">
+        <div class="footer__aside-wrapper">
+            <div class="footer__content">
+                <div class="footer__aside">
+                    <p class="footer__strapline">Over 10 million scientific documents at your fingertips</p>
+                                <div class="footer__edition" data-component="SV.EditionSwitcher">
+                                    <h3 class="u-hide" data-role="button-dropdown__title" data-btn-text="Switch between Academic &#38; Corporate Edition">Switch Edition</h3>
+                                    <ul data-role="button-dropdown__content">
+                                        <li  class="selected"><a href="/siteEdition/link?previousUrl=/article/10.1007/BF02125403&id=siteedition-academic-link" id="siteedition-academic-link">Academic Edition</a></li>
+                                        <li ><a href="/siteEdition/rd?previousUrl=/article/10.1007/BF02125403&id=siteedition-corporate-link" id="siteedition-corporate-link">Corporate Edition</a></li>
+                                    </ul>
+                                </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__content">
+            <ul class="footer__nav">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/impressum">Impressum</a>
+                </li>
+                <li>
+                    <a href="/termsandconditions">Legal information</a>
+                </li>
+                <li>
+                    <a href="/privacystatement">Privacy statement</a>
+                </li>
+                <li>
+                    <a href="/cookiepolicy">How we use cookies</a>
+                </li>
+                <li>
+                    <a href="/accessibility">Accessibility</a>
+                </li>
+                <li>
+                    <a id="contactus-footer-link" href="/contactus">Contact us</a>
+                </li>
+            </ul>
+            <a class="parent-logo"
+               target="_blank" rel="noopener"
+               href="//www.springernature.com"
+               title="Go to Springer Nature">
+                <span class="u-screenreader-only">Springer Nature</span>
+                <svg width="125" height="12" focusable="false" aria-hidden="true">
+                    <image width="125" height="12"
+                           src="/springerlink-static/1863137807/images/png/springernature.png"
+                           xmlns:xlink="http://www.w3.org/1999/xlink"
+                           xlink:href="/springerlink-static/1863137807/images/svg/springernature.svg">
+                    </image>
+                </svg>
+            </a>
+
+            <p class="footer__copyright">&copy; 2019 Springer Nature Switzerland AG. Part of <a target="_blank" rel="noopener" href="//www.springernature.com">Springer Nature</a>.</p>
+                <p class="footer__user-access-info">
+                    <span>Not logged in</span>
+                    <span>Not affiliated</span>
+                    <span>94.255.128.137</span>
+                </p>
+        </div>
+    </footer>
+
+        </div>
+        <script type="text/javascript">
+    (function() {
+        var linkEl = document.querySelector('.js-ctm');
+        var scriptsList = [];
+        var polyfillFeatures = '';
+
+        window.SpringerLink = window.SpringerLink || {};
+        window.SpringerLink.staticLocation = '/springerlink-static/1863137807';
+        window.eventTrackerInstance = null;
+
+        if (window.matchMedia && window.matchMedia(linkEl.media).matches) {
+            (function(h){h.className = h.className.replace('no-js', 'js')})(document.documentElement);
+
+            polyfillFeatures = 'default,fetch,Promise,Object.setPrototypeOf,Object.entries,Number.isInteger,MutationObserver,startsWith,Array.prototype.includes,Array.from,IntersectionObserver';
+
+            scriptsList = [
+                'https://cdn.polyfill.io/v2/polyfill.min.js?features=' + polyfillFeatures + '&flags=gated',
+                window.SpringerLink.staticLocation + '/js/main.js'
+            ];
+
+            scriptsList.forEach(function(script) {
+                var tag = document.createElement('script');
+                tag.async = false;
+                tag.src = script;
+
+                document.body.appendChild(tag);
+            });
+        }
+    })();
+</script>
+
+
+
+    <script type="text/javascript" id="googletag-push">
+        
+            var adSlot = '270604982/springerlink/10479/article';
+        
+
+        var definedSlots = [
+                {slot: [728, 90], containerName: 'doubleclick-leaderboard-ad'},
+                {slot: [160, 600], containerName: 'doubleclick-ad'},
+            {slot: [2, 2], containerName: 'doubleclick-native-ad'}
+        ];
+    </script>
+
+
+        
+        <span id="chat-widget" class="u-hide"></span>
+        
+            <img data-test="tracking-pixel" width="1" height="1" src="/track/controlled/article/denied/10.1007/BF02125403" alt=""/>
+
+    </body>
+</html>
