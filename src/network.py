@@ -224,13 +224,13 @@ def visualize(G):
 
     fig = go.Figure(data=[edge_trace, node_trace],
             layout=go.Layout(
-            title='<br>Network graph made with Python',
+            title='Network of Tourist Attractions in Iceland',
             titlefont_size=16,
             showlegend=False,
             hovermode='closest',
             margin=dict(b=20,l=5,r=5,t=40),
             annotations=[ dict(
-                text="Python code: <a href='https://plot.ly/ipython-notebooks/network-graphs/'> https://plot.ly/ipython-notebooks/network-graphs/</a>",
+                text="Iceland",
                 showarrow=False,
                 xref="paper", yref="paper",
                 x=0.005, y=-0.002 ) ],
