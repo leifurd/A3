@@ -5,6 +5,11 @@ from itertools import combinations
 import plotly.graph_objects as go
 import networkx as nx
 
+import sys
+sys.path.append('models')
+
+from geo import get_edges, get_nodes
+
 class Node:
     def __init__(self, name):
         self.name = name
@@ -39,6 +44,9 @@ class BiNetwork:
         self.__network, self.__network_cost = self.__initialize_network(edges)
         
 
+    def adjacency(self):
+        for key in self.V:
+            yield (key, self.__network[key])
     def __initialize_network(self, edges):
         '''
         Assumes that A->A exists and has cost of 0
@@ -204,6 +212,15 @@ def visualize(G):
             ),
             line_width=2))
 
+    node_adjacencies = []
+    node_text = []
+    for node, adjacencies in G.adjacency():
+        node_adjacencies.append(len(adjacencies))
+        node_text.append('# of connections: '+str(len(adjacencies)) + "\nName: " + str(node))
+
+    node_trace.marker.color = node_adjacencies
+    node_trace.text = node_text
+
 
     fig = go.Figure(data=[edge_trace, node_trace],
             layout=go.Layout(
@@ -225,8 +242,29 @@ def visualize(G):
 
 if __name__ == '__main__':
 
-    nw = get_random_network()
-    visualize(nw.complete_transform())
+
+    nodes    = get_nodes()
+    edge_map = get_edges()
+
+    V, E = [], []
+
+    node_map = {}
+    for node in nodes:
+        V.append(GeoNode(node[0], node[2][0], node[2][1]))
+        node_map[node[0]] = V[-1]
+    
+    for place_from in edge_map:
+        for place_to in edge_map[place_from]:
+            E.append(Edge(node_map[place_from], node_map[place_to], edge_map[place_from][place_to]))
+
+    nw = BiNetwork(V, E)
+
+    visualize(nw)
+    #nw = get_random_network()
+
+
+
+    #visualize(nw.complete_transform())
     '''
     a, b, c = GeoNode('a', -1, 0), GeoNode('b', 0, -1), GeoNode('c', 1, 0)
 
