@@ -43,11 +43,36 @@ class BiNetwork:
         self.E                              = edges
         self.__fw_map                       = None 
         self.__network, self.__network_cost = self.__initialize_network(edges)
+        self.encode_map, self.decode_map    = self.__create_maps()
+        self._floyd_warshall()
         
 
     def adjacency(self):
         for key in self.V:
             yield (key, self.__network[key])
+
+    def __create_maps(self):
+        enc_map, dec_map = {}, {}
+
+        for idx, node in enumerate(self.V):
+            enc_map[node.name] = idx
+            dec_map[idx]       = node
+
+        return (enc_map, dec_map)
+
+    def get_encoded_node_with_name(self, node_name):
+        return self.encode_map[node_name]
+
+    def get_encoded_node_with_node(self, node):
+        return self.encode_map[node.name]
+
+    def get_decoded_node_with_encoded_name(self, encoded_name):
+        
+        return self.decode_map[encoded_name]
+
+    def get_decoded_node_name_with_encoded_name(self, encoded_name):
+        return self.decode_map[encoded_name].name
+
     def __initialize_network(self, edges):
         '''
         Assumes that A->A exists and has cost of 0
@@ -72,7 +97,7 @@ class BiNetwork:
     def shortest_path_cost(self, node_from, node_to):
         return self.__fw_map[node_from][node_to]
 
-    def __shortest_path_cost(self, node_from, node_to):
+    def shortest_path_cost_bf(self, node_from, node_to):
         '''
         Regular Dijkstra, used to assert fw algorithm
         '''
@@ -92,37 +117,27 @@ class BiNetwork:
                 if neighbour not in seen:
                     heappush(pq, (cost + self.__network_cost[node][neighbour], neighbour))
                     
-        return -1
-
-    def __floyd_warshall(self, i, j, k):
-        '''
-        Computes all pairs shortest path
-        '''
-        if self.__fw_map[i][j] != None:
-            return self.__fw_map[i][j]
-        if (k == 0):
-            if j in self.__network_cost[i]:
-                self.__fw_map[i][j] = self.__network_cost[i][j]
-            else:
-                self.__fw_map[i][j] = inf
-        else:
-            self.__fw_map[i][j] = min(self.__floyd_warshall(i, j, k-1), 
-                                         self.__floyd_warshall(i, self.V[k], k-1) + self.__floyd_warshall(self.V[k], j, k-1))
-
-        return self.__fw_map[i][j]
+        return inf
 
     def _floyd_warshall(self):
         self.__fw_map = defaultdict(lambda : defaultdict(int))
-        for node_from in self.V:
-            for node_to in self.V:
-                self.__fw_map[node_from][node_to] = None
 
-        for node_from in self.V:
-            for node_to in self.V:
-                self.__floyd_warshall(node_from, node_to, len(self.V)-1)
+        for i in self.V:
+            for j in self.V:
+                self.__fw_map[i][j] = inf
 
+        for edge in self.E:
+            self.__fw_map[edge.node_from][edge.node_to] = edge.cost
+            self.__fw_map[edge.node_to][edge.node_from] = edge.cost
 
+        for node in self.V:
+            self.__fw_map[node][node] = 0
 
+        for k in self.V:
+            for i in self.V:
+                for j in self.V:
+                    if self.__fw_map[i][j] > self.__fw_map[i][k] + self.__fw_map[k][j]:
+                        self.__fw_map[i][j] = self.__fw_map[i][k] + self.__fw_map[k][j]
 
 
     def complete_transform(self):
@@ -131,8 +146,6 @@ class BiNetwork:
         add the from A to C with cost of shortest path from A to C. It is enough to work for bidirectional graphs only.
         Returns the transformed network
         '''
-
-        self._floyd_warshall()
 
         edges = []
 
@@ -184,7 +197,9 @@ if __name__ == '__main__':
 
     nw = BiNetwork(V, E)
 
-    visualize(nw)
+    
+
+    #visualize(nw)
     #nw = get_random_network()
 
 
