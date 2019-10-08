@@ -16,7 +16,7 @@ class Individual:
         res = 0
         for i in range(0, len(self.genes)-1, 2):
             node_from = network.get_decoded_node_with_encoded_name(self.genes[i][0])
-            node_to   = network.get_decoded_node_with_encoded_name(self.genes[i+2][0])
+            node_to   = network.get_decoded_node_with_encoded_name(self.genes[i+1][0])
 
             res += network.shortest_path_cost(node_from, node_to)
         

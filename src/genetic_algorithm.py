@@ -38,10 +38,11 @@ class GA:
             print('Done!')
             print('Population size: {0}'.format(len(self.population.population)))
             print('Average fitness: {0}'.format(self.population.average_fitness))
+            print('Average length of tour: {0}'.format(1/self.population.average_fitness))
             
 
     def best(self):
         '''
         Returns the individual with highest/lowest fitness
         '''
-        raise NotImplementedError
+        return max([x for x in self.population.population], key = lambda x : x.fitness)

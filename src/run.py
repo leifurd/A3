@@ -29,7 +29,7 @@ nw = BiNetwork(V, E)
 #Setup solution generator for initial solution
 
 #1. Pick N random nodes
-N = 5
+N = 30
 
 places = [x.name for x in V]
 shuffle(places)
@@ -41,6 +41,8 @@ solution_generator = SolutionGenerator(places, nw)
 
 #Setup genetic algorithm
 
-ga = GA(None, solution_generator, 1024, nw)
+ga = GA(None, solution_generator, 2048, nw)
 
-ga.evolve(200)
+ga.evolve(500)
+
+print(ga.best().genes)
