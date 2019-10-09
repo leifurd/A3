@@ -49,8 +49,8 @@ class GeoCode:
         return directions_result
 
 
-def get_nodes():
-    with open('nodes.model', 'r') as f:
+def get_nodes(model_name):
+    with open('{0}.nodes'.format(model_name), 'r') as f:
         nodes = [x.strip() for x in f.readlines()]
 
     res = []
@@ -61,8 +61,8 @@ def get_nodes():
 
     return res
 
-def get_edges():
-    with open('edges.model', 'r') as f:
+def get_edges(model_name):
+    with open('{0}.edges'.format(model_name), 'r') as f:
         edges = [x.strip() for x in f.readlines()]
 
     edge_map = defaultdict(lambda : defaultdict(int))
