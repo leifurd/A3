@@ -1,380 +1,380 @@
-Alþingishúsið--Reykjavík;0.007067295364719566
-Alþingishúsið--Harpan;0.03204319969409071
-Alþingishúsið--National Museum of Iceland;0.04072002881071886
-Alþingishúsið--Hallgrímskirkja;0.050592319213595235
-Alþingishúsið--Hið íslenzka reðasafn;0.07386603912672338
-Alþingishúsið--Grundartangi;1.474990512823393
-Alþingishúsið--Laugavegur;0.08262083449564514
-Alþingishúsið--Perlan;0.12915363403370272
-Reykjavík--Alþingishúsið;0.007067295364719566
-Reykjavík--Hið íslenzka reðasafn;0.0801896574346224
-Reykjavík--Hallgrímskirkja;0.055484970408151625
-Reykjavík--National Museum of Iceland;0.03613252394077453
-Reykjavík--Harpan;0.037933592556583434
-Reykjavík--Laugavegur;0.08904599716630131
-Reykjavík--Perlan;0.13163991083704144
-Reykjavík--Blue Lagoon;2.2505440895169824
-Harpan--Alþingishúsið;0.03204319969409071
-Harpan--Hið íslenzka reðasafn;0.06673153962518302
-Harpan--Reykjavík;0.037933592556583434
-Harpan--Hallgrímskirkja;0.057917896690592094
-Harpan--National Museum of Iceland;0.07255481080487962
-Harpan--Laugavegur;0.07354157646054735
-Harpan--Perlan;0.1422359090664718
-Harpan--Laugardalslaug;0.1509785295092232
-Harpan--Grundartangi;1.4462676380463186
-National Museum of Iceland--Alþingishúsið;0.04072002881071886
-National Museum of Iceland--Reykjavík;0.03613252394077453
-National Museum of Iceland--Harpan;0.07255481080487962
-National Museum of Iceland--Hallgrímskirkja;0.06232676864808089
-National Museum of Iceland--Hið íslenzka reðasafn;0.09401234588018298
-National Museum of Iceland--Laugavegur;0.10318982742228303
-National Museum of Iceland--Perlan;0.1168214272906457
-National Museum of Iceland--Laugardalslaug;0.196958119266454
-National Museum of Iceland--Blue Lagoon;2.2152267690381136
-Hallgrímskirkja--Alþingishúsið;0.050592319213595235
-Hallgrímskirkja--Hið íslenzka reðasafn;0.032430933092416715
-Hallgrímskirkja--Laugavegur;0.04139000434614732
-Hallgrímskirkja--Reykjavík;0.055484970408151625
-Hallgrímskirkja--Harpan;0.057917896690592094
-Hallgrímskirkja--National Museum of Iceland;0.06232676864808089
-Hallgrímskirkja--Laugardalslaug;0.13556632006227204
-Hallgrímskirkja--Perlan;0.08432636597827675
-Rauðisandur--Dynjandi;3.1457596831284365
-Rauðisandur--Kirkjufell;4.045761027222354
-Rauðisandur--Hornstrandir;7.662284033072087
-Rauðisandur--Borgarnes;8.50496527452272
-Rauðisandur--Laugarbakki;8.877570447594534
-Dynjandi--Rauðisandur;3.1457596831284365
-Dynjandi--Kirkjufell;5.690034814529434
-Dynjandi--Hornstrandir;4.590801281102261
-Dynjandi--Laugarbakki;7.203348157711145
-Dynjandi--Blönduós;8.265785045567569
-Dynjandi--Borgarnes;8.976823509652284
-Dynjandi--Djúpalón;10.09995340836541
-Kirkjufell--Rauðisandur;4.045761027222354
-Kirkjufell--Borgarnes;4.736930317231817
-Kirkjufell--Dynjandi;5.690034814529434
-Hornstrandir--Rauðisandur;7.662284033072087
-Hornstrandir--Dynjandi;4.590801281102261
-Hornstrandir--Blönduós;7.502539044543943
-Hornstrandir--Laugarbakki;8.134898218421398
-Borgarnes--Rauðisandur;8.50496527452272
-Borgarnes--Laugarbakki;5.880826922294287
-Borgarnes--Kirkjufell;4.736930317231817
-Borgarnes--Dynjandi;8.976823509652284
-Borgarnes--Grundartangi;1.3702682951595189
-Borgarnes--Viðey;2.6111075209516095
-Laugarbakki--Rauðisandur;8.877570447594534
-Laugarbakki--Blönduós;2.879883307787569
-Laugarbakki--Djúpalón;3.232726200476939
-Laugarbakki--Varmahlíð;4.384079890926566
-Laugarbakki--Borgarnes;5.880826922294287
-Laugarbakki--Hornstrandir;8.134898218421398
-Laugarbakki--Dynjandi;7.203348157711145
 Gullfoss--Geysir;0.5303141394187572
 Gullfoss--Þingvellir;2.910379875146457
-Gullfoss--Djúpalón;3.974361867489629
 Gullfoss--Hella;3.291279434860461
+Gullfoss--Selfoss;3.58754766024245
+Gullfoss--Djúpalón;3.974361867489629
 Geysir--Gullfoss;0.5303141394187572
 Geysir--Djúpalón;4.063165919487937
 Geysir--Þingvellir;2.3807811597027166
 Geysir--Hella;3.0999571607237546
 Geysir--Selfoss;3.1602887559140282
+Geysir--Hvolsvöllur;3.63488168693625
+Geysir--Mosfellsbær;4.044017727479438
 Þingvellir--Gullfoss;2.910379875146457
+Þingvellir--Selfoss;2.130449551771597
 Þingvellir--Mosfellsbær;1.6831120267055593
 Þingvellir--Grundartangi;1.9612281632909763
-Þingvellir--Selfoss;2.130449551771597
 Þingvellir--Viðey;2.141934083172506
 Þingvellir--Laugardalslaug;2.2511474262144193
 Þingvellir--Geysir;2.3807811597027166
-Þingvellir--Hella;3.445252640697488
-Blönduós--Laugarbakki;2.879883307787569
-Blönduós--Varmahlíð;2.4889214111644105
-Blönduós--Djúpalón;5.019667963101941
-Blönduós--Lystigarðurinn;6.219521740708438
-Blönduós--Akureyrarkirkja;6.227679266538276
-Blönduós--Hornstrandir;7.502539044543943
-Blönduós--Dynjandi;8.265785045567569
-Blönduós--Reykjahlíð;9.58516792648991
-Djúpalón--Laugarbakki;3.232726200476939
-Djúpalón--Blönduós;5.019667963101941
-Djúpalón--Gullfoss;3.974361867489629
-Djúpalón--Geysir;4.063165919487937
-Djúpalón--Varmahlíð;4.869845580142898
-Djúpalón--Dynjandi;10.09995340836541
-Varmahlíð--Laugarbakki;4.384079890926566
-Varmahlíð--Blönduós;2.4889214111644105
-Varmahlíð--Djúpalón;4.869845580142898
-Varmahlíð--Lystigarðurinn;3.937784531343326
-Varmahlíð--Akureyrarkirkja;3.95233372800048
-Varmahlíð--Akureyri;3.9567332213715667
-Varmahlíð--Húsavík;6.901501919140738
-Varmahlíð--Reykjahlíð;7.237770251159189
-Fáskrúðsfjörður--Breiðdalsvík;0.9151086651761952
-Fáskrúðsfjörður--Reyðarfjörður;0.9198016882006
-Fáskrúðsfjörður--Djúpivogur;1.983682871580204
-Fáskrúðsfjörður--Egilsstaðir;2.527067739181136
-Fáskrúðsfjörður--Reykjahlíð;9.566729740491999
-Breiðdalsvík--Fáskrúðsfjörður;0.9151086651761952
-Breiðdalsvík--Djúpivogur;1.2090060093559754
-Breiðdalsvík--Egilsstaðir;3.3797759617680097
-Breiðdalsvík--Reyðarfjörður;1.7331472893886983
-Breiðdalsvík--Jökulsárlón;7.882468936243659
-Breiðdalsvík--Askja;7.9318698013540505
-Reyðarfjörður--Fáskrúðsfjörður;0.9198016882006
-Reyðarfjörður--Djúpivogur;2.5420266339892152
-Reyðarfjörður--Egilsstaðir;1.6471303775376076
-Reyðarfjörður--Breiðdalsvík;1.7331472893886983
-Reyðarfjörður--Askja;7.205525904111706
-Reyðarfjörður--Dettifoss;8.15220111689794
-Reyðarfjörður--Dimmuborgir;8.521721254529993
-Reyðarfjörður--Jökulsárlón;8.54356067624651
-Reyðarfjörður--Reykjahlíð;8.710623771668956
-Djúpivogur--Fáskrúðsfjörður;1.983682871580204
-Djúpivogur--Breiðdalsvík;1.2090060093559754
-Djúpivogur--Reyðarfjörður;2.5420266339892152
-Egilsstaðir--Fáskrúðsfjörður;2.527067739181136
-Egilsstaðir--Reyðarfjörður;1.6471303775376076
-Egilsstaðir--Breiðdalsvík;3.3797759617680097
-Egilsstaðir--Reykjahlíð;7.603683605525778
-Mosfellsbær--Þingvellir;1.6831120267055593
-Mosfellsbær--Þríhnjúkagígur;1.098592908971563
-Mosfellsbær--Selfoss;2.4684316483355984
-Mosfellsbær--Viðey;0.4768856894450565
-Mosfellsbær--Laugardalslaug;0.5705405064355658
-Mosfellsbær--Laugavegur;0.6646844045053286
-Mosfellsbær--Grundartangi;1.2915470301422793
-Grundartangi--Þingvellir;1.9612281632909763
-Grundartangi--Borgarnes;1.3702682951595189
-Grundartangi--Mosfellsbær;1.2915470301422793
-Grundartangi--Viðey;1.3029529310639434
-Grundartangi--Laugardalslaug;1.4340407971316886
-Grundartangi--Harpan;1.4462676380463186
-Grundartangi--Alþingishúsið;1.474990512823393
-Grundartangi--Laugavegur;1.4751995866260152
-Selfoss--Þingvellir;2.130449551771597
-Selfoss--Hella;1.8456348297879068
-Selfoss--Þríhnjúkagígur;2.0284527213646784
-Selfoss--Mosfellsbær;2.4684316483355984
-Selfoss--Geysir;3.1602887559140282
-Selfoss--Skógafoss;4.961783615539735
-Viðey--Þingvellir;2.141934083172506
-Viðey--Laugardalslaug;0.14160051469212515
-Viðey--Laugavegur;0.21885168883110462
-Viðey--Borgarnes;2.6111075209516095
-Viðey--Mosfellsbær;0.4768856894450565
-Viðey--Grundartangi;1.3029529310639434
-Laugardalslaug--Þingvellir;2.2511474262144193
-Laugardalslaug--Viðey;0.14160051469212515
-Laugardalslaug--Harpan;0.1509785295092232
-Laugardalslaug--Þríhnjúkagígur;1.0899414222370283
-Laugardalslaug--National Museum of Iceland;0.196958119266454
-Laugardalslaug--Laugavegur;0.09417667309979033
-Laugardalslaug--Hið íslenzka reðasafn;0.10320028721007704
-Laugardalslaug--Hallgrímskirkja;0.13556632006227204
-Laugardalslaug--Perlan;0.15635452846103667
-Laugardalslaug--Mosfellsbær;0.5705405064355658
-Laugardalslaug--Grundartangi;1.4340407971316886
-Akureyri--Akureyrarkirkja;0.018484890921322366
-Akureyri--Lystigarðurinn;0.051834536558155314
-Akureyri--Mývatn;3.160422857426643
-Akureyri--Húsavík;3.306897711838079
-Akureyri--Reykjahlíð;3.3691815221997903
-Akureyri--Krafla;3.8084371485705963
-Akureyri--Varmahlíð;3.9567332213715667
-Akureyrarkirkja--Akureyri;0.018484890921322366
-Akureyrarkirkja--Blönduós;6.227679266538276
-Akureyrarkirkja--Mývatn;3.1575278866074328
-Akureyrarkirkja--Lystigarðurinn;0.0336207319807144
-Akureyrarkirkja--Húsavík;3.3211587642788354
-Akureyrarkirkja--Reykjahlíð;3.3679576889851544
-Akureyrarkirkja--Varmahlíð;3.95233372800048
-Lystigarðurinn--Akureyri;0.051834536558155314
-Lystigarðurinn--Blönduós;6.219521740708438
-Lystigarðurinn--Akureyrarkirkja;0.0336207319807144
-Lystigarðurinn--Mývatn;3.1596873650434243
-Lystigarðurinn--Húsavík;3.351100339413744
-Lystigarðurinn--Reykjahlíð;3.373139579691218
-Lystigarðurinn--Dimmuborgir;3.436289402590828
-Lystigarðurinn--Varmahlíð;3.937784531343326
-Mývatn--Akureyri;3.160422857426643
-Mývatn--Dimmuborgir;0.2839289926277181
-Mývatn--Reykjahlíð;0.3633153655926596
-Mývatn--Krafla;1.0409690618663938
-Mývatn--Dettifoss;2.269466470592989
-Mývatn--Akureyrarkirkja;3.1575278866074328
-Mývatn--Lystigarðurinn;3.1596873650434243
-Mývatn--Askja;4.097564621699503
-Húsavík--Akureyri;3.306897711838079
-Húsavík--Ásbyrgi;2.3765138868902587
-Húsavík--Krafla;2.822589787917213
-Húsavík--Reykjahlíð;3.0490068592744612
-Húsavík--Dettifoss;3.1527593431424243
-Húsavík--Akureyrarkirkja;3.3211587642788354
-Húsavík--Lystigarðurinn;3.351100339413744
-Húsavík--Varmahlíð;6.901501919140738
-Reykjahlíð--Akureyri;3.3691815221997903
-Reykjahlíð--Dettifoss;1.910078871061671
-Reykjahlíð--Dimmuborgir;0.37804404056355095
-Reykjahlíð--Húsavík;3.0490068592744612
-Reykjahlíð--Mývatn;0.3633153655926596
-Reykjahlíð--Akureyrarkirkja;3.3679576889851544
-Reykjahlíð--Lystigarðurinn;3.373139579691218
-Reykjahlíð--Ásbyrgi;2.847623967061012
-Reykjahlíð--Askja;4.329759003924074
-Reykjahlíð--Krafla;0.677734579985262
-Reykjahlíð--Varmahlíð;7.237770251159189
-Reykjahlíð--Egilsstaðir;7.603683605525778
-Reykjahlíð--Reyðarfjörður;8.710623771668956
-Reykjahlíð--Fáskrúðsfjörður;9.566729740491999
-Reykjahlíð--Blönduós;9.58516792648991
-Laugavegur--Viðey;0.21885168883110462
-Laugavegur--Hið íslenzka reðasafn;0.009213171161070607
-Laugavegur--Hallgrímskirkja;0.04139000434614732
-Laugavegur--Reykjavík;0.08904599716630131
-Laugavegur--Harpan;0.07354157646054735
-Laugavegur--National Museum of Iceland;0.10318982742228303
-Laugavegur--Laugardalslaug;0.09417667309979033
-Laugavegur--Mosfellsbær;0.6646844045053286
-Laugavegur--Alþingishúsið;0.08262083449564514
-Laugavegur--Perlan;0.09209589056200672
-Laugavegur--Þríhnjúkagígur;1.1194160658111971
-Laugavegur--Grundartangi;1.4751995866260152
-Laugavegur--Blue Lagoon;2.2893006118084047
-Hið íslenzka reðasafn--Laugavegur;0.009213171161070607
-Hið íslenzka reðasafn--Hallgrímskirkja;0.032430933092416715
-Hið íslenzka reðasafn--Harpan;0.06673153962518302
-Hið íslenzka reðasafn--Alþingishúsið;0.07386603912672338
-Hið íslenzka reðasafn--Reykjavík;0.0801896574346224
-Hið íslenzka reðasafn--National Museum of Iceland;0.09401234588018298
-Hið íslenzka reðasafn--Laugardalslaug;0.10320028721007704
-Hið íslenzka reðasafn--Perlan;0.09063740497099007
-Perlan--Reykjavík;0.13163991083704144
-Perlan--Harpan;0.1422359090664718
-Perlan--Þríhnjúkagígur;1.0559305408029267
-Perlan--National Museum of Iceland;0.1168214272906457
-Perlan--Laugardalslaug;0.15635452846103667
-Perlan--Laugavegur;0.09209589056200672
-Perlan--Hallgrímskirkja;0.08432636597827675
-Perlan--Hið íslenzka reðasafn;0.09063740497099007
-Perlan--Alþingishúsið;0.12915363403370272
-Perlan--Blue Lagoon;2.2100376246546576
-Dettifoss--Krafla;1.2504610256301523
-Dettifoss--Ásbyrgi;1.456959617948097
-Dettifoss--Reykjahlíð;1.910078871061671
-Dettifoss--Dimmuborgir;2.153257141378165
-Dettifoss--Húsavík;3.1527593431424243
-Dettifoss--Reyðarfjörður;8.15220111689794
-Dettifoss--Mývatn;2.269466470592989
-Krafla--Dettifoss;1.2504610256301523
-Krafla--Húsavík;2.822589787917213
-Krafla--Mývatn;1.0409690618663938
-Krafla--Ásbyrgi;2.2082787882434594
-Krafla--Askja;4.818299007397903
-Krafla--Reykjahlíð;0.677734579985262
-Krafla--Dimmuborgir;0.9869344351165098
-Krafla--Akureyri;3.8084371485705963
-Ásbyrgi--Dettifoss;1.456959617948097
-Ásbyrgi--Húsavík;2.3765138868902587
-Ásbyrgi--Krafla;2.2082787882434594
-Ásbyrgi--Reykjahlíð;2.847623967061012
-Dimmuborgir--Dettifoss;2.153257141378165
-Dimmuborgir--Mývatn;0.2839289926277181
-Dimmuborgir--Reykjahlíð;0.37804404056355095
-Dimmuborgir--Reyðarfjörður;8.521721254529993
-Dimmuborgir--Lystigarðurinn;3.436289402590828
-Dimmuborgir--Askja;3.9524516839225265
-Dimmuborgir--Krafla;0.9869344351165098
-Þríhnjúkagígur--Perlan;1.0559305408029267
-Þríhnjúkagígur--Laugardalslaug;1.0899414222370283
-Þríhnjúkagígur--Mosfellsbær;1.098592908971563
-Þríhnjúkagígur--Selfoss;2.0284527213646784
-Þríhnjúkagígur--Laugavegur;1.1194160658111971
-Jökulsárlón--Svartifoss;2.144118720650341
-Jökulsárlón--Skaftafell;2.2251779751360603
-Jökulsárlón--Kirkjubæjarklaustur;5.629964696500482
-Jökulsárlón--Askja;6.346044195510949
-Jökulsárlón--Breiðdalsvík;7.882468936243659
-Jökulsárlón--Reyðarfjörður;8.54356067624651
-Svartifoss--Jökulsárlón;2.144118720650341
-Svartifoss--Skaftafell;0.09953606587904697
-Svartifoss--Kirkjubæjarklaustur;3.5509515338636346
-Skaftafell--Jökulsárlón;2.2251779751360603
-Skaftafell--Svartifoss;0.09953606587904697
-Skaftafell--Kirkjubæjarklaustur;3.45661128849389
-Skaftafell--Landmannalaugar;5.883523307910438
-Skaftafell--Askja;6.612988233782485
-Skaftafell--Vík;6.878899118292688
-Skaftafell--Reynisfjara;6.98791588773703
-Kirkjubæjarklaustur--Jökulsárlón;5.629964696500482
-Kirkjubæjarklaustur--Landmannalaugar;3.073437535440629
-Kirkjubæjarklaustur--Vík;3.484166667890908
-Kirkjubæjarklaustur--Svartifoss;3.5509515338636346
-Kirkjubæjarklaustur--Skaftafell;3.45661128849389
-Kirkjubæjarklaustur--Reynisfjara;3.5986011595602028
-Kirkjubæjarklaustur--Þórsmörk;4.013059155299455
-Kirkjubæjarklaustur--Skógafoss;4.345003983352167
-Askja--Jökulsárlón;6.346044195510949
-Askja--Breiðdalsvík;7.9318698013540505
-Askja--Reyðarfjörður;7.205525904111706
-Askja--Skaftafell;6.612988233782485
-Askja--Dimmuborgir;3.9524516839225265
-Askja--Mývatn;4.097564621699503
-Askja--Reykjahlíð;4.329759003924074
-Askja--Krafla;4.818299007397903
-Hella--Selfoss;1.8456348297879068
-Hella--Geysir;3.0999571607237546
+Hella--Gullfoss;3.291279434860461
 Hella--Hvolsvöllur;0.7253229237658436
 Hella--Seljalandsfoss;1.8199379013870267
 Hella--Þórsmörk;2.7713969044624163
+Hella--Selfoss;1.8456348297879068
 Hella--Skógafoss;3.172315504056628
-Hella--Gullfoss;3.291279434860461
-Hella--Þingvellir;3.445252640697488
-Landmannalaugar--Þórsmörk;2.280116565049756
-Landmannalaugar--Kirkjubæjarklaustur;3.073437535440629
-Landmannalaugar--Vík;3.6275377850013975
-Landmannalaugar--Skaftafell;5.883523307910438
-Landmannalaugar--Skógafoss;3.1643820969514675
-Þórsmörk--Landmannalaugar;2.280116565049756
-Þórsmörk--Vík;2.1538082438247246
-Þórsmörk--Skógafoss;0.9547893771268849
-Þórsmörk--Seljalandsfoss;1.4983754903701612
-Þórsmörk--Hvolsvöllur;2.1491988848736487
-Þórsmörk--Hella;2.7713969044624163
-Þórsmörk--Kirkjubæjarklaustur;4.013059155299455
-Reynisfjara--Vík;0.11903291495997513
-Reynisfjara--Skógafoss;1.601688662584115
-Reynisfjara--Skaftafell;6.98791588773703
-Reynisfjara--Seljalandsfoss;3.049994695759645
-Reynisfjara--Kirkjubæjarklaustur;3.5986011595602028
+Hella--Geysir;3.0999571607237546
+Selfoss--Gullfoss;3.58754766024245
+Selfoss--Hella;1.8456348297879068
+Selfoss--Þríhnjúkagígur;2.0284527213646784
+Selfoss--Þingvellir;2.130449551771597
+Selfoss--Hvolsvöllur;2.5100533299888212
+Selfoss--Geysir;3.1602887559140282
 Vík--Reynisfjara;0.11903291495997513
 Vík--Skógafoss;1.6086944358803643
 Vík--Þórsmörk;2.1538082438247246
 Vík--Seljalandsfoss;3.0642154406740345
 Vík--Kirkjubæjarklaustur;3.484166667890908
 Vík--Landmannalaugar;3.6275377850013975
-Vík--Skaftafell;6.878899118292688
-Skógafoss--Reynisfjara;1.601688662584115
+Reynisfjara--Vík;0.11903291495997513
+Reynisfjara--Skógafoss;1.601688662584115
+Reynisfjara--Þórsmörk;2.1950966675600787
+Reynisfjara--Seljalandsfoss;3.049994695759645
+Reynisfjara--Kirkjubæjarklaustur;3.5986011595602028
+Reynisfjara--Landmannalaugar;3.725766180659935
 Skógafoss--Vík;1.6086944358803643
-Skógafoss--Þórsmörk;0.9547893771268849
-Skógafoss--Hella;3.172315504056628
+Skógafoss--Reynisfjara;1.601688662584115
 Skógafoss--Seljalandsfoss;1.4586760287605909
+Skógafoss--Þórsmörk;0.9547893771268849
+Skógafoss--Kirkjubæjarklaustur;4.345003983352167
 Skógafoss--Hvolsvöllur;2.4612949444080168
 Skógafoss--Landmannalaugar;3.1643820969514675
-Skógafoss--Kirkjubæjarklaustur;4.345003983352167
-Skógafoss--Selfoss;4.961783615539735
-Seljalandsfoss--Vík;3.0642154406740345
-Seljalandsfoss--Þórsmörk;1.4983754903701612
-Seljalandsfoss--Hvolsvöllur;1.0963135359919784
-Seljalandsfoss--Hella;1.8199379013870267
-Seljalandsfoss--Skógafoss;1.4586760287605909
-Seljalandsfoss--Reynisfjara;3.049994695759645
-Hvolsvöllur--Þórsmörk;2.1491988848736487
+Skógafoss--Hella;3.172315504056628
+Þórsmörk--Vík;2.1538082438247246
+Þórsmörk--Reynisfjara;2.1950966675600787
+Þórsmörk--Seljalandsfoss;1.4983754903701612
+Þórsmörk--Skógafoss;0.9547893771268849
+Þórsmörk--Hvolsvöllur;2.1491988848736487
+Þórsmörk--Landmannalaugar;2.280116565049756
+Þórsmörk--Hella;2.7713969044624163
+Þórsmörk--Kirkjubæjarklaustur;4.013059155299455
+Dimmuborgir--Mývatn;0.2839289926277181
+Dimmuborgir--Reykjahlíð;0.37804404056355095
+Dimmuborgir--Askja;3.9524516839225265
+Dimmuborgir--Dettifoss;2.153257141378165
+Dimmuborgir--Krafla;0.9869344351165098
+Dimmuborgir--Akureyrarkirkja;3.434768641982793
+Dimmuborgir--Lystigarðurinn;3.436289402590828
+Mývatn--Dimmuborgir;0.2839289926277181
+Mývatn--Askja;4.097564621699503
+Mývatn--Dettifoss;2.269466470592989
+Mývatn--Reykjahlíð;0.3633153655926596
+Mývatn--Krafla;1.0409690618663938
+Mývatn--Akureyri;3.160422857426643
+Mývatn--Akureyrarkirkja;3.1575278866074328
+Mývatn--Lystigarðurinn;3.1596873650434243
+Reykjahlíð--Dimmuborgir;0.37804404056355095
+Reykjahlíð--Dettifoss;1.910078871061671
+Reykjahlíð--Krafla;0.677734579985262
+Reykjahlíð--Mývatn;0.3633153655926596
+Reykjahlíð--Ásbyrgi;2.847623967061012
+Reykjahlíð--Akureyri;3.3691815221997903
+Reykjahlíð--Akureyrarkirkja;3.3679576889851544
+Reykjahlíð--Húsavík;3.0490068592744612
+Reykjahlíð--Lystigarðurinn;3.373139579691218
+Reykjahlíð--Askja;4.329759003924074
+Reykjahlíð--Varmahlíð;7.237770251159189
+Reykjahlíð--Egilsstaðir;7.603683605525778
+Reykjahlíð--Reyðarfjörður;8.710623771668956
+Þríhnjúkagígur--Perlan;1.0559305408029267
+Þríhnjúkagígur--Laugardalslaug;1.0899414222370283
+Þríhnjúkagígur--Mosfellsbær;1.098592908971563
+Þríhnjúkagígur--Laugavegur;1.1194160658111971
+Þríhnjúkagígur--Hið íslenzka reðasafn;1.1244253272364844
+Þríhnjúkagígur--Reykjavík;1.1869869720097304
+Þríhnjúkagígur--Selfoss;2.0284527213646784
+Perlan--Þríhnjúkagígur;1.0559305408029267
+Perlan--Blue Lagoon;2.2100376246546576
+Perlan--Laugavegur;0.09209589056200672
+Perlan--Hið íslenzka reðasafn;0.09063740497099007
+Perlan--Reykjavík;0.13163991083704144
+Perlan--Hallgrímskirkja;0.08432636597827675
+Perlan--National Museum of Iceland;0.1168214272906457
+Perlan--Alþingishúsið;0.12915363403370272
+Perlan--Harpan;0.1422359090664718
+Laugardalslaug--Þríhnjúkagígur;1.0899414222370283
+Laugardalslaug--Laugavegur;0.09417667309979033
+Laugardalslaug--Hið íslenzka reðasafn;0.10320028721007704
+Laugardalslaug--Hallgrímskirkja;0.13556632006227204
+Laugardalslaug--Mosfellsbær;0.5705405064355658
+Laugardalslaug--Viðey;0.14160051469212515
+Laugardalslaug--Reykjavík;0.17803086714030664
+Laugardalslaug--Þingvellir;2.2511474262144193
+Laugardalslaug--Grundartangi;1.4340407971316886
+Mosfellsbær--Þríhnjúkagígur;1.098592908971563
+Mosfellsbær--Borgarnes;2.6605164446576244
+Mosfellsbær--Viðey;0.4768856894450565
+Mosfellsbær--Laugardalslaug;0.5705405064355658
+Mosfellsbær--Laugavegur;0.6646844045053286
+Mosfellsbær--Reykjavík;0.7439833961947323
+Mosfellsbær--Þingvellir;1.6831120267055593
+Mosfellsbær--Grundartangi;1.2915470301422793
+Mosfellsbær--Geysir;4.044017727479438
+Laugavegur--Þríhnjúkagígur;1.1194160658111971
+Laugavegur--Laugardalslaug;0.09417667309979033
+Laugavegur--Alþingishúsið;0.08262083449564514
+Laugavegur--Hallgrímskirkja;0.04139000434614732
+Laugavegur--Hið íslenzka reðasafn;0.009213171161070607
+Laugavegur--Harpan;0.07354157646054735
+Laugavegur--Reykjavík;0.08904599716630131
+Laugavegur--Perlan;0.09209589056200672
+Laugavegur--Mosfellsbær;0.6646844045053286
+Laugavegur--Viðey;0.21885168883110462
+Hið íslenzka reðasafn--Þríhnjúkagígur;1.1244253272364844
+Hið íslenzka reðasafn--Laugardalslaug;0.10320028721007704
+Hið íslenzka reðasafn--Harpan;0.06673153962518302
+Hið íslenzka reðasafn--Alþingishúsið;0.07386603912672338
+Hið íslenzka reðasafn--Hallgrímskirkja;0.032430933092416715
+Hið íslenzka reðasafn--Laugavegur;0.009213171161070607
+Hið íslenzka reðasafn--Reykjavík;0.0801896574346224
+Hið íslenzka reðasafn--Perlan;0.09063740497099007
+Hið íslenzka reðasafn--National Museum of Iceland;0.09401234588018298
+Hið íslenzka reðasafn--Viðey;0.22606264854261576
+Askja--Dimmuborgir;3.9524516839225265
+Askja--Mývatn;4.097564621699503
+Askja--Fáskrúðsfjörður;7.8029671202535
+Askja--Egilsstaðir;6.915030493632245
+Askja--Jökulsárlón;6.346044195510949
+Askja--Reyðarfjörður;7.205525904111706
+Askja--Reykjahlíð;4.329759003924074
+Askja--Skaftafell;6.612988233782485
+Breiðdalsvík--Fáskrúðsfjörður;0.9151086651761952
+Breiðdalsvík--Djúpivogur;1.2090060093559754
+Breiðdalsvík--Egilsstaðir;3.3797759617680097
+Breiðdalsvík--Jökulsárlón;7.882468936243659
+Breiðdalsvík--Reyðarfjörður;1.7331472893886983
+Fáskrúðsfjörður--Breiðdalsvík;0.9151086651761952
+Fáskrúðsfjörður--Reyðarfjörður;0.9198016882006
+Fáskrúðsfjörður--Djúpivogur;1.983682871580204
+Fáskrúðsfjörður--Egilsstaðir;2.527067739181136
+Fáskrúðsfjörður--Askja;7.8029671202535
+Djúpivogur--Breiðdalsvík;1.2090060093559754
+Djúpivogur--Fáskrúðsfjörður;1.983682871580204
+Djúpivogur--Reyðarfjörður;2.5420266339892152
+Djúpivogur--Egilsstaðir;4.110701075978266
+Djúpivogur--Jökulsárlón;6.703274794938614
+Reyðarfjörður--Fáskrúðsfjörður;0.9198016882006
+Reyðarfjörður--Djúpivogur;2.5420266339892152
+Reyðarfjörður--Egilsstaðir;1.6471303775376076
+Reyðarfjörður--Breiðdalsvík;1.7331472893886983
+Reyðarfjörður--Askja;7.205525904111706
+Reyðarfjörður--Reykjahlíð;8.710623771668956
+Egilsstaðir--Fáskrúðsfjörður;2.527067739181136
+Egilsstaðir--Djúpivogur;4.110701075978266
+Egilsstaðir--Reyðarfjörður;1.6471303775376076
+Egilsstaðir--Breiðdalsvík;3.3797759617680097
+Egilsstaðir--Dettifoss;6.79670724799487
+Egilsstaðir--Askja;6.915030493632245
+Egilsstaðir--Krafla;7.387750873271782
+Egilsstaðir--Reykjahlíð;7.603683605525778
+Dettifoss--Krafla;1.2504610256301523
+Dettifoss--Ásbyrgi;1.456959617948097
+Dettifoss--Reykjahlíð;1.910078871061671
+Dettifoss--Dimmuborgir;2.153257141378165
+Dettifoss--Mývatn;2.269466470592989
+Dettifoss--Egilsstaðir;6.79670724799487
+Dettifoss--Húsavík;3.1527593431424243
+Dettifoss--Lystigarðurinn;4.955784800640323
+Krafla--Dettifoss;1.2504610256301523
+Krafla--Reykjahlíð;0.677734579985262
+Krafla--Dimmuborgir;0.9869344351165098
+Krafla--Mývatn;1.0409690618663938
+Krafla--Egilsstaðir;7.387750873271782
+Krafla--Ásbyrgi;2.2082787882434594
+Krafla--Húsavík;2.822589787917213
+Krafla--Lystigarðurinn;3.819729318536871
+Ásbyrgi--Dettifoss;1.456959617948097
+Ásbyrgi--Krafla;2.2082787882434594
+Ásbyrgi--Húsavík;2.3765138868902587
+Ásbyrgi--Reykjahlíð;2.847623967061012
 Hvolsvöllur--Hella;0.7253229237658436
 Hvolsvöllur--Seljalandsfoss;1.0963135359919784
+Hvolsvöllur--Þórsmörk;2.1491988848736487
 Hvolsvöllur--Skógafoss;2.4612949444080168
-Blue Lagoon--Laugavegur;2.2893006118084047
+Hvolsvöllur--Selfoss;2.5100533299888212
+Hvolsvöllur--Landmannalaugar;3.6053386415586335
+Hvolsvöllur--Geysir;3.63488168693625
+Seljalandsfoss--Hella;1.8199379013870267
+Seljalandsfoss--Reynisfjara;3.049994695759645
+Seljalandsfoss--Hvolsvöllur;1.0963135359919784
+Seljalandsfoss--Skógafoss;1.4586760287605909
+Seljalandsfoss--Þórsmörk;1.4983754903701612
+Seljalandsfoss--Vík;3.0642154406740345
+Seljalandsfoss--Landmannalaugar;3.531772446834109
+Hallgrímskirkja--Laugardalslaug;0.13556632006227204
+Hallgrímskirkja--National Museum of Iceland;0.06232676864808089
+Hallgrímskirkja--Harpan;0.057917896690592094
+Hallgrímskirkja--Alþingishúsið;0.050592319213595235
+Hallgrímskirkja--Hið íslenzka reðasafn;0.032430933092416715
+Hallgrímskirkja--Laugavegur;0.04139000434614732
+Hallgrímskirkja--Reykjavík;0.055484970408151625
+Hallgrímskirkja--Perlan;0.08432636597827675
+Svartifoss--Skaftafell;0.09953606587904697
+Svartifoss--Jökulsárlón;2.144118720650341
+Svartifoss--Kirkjubæjarklaustur;3.5509515338636346
+Skaftafell--Svartifoss;0.09953606587904697
+Skaftafell--Jökulsárlón;2.2251779751360603
+Skaftafell--Kirkjubæjarklaustur;3.45661128849389
+Skaftafell--Landmannalaugar;5.883523307910438
+Skaftafell--Askja;6.612988233782485
+Jökulsárlón--Svartifoss;2.144118720650341
+Jökulsárlón--Djúpivogur;6.703274794938614
+Jökulsárlón--Skaftafell;2.2251779751360603
+Jökulsárlón--Kirkjubæjarklaustur;5.629964696500482
+Jökulsárlón--Askja;6.346044195510949
+Jökulsárlón--Breiðdalsvík;7.882468936243659
+Kirkjubæjarklaustur--Svartifoss;3.5509515338636346
+Kirkjubæjarklaustur--Jökulsárlón;5.629964696500482
+Kirkjubæjarklaustur--Reynisfjara;3.5986011595602028
+Kirkjubæjarklaustur--Landmannalaugar;3.073437535440629
+Kirkjubæjarklaustur--Skaftafell;3.45661128849389
+Kirkjubæjarklaustur--Vík;3.484166667890908
+Kirkjubæjarklaustur--Þórsmörk;4.013059155299455
+Kirkjubæjarklaustur--Skógafoss;4.345003983352167
+Kirkjufell--Rauðisandur;4.045761027222354
+Kirkjufell--Borgarnes;4.736930317231817
+Kirkjufell--Dynjandi;5.690034814529434
+Rauðisandur--Kirkjufell;4.045761027222354
+Rauðisandur--Dynjandi;3.1457596831284365
+Rauðisandur--Hornstrandir;7.662284033072087
+Rauðisandur--Borgarnes;8.50496527452272
+Rauðisandur--Laugarbakki;8.877570447594534
+Borgarnes--Kirkjufell;4.736930317231817
+Borgarnes--Grundartangi;1.3702682951595189
+Borgarnes--Viðey;2.6111075209516095
+Borgarnes--Mosfellsbær;2.6605164446576244
+Borgarnes--Laugarbakki;5.880826922294287
+Borgarnes--Rauðisandur;8.50496527452272
+Dynjandi--Kirkjufell;5.690034814529434
+Dynjandi--Rauðisandur;3.1457596831284365
+Dynjandi--Hornstrandir;4.590801281102261
 Blue Lagoon--Perlan;2.2100376246546576
 Blue Lagoon--National Museum of Iceland;2.2152267690381136
 Blue Lagoon--Reykjavík;2.2505440895169824
+National Museum of Iceland--Blue Lagoon;2.2152267690381136
+National Museum of Iceland--Reykjavík;0.03613252394077453
+National Museum of Iceland--Alþingishúsið;0.04072002881071886
+National Museum of Iceland--Hallgrímskirkja;0.06232676864808089
+National Museum of Iceland--Harpan;0.07255481080487962
+National Museum of Iceland--Hið íslenzka reðasafn;0.09401234588018298
+National Museum of Iceland--Perlan;0.1168214272906457
+Reykjavík--Blue Lagoon;2.2505440895169824
+Reykjavík--National Museum of Iceland;0.03613252394077453
+Reykjavík--Harpan;0.037933592556583434
+Reykjavík--Alþingishúsið;0.007067295364719566
+Reykjavík--Hallgrímskirkja;0.055484970408151625
+Reykjavík--Laugavegur;0.08904599716630131
+Reykjavík--Hið íslenzka reðasafn;0.0801896574346224
+Reykjavík--Perlan;0.13163991083704144
+Reykjavík--Laugardalslaug;0.17803086714030664
+Reykjavík--Viðey;0.2802052582458255
+Reykjavík--Mosfellsbær;0.7439833961947323
+Reykjavík--Þríhnjúkagígur;1.1869869720097304
+Húsavík--Ásbyrgi;2.3765138868902587
+Húsavík--Akureyri;3.306897711838079
+Húsavík--Akureyrarkirkja;3.3211587642788354
+Húsavík--Krafla;2.822589787917213
+Húsavík--Reykjahlíð;3.0490068592744612
+Húsavík--Dettifoss;3.1527593431424243
+Húsavík--Lystigarðurinn;3.351100339413744
+Alþingishúsið--National Museum of Iceland;0.04072002881071886
+Alþingishúsið--Harpan;0.03204319969409071
+Alþingishúsið--Reykjavík;0.007067295364719566
+Alþingishúsið--Hallgrímskirkja;0.050592319213595235
+Alþingishúsið--Hið íslenzka reðasafn;0.07386603912672338
+Alþingishúsið--Laugavegur;0.08262083449564514
+Alþingishúsið--Grundartangi;1.474990512823393
+Alþingishúsið--Perlan;0.12915363403370272
+Harpan--National Museum of Iceland;0.07255481080487962
+Harpan--Alþingishúsið;0.03204319969409071
+Harpan--Reykjavík;0.037933592556583434
+Harpan--Hallgrímskirkja;0.057917896690592094
+Harpan--Hið íslenzka reðasafn;0.06673153962518302
+Harpan--Laugavegur;0.07354157646054735
+Harpan--Viðey;0.24370207189109339
+Harpan--Grundartangi;1.4462676380463186
+Harpan--Perlan;0.1422359090664718
+Hornstrandir--Dynjandi;4.590801281102261
+Hornstrandir--Blönduós;7.502539044543943
+Hornstrandir--Rauðisandur;7.662284033072087
+Hornstrandir--Laugarbakki;8.134898218421398
+Hornstrandir--Varmahlíð;9.861915376884797
+Akureyri--Akureyrarkirkja;0.018484890921322366
+Akureyri--Lystigarðurinn;0.051834536558155314
+Akureyri--Mývatn;3.160422857426643
+Akureyri--Húsavík;3.306897711838079
+Akureyri--Reykjahlíð;3.3691815221997903
+Akureyrarkirkja--Akureyri;0.018484890921322366
+Akureyrarkirkja--Lystigarðurinn;0.0336207319807144
+Akureyrarkirkja--Mývatn;3.1575278866074328
+Akureyrarkirkja--Húsavík;3.3211587642788354
+Akureyrarkirkja--Reykjahlíð;3.3679576889851544
+Akureyrarkirkja--Dimmuborgir;3.434768641982793
+Akureyrarkirkja--Varmahlíð;3.95233372800048
+Lystigarðurinn--Akureyri;0.051834536558155314
+Lystigarðurinn--Akureyrarkirkja;0.0336207319807144
+Lystigarðurinn--Varmahlíð;3.937784531343326
+Lystigarðurinn--Reykjahlíð;3.373139579691218
+Lystigarðurinn--Mývatn;3.1596873650434243
+Lystigarðurinn--Húsavík;3.351100339413744
+Lystigarðurinn--Dimmuborgir;3.436289402590828
+Lystigarðurinn--Krafla;3.819729318536871
+Lystigarðurinn--Dettifoss;4.955784800640323
+Grundartangi--Borgarnes;1.3702682951595189
+Grundartangi--Laugarbakki;6.9252352338369025
+Grundartangi--Þingvellir;1.9612281632909763
+Grundartangi--Mosfellsbær;1.2915470301422793
+Grundartangi--Viðey;1.3029529310639434
+Grundartangi--Laugardalslaug;1.4340407971316886
+Grundartangi--Harpan;1.4462676380463186
+Grundartangi--Alþingishúsið;1.474990512823393
+Viðey--Borgarnes;2.6111075209516095
+Viðey--Mosfellsbær;0.4768856894450565
+Viðey--Laugardalslaug;0.14160051469212515
+Viðey--Laugavegur;0.21885168883110462
+Viðey--Hið íslenzka reðasafn;0.22606264854261576
+Viðey--Harpan;0.24370207189109339
+Viðey--Reykjavík;0.2802052582458255
+Viðey--Þingvellir;2.141934083172506
+Viðey--Grundartangi;1.3029529310639434
+Landmannalaugar--Reynisfjara;3.725766180659935
+Landmannalaugar--Þórsmörk;2.280116565049756
+Landmannalaugar--Kirkjubæjarklaustur;3.073437535440629
+Landmannalaugar--Skógafoss;3.1643820969514675
+Landmannalaugar--Hvolsvöllur;3.6053386415586335
+Landmannalaugar--Skaftafell;5.883523307910438
+Landmannalaugar--Seljalandsfoss;3.531772446834109
+Landmannalaugar--Vík;3.6275377850013975
+Blönduós--Hornstrandir;7.502539044543943
+Blönduós--Varmahlíð;2.4889214111644105
+Blönduós--Laugarbakki;2.879883307787569
+Blönduós--Djúpalón;5.019667963101941
+Laugarbakki--Hornstrandir;8.134898218421398
+Laugarbakki--Blönduós;2.879883307787569
+Laugarbakki--Djúpalón;3.232726200476939
+Laugarbakki--Varmahlíð;4.384079890926566
+Laugarbakki--Borgarnes;5.880826922294287
+Laugarbakki--Grundartangi;6.9252352338369025
+Laugarbakki--Rauðisandur;8.877570447594534
+Varmahlíð--Hornstrandir;9.861915376884797
+Varmahlíð--Blönduós;2.4889214111644105
+Varmahlíð--Lystigarðurinn;3.937784531343326
+Varmahlíð--Akureyrarkirkja;3.95233372800048
+Varmahlíð--Laugarbakki;4.384079890926566
+Varmahlíð--Djúpalón;4.869845580142898
+Varmahlíð--Reykjahlíð;7.237770251159189
+Djúpalón--Blönduós;5.019667963101941
+Djúpalón--Laugarbakki;3.232726200476939
+Djúpalón--Gullfoss;3.974361867489629
+Djúpalón--Geysir;4.063165919487937
+Djúpalón--Varmahlíð;4.869845580142898

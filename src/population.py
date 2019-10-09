@@ -12,7 +12,7 @@ class Population:
         return [Individual(self.solution_generator.get_random_encoded_solution(), self.network) for _ in range(initial_population_size)]
     
     def __average_fitness(self):
-        return sum([x.fitness for x in self.population])/len(self.population)
+        return sum([x.get_fitness() for x in self.population])/len(self.population)
 
     def set_population(self, population):
         self.population      = population
@@ -24,10 +24,10 @@ class Population:
         '''
         
         #Sum of the fitness of all individuals
-        fitness_sum = sum([x.fitness for x in self.population])
+        fitness_sum = sum([x.get_fitness() for x in self.population])
 
         #Probability of selecting each individual
-        selection_probability = [x.fitness/fitness_sum for x in self.population]
+        selection_probability = [x.get_fitness()/fitness_sum for x in self.population]
 
         #Sample P indivduals w. replacement
         fittest_individuals = [self.population[np.random.choice(len(self.population), p=selection_probability)] for _ in range(len(self.population))]

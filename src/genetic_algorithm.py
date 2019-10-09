@@ -1,13 +1,22 @@
 from population import Population
+from individual import Individual
+
 from random import shuffle
 
 class GA:
-    def __init__(self, crossover, solution_generator, population_size, network = None):
+    def __init__(self, crossover, mutate, fitness, solution_generator, population_size, network = None):
+        #Inject function
+        Individual.crossover      = crossover
+        Individual.mutate         = mutate
+        Individual.fitness        = fitness
+
+
         self.network         = network
-        self.crossover       = crossover
         self.generation      = 0
         self.population      = Population(network, solution_generator, population_size)
         self.population_size = population_size
+
+        
 
     def __evolve(self):
         '''
@@ -45,4 +54,4 @@ class GA:
         '''
         Returns the individual with highest/lowest fitness
         '''
-        return max([x for x in self.population.population], key = lambda x : x.fitness)
+        return max([x for x in self.population.population], key = lambda x : x.get_fitness())
