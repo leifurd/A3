@@ -2,7 +2,6 @@ from collections import defaultdict
 from heapq import heappop, heappush
 from math import inf
 from itertools import combinations
-from visualize import visualize
 import networkx as nx
 
 
@@ -68,6 +67,8 @@ class BiNetwork:
 
     def get_decoded_node_name_with_encoded_name(self, encoded_name):
         return self.decode_map[encoded_name].name
+
+    
 
     def __initialize_network(self, edges):
         '''

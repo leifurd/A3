@@ -1,8 +1,8 @@
 import plotly.graph_objects as go
+from network import BiNetwork, Edge
 
 
-
-def visualize(G):
+def create_traces(G, edge_color = '#888', node_color = 'YlGnBu', edge_width = 0.5):
     edge_x = []
     edge_y = []
     for edge in G.E:
@@ -17,7 +17,7 @@ def visualize(G):
 
     edge_trace = go.Scatter(
         x=edge_x, y=edge_y,
-        line=dict(width=0.5, color='#888'),
+        line=dict(width=edge_width, color=edge_color),
         hoverinfo='none',
         mode='lines')
 
@@ -38,7 +38,7 @@ def visualize(G):
             #'Greys' | 'YlGnBu' | 'Greens' | 'YlOrRd' | 'Bluered' | 'RdBu' |
             #'Reds' | 'Blues' | 'Picnic' | 'Rainbow' | 'Portland' | 'Jet' |
             #'Hot' | 'Blackbody' | 'Earth' | 'Electric' | 'Viridis' |
-            colorscale='YlGnBu',
+            colorscale=node_color,
             reversescale=True,
             color=[],
             size=10,
@@ -50,6 +50,7 @@ def visualize(G):
             ),
             line_width=2))
 
+    
     node_adjacencies = []
     node_text = []
     for node, adjacencies in G.adjacency():
@@ -59,7 +60,9 @@ def visualize(G):
     node_trace.marker.color = node_adjacencies
     node_trace.text = node_text
 
+    return edge_trace, node_trace
 
+def _visualize(edge_trace, node_trace, path_edge_trace = [], path_node_trace = []):
     fig = go.Figure(data=[edge_trace, node_trace],
             layout=go.Layout(
             title='Network of Tourist Attractions in Iceland',
@@ -75,4 +78,41 @@ def visualize(G):
             xaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
             yaxis=dict(showgrid=False, zeroline=False, showticklabels=False))
             )
+    return fig
+    
+
+def visualize(G):
+    edge_trace, node_trace = create_traces(G)
+    _visualize(edge_trace, node_trace).show()
+    
+
+
+    
+
+def visualize_with_path(G, path):
+
+    edge_trace, node_trace = create_traces(G)
+
+    V, E = [], []
+
+    V.append(G.get_decoded_node_with_encoded_name(path[0][0]))
+
+    for i in range(1, len(path)):
+        node_from = V[i-1]
+        node_to   = G.get_decoded_node_with_encoded_name(path[i][0])
+
+        V.append(node_to)
+        E.append(Edge(node_from, node_to, 0)) #set cost to 0 since we are only visualizing
+
+    path_nw = BiNetwork(V, E)
+    path_edge_trace, path_node_trace =  create_traces(path_nw, edge_color = 'red', node_color = 'Reds', edge_width=3)
+
+    fig = _visualize(edge_trace, node_trace)
+
+    fig.add_trace(path_edge_trace)
+
     fig.show()
+
+
+
+    

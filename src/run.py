@@ -3,6 +3,7 @@ from individual import Individual
 from network import BiNetwork, GeoNode, Edge
 from solution_generator import SolutionGenerator
 from random import shuffle, randint
+from visualize import visualize_with_path
 import sys
 sys.path.append('models')
 
@@ -89,6 +90,7 @@ def mutate_op(self, network):
 ga = GA(crossover_op, mutate_op, fitness_func, solution_generator, 2048, nw)
 
 
-ga.evolve(20)
+ga.evolve(2)
 
+visualize_with_path(nw, ga.best().genes)
 #print([(nw.get_decoded_node_name_with_encoded_name(x), y) for (x,y) in ga.best().genes])
