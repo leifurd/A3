@@ -19,7 +19,7 @@ class Individual:
     def crossover(self, other, network):
         raise Exception('Crossover operator has not been injected into Individual')
 
-    def mutate(self):
+    def mutate(self, network):
         raise Exception('Mutation operator has not been injected into Individual')
 
 
@@ -32,8 +32,8 @@ class Individual:
         offspring1 = self.crossover(other, network)
         offspring2 = self.crossover(other, network)
 
-        offspring1.mutate()
-        offspring2.mutate()
+        offspring1.mutate(network)
+        offspring2.mutate(network)
         return [offspring1, offspring2] #For now produce two offsprings (could have the same crossover point)
 
 

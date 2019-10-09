@@ -30,7 +30,7 @@ nw = BiNetwork(V, E)
 #Setup solution generator for initial solution
 
 #1. Pick N random nodes
-N = 3
+N = 30
 
 places = [x.name for x in V]
 shuffle(places)
@@ -74,7 +74,7 @@ def crossover_op(self, other, network):
 
     return Individual(offspring, network)
 
-def mutate_op(self):
+def mutate_op(self, network):
     '''
     Mutate offspring
     The offspring only gets mutated with a certain probability
@@ -82,12 +82,13 @@ def mutate_op(self):
     if randint(0, 1000) < 50: #~5% chance of mutation this should be changed
         i, j = randint(0, len(self.genes)-1), randint(0, len(self.genes)-1)
         self.genes[i], self.genes[j] = self.genes[j], self.genes[i] #For now only swap order of two genes
+        self.__fitness = self.fitness(network)
 
 #Setup genetic algorithm
 
 ga = GA(crossover_op, mutate_op, fitness_func, solution_generator, 2048, nw)
 
-Individual.fitness('', '')
-#ga.evolve(20)
+
+ga.evolve(20)
 
 #print([(nw.get_decoded_node_name_with_encoded_name(x), y) for (x,y) in ga.best().genes])
