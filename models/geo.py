@@ -4,11 +4,10 @@ from datetime import datetime
 from random import randint, shuffle
 import os
 from collections import defaultdict
-import utm
 
-abspath = os.path.abspath(__file__)
-dname = os.path.dirname(abspath)
-os.chdir(dname)
+#abspath = os.path.abspath(__file__)
+#dname = os.path.dirname(abspath)
+#os.chdir(dname)
 
 class GeoCode:
     def __init__(self):
