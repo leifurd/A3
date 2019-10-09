@@ -48,6 +48,7 @@ class GA:
             print('Population size: {0}'.format(len(self.population.population)))
             print('Average fitness: {0}'.format(self.population.average_fitness))
             print('Average length of tour: {0}'.format(1/self.population.average_fitness))
+            print('Best tour: {0}'.format(self.best().get_fitness()))
             
 
     def best(self):

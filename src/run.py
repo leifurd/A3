@@ -10,8 +10,8 @@ from geo import get_edges, get_nodes
 
 
 #Create graph
-nodes    = get_nodes()
-edge_map = get_edges()
+nodes    = get_nodes('iceland')
+edge_map = get_edges('iceland')
 
 V, E = [], []
 
@@ -87,6 +87,7 @@ def mutate_op(self):
 
 ga = GA(crossover_op, mutate_op, fitness_func, solution_generator, 2048, nw)
 
-ga.evolve(20)
+Individual.fitness('', '')
+#ga.evolve(20)
 
-print([(nw.get_decoded_node_name_with_encoded_name(x), y) for (x,y) in ga.best().genes])
+#print([(nw.get_decoded_node_name_with_encoded_name(x), y) for (x,y) in ga.best().genes])

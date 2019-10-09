@@ -5,9 +5,9 @@ from random import randint, shuffle
 import os
 from collections import defaultdict
 
-#abspath = os.path.abspath(__file__)
-#dname = os.path.dirname(abspath)
-#os.chdir(dname)
+abspath = os.path.abspath(__file__)
+dname = os.path.dirname(abspath)
+os.chdir(dname)
 
 class GeoCode:
     def __init__(self):
@@ -74,10 +74,11 @@ def get_edges(model_name):
 
     return edge_map
 
+'''
 def create_randomish_edges(nodes):
-    '''
-    Creates not entirely random edges
-    '''
+
+    #Creates not entirely random edges
+    
 
     shuffle(nodes)
     edge_map = defaultdict(lambda : defaultdict(int))
@@ -102,8 +103,9 @@ def create_randomish_edges(nodes):
                 break
 
     return edge_map
+'''
 
-
+'''
 geo = GeoCode()
 
 #geo.get_xy_coordinates('Hallgrímskirkja, Iceland')
@@ -114,6 +116,8 @@ with open('edges.model', 'w') as f:
     for place_from in edges:
         for place_to in edges[place_from]:
             f.write('{0}--{1};{2}\n'.format(place_from, place_to, edges[place_from][place_to]))
+
+'''
 
 '''
 geo = GeoCode()
