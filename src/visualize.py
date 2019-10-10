@@ -92,6 +92,7 @@ def visualize(G):
 def visualize_with_path(G, path, full_path = True):
 
     edge_trace, node_trace = create_traces(G)
+    edge_trace = []
 
     V, E = [], []
 
@@ -110,11 +111,11 @@ def visualize_with_path(G, path, full_path = True):
             E.append(Edge(node_from, node_to, 0))#set cost to 0 since we are only visualizing
 
     path_nw = BiNetwork(V, E)
-    path_edge_trace, path_node_trace =  create_traces(path_nw, edge_color = 'red', node_color = 'Reds', edge_width=3)
+    path_edge_trace, path_node_trace =  create_traces(path_nw, edge_color = 'red', node_color = 'Reds', edge_width=0.5)
 
-    fig = _visualize(edge_trace, node_trace)
+    fig = _visualize(path_edge_trace, node_trace)
 
-    fig.add_trace(path_edge_trace)
+    #fig.add_trace(path_edge_trace)
 
     fig.show()
 
