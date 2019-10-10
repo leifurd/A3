@@ -53,7 +53,7 @@ class GA:
 
             b = self.best()
 
-            if b.get_fitness() > self.best_found:
+            if b.get_fitness() > self.best_found.get_fitness():
                 self.best_found = b
             
 
