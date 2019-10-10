@@ -30,7 +30,7 @@ class Individual:
         '''
 
         offspring1 = self.crossover(other, network)
-        offspring2 = self.crossover(other, network)
+        offspring2 = other.crossover(self, network)
 
         offspring1.mutate(network)
         offspring2.mutate(network)
