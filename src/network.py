@@ -94,6 +94,7 @@ class BiNetwork:
     def shortest_path_cost(self, node_from, node_to):
         return self.__fw_map[node_from][node_to]
 
+    
     def shortest_path_cost_bf(self, node_from, node_to):
         '''
         Regular Dijkstra, used to assert fw algorithm
@@ -101,20 +102,22 @@ class BiNetwork:
         pq   = []
         seen = set()
 
-        heappush(pq, (0, node_from))
+        heappush(pq, (0, node_from, []))
+
 
         while len(pq) > 0:
 
-            cost, node = heappop(pq)
+            cost, node, path = heappop(pq)
             seen.add(node)
+            path = path[::] + [node]
             if node == node_to:
-                return cost
+                return path[::-1]
 
             for neighbour in self.__network[node]:
                 if neighbour not in seen:
-                    heappush(pq, (cost + self.__network_cost[node][neighbour], neighbour))
+                    heappush(pq, (cost + self.__network_cost[node][neighbour], neighbour, path))
                     
-        return inf
+        return []
 
     def _floyd_warshall(self):
         self.__fw_map = defaultdict(lambda : defaultdict(int))

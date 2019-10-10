@@ -100,9 +100,11 @@ def visualize_with_path(G, path):
     for i in range(1, len(path)):
         node_from = V[i-1]
         node_to   = G.get_decoded_node_with_encoded_name(path[i][0])
-
+        
         V.append(node_to)
-        E.append(Edge(node_from, node_to, 0)) #set cost to 0 since we are only visualizing
+        shortest_path = G.shortest_path_cost_bf(node_from, node_to)
+        for j in range(len(shortest_path)-1):
+            E.append(Edge(shortest_path[j], shortest_path[j+1], 0)) #set cost to 0 since we are only visualizing
 
     path_nw = BiNetwork(V, E)
     path_edge_trace, path_node_trace =  create_traces(path_nw, edge_color = 'red', node_color = 'Reds', edge_width=3)

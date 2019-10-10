@@ -89,6 +89,10 @@ def mutate_op(self, network):
 
 ga = GA(crossover_op, mutate_op, fitness_func, solution_generator, 2048, nw)
 
+askja = [x for x in nw.V if x.name == 'Askja'][0]
+reykjavik = [x for x in nw.V if x.name == 'Reykjavík'][0]
+
+#print(nw.shortest_path_cost_bf(askja, reykjavik))
 
 ga.evolve(2)
 
