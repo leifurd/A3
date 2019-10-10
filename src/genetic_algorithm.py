@@ -15,6 +15,7 @@ class GA:
         self.generation      = 0
         self.population      = Population(network, solution_generator, population_size)
         self.population_size = population_size
+        self.best_found      = self.best()
 
         
 
@@ -49,6 +50,11 @@ class GA:
             print('Average fitness: {0}'.format(self.population.average_fitness))
             print('Average length of tour: {0}'.format(1.0/self.population.average_fitness))
             print('Best tour: {0}'.format(1.0/self.best().get_fitness()))
+
+            b = self.best()
+
+            if b.get_fitness() > self.best_found:
+                self.best_found = b
             
 
     def best(self):
