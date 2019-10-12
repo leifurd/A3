@@ -35,8 +35,8 @@ N = 30
 
 places = [x.name for x in V]
 shuffle(places)
-places = places[:N]
-
+places = ['Rauðisandur', 'Hornstrandir', 'Varmahlíð', 'Ásbyrgi', 'Djúpivogur', 'Svartifoss', 'Landmannalaugar', 'Hvolsvöllur', 'Geysir', 'Selfoss', 'Þríhnjúkagígur', 'Reykjavík', 'Laugavegur', 'Laugardalslaug', 'Perlan', 'Kirkjufell']
+places = ['National Museum of Iceland', 'Djúpalón', 'Blue Lagoon', 'Mývatn', 'Þórsmörk', 'Seljalandsfoss', 'Hallgrímskirkja', 'Reykjahlíð', 'Reykjavík', 'Rauðisandur', 'Akureyri', 'Landmannalaugar', 'Þingvellir', 'Lystigarðurinn', 'Ásbyrgi', 'Akureyrarkirkja', 'Perlan', 'Fáskrúðsfjörður', 'Reyðarfjörður', 'Hið íslenzka reðasafn', 'Egilsstaðir', 'Hella', 'Reynisfjara', 'Krafla', 'Þríhnjúkagígur', 'Dimmuborgir', 'Dynjandi', 'Laugarbakki', 'Viðey', 'Húsavík']
 #2. Initialize generator
 solution_generator = SolutionGenerator(places, nw)
 
@@ -48,7 +48,7 @@ def fitness_func(self, network):
         '''
 
         res = 0
-        for i in range(0, len(self.genes)-1, 2):
+        for i in range(0, len(self.genes)-1):
             node_from = network.get_decoded_node_with_encoded_name(self.genes[i][0])
             node_to   = network.get_decoded_node_with_encoded_name(self.genes[i+1][0])
 
@@ -89,12 +89,20 @@ def mutate_op(self, network):
 
 ga = GA(crossover_op, mutate_op, fitness_func, solution_generator, 2048, nw)
 
-askja = [x for x in nw.V if x.name == 'Askja'][0]
-reykjavik = [x for x in nw.V if x.name == 'Reykjavík'][0]
 
 #print(nw.shortest_path_cost_bf(askja, reykjavik))
 
-ga.evolve(2)
+#ga.evolve(2)
 
-visualize_with_path(nw, ga.best().genes)
+enc_path = nw.greedy(places, encoded = True)
+
+#enc_path = nw.exact(places)
+
+exact_path = [(x, 0) for x in enc_path]
+
+#visualize_with_path(nw, ga.best().genes)
+visualize_with_path(nw, exact_path)
+
+
+print(nw.length_of_encoded_path(enc_path))
 #print([(nw.get_decoded_node_name_with_encoded_name(x), y) for (x,y) in ga.best().genes])

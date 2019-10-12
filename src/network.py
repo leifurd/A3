@@ -1,7 +1,7 @@
 from collections import defaultdict
 from heapq import heappop, heappush
 from math import inf
-from itertools import combinations
+from itertools import combinations, permutations
 import networkx as nx
 
 
@@ -69,7 +69,16 @@ class BiNetwork:
         return self.decode_map[encoded_name].name
 
     
+    def length_of_encoded_path(self, path):
 
+        res = 0
+        for i in range(len(path)-1):
+            node_from = self.get_decoded_node_with_encoded_name(path[i])
+            node_to   = self.get_decoded_node_with_encoded_name(path[i+1])
+
+            res += self.shortest_path_cost(node_from, node_to)
+
+        return res
     def __initialize_network(self, edges):
         '''
         Assumes that A->A exists and has cost of 0
@@ -90,6 +99,15 @@ class BiNetwork:
             c_mp[node][node] = 0
 
         return (n_mp, c_mp)
+
+    def shortest_path_cost_name(self, name_from, name_to):
+        '''
+        Returns the shortest path from a given node name to another node name
+        '''
+        node_from = self.get_decoded_node_with_encoded_name(self.get_encoded_node_with_name(name_from))
+        node_to   = self.get_decoded_node_with_encoded_name(self.get_encoded_node_with_name(name_to))
+
+        return self.shortest_path_cost(node_from, node_to)
 
     def shortest_path_cost(self, node_from, node_to):
         return self.__fw_map[node_from][node_to]
@@ -154,6 +172,63 @@ class BiNetwork:
 
         return BiNetwork(self.V, edges)
 
+    def __greedy(self, current, places):
+        '''
+        Helper function for greedy. Selects the closest place to current and adds it to the path
+        '''
+
+        if len(places) == 1:
+            name_to = places.pop()
+            return [name_to], self.shortest_path_cost_name(current, name_to)
+
+        min_cost  = inf
+        min_place = None
+        for place in places:
+            cost = self.shortest_path_cost_name(current, place)
+
+            if cost < min_cost:
+                min_cost  = cost
+                min_place = place
+
+        result, cost = self.__greedy(min_place, places.symmetric_difference(set([min_place])))
+
+        return [min_place] + result, cost + min_cost
+    
+    def greedy(self, places, encoded = True):
+        '''
+        Gives a greedy solution to visiting all places
+        If encoded is flagged, will return the encoded names of the places
+        '''
+
+        places   = set(places)
+        min_cost = inf
+        min_path = []
+        for starting_place in places:
+            result, cost = self.__greedy(starting_place, places.symmetric_difference(set([starting_place])))
+
+            if cost < min_cost:
+                min_cost = cost
+                min_path = [starting_place] + result
+
+        return [self.get_encoded_node_with_name(x) for x in min_path]
+
+    def exact(self, places):
+        '''
+        Gives exact solution to visiting all places (shortest path)
+        '''
+
+        encoded_places = [self.get_encoded_node_with_name(x) for x in places]
+        
+        min_cost = inf
+        min_path = []
+        for perm in permutations(encoded_places):
+            cost = self.length_of_encoded_path(perm)
+
+            if cost < min_cost:
+                min_cost = cost
+                min_path = perm
+
+        return list(min_path)
 
 
 def get_random_network():
