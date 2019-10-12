@@ -37,6 +37,7 @@ places = [x.name for x in V]
 shuffle(places)
 places = ['Rauðisandur', 'Hornstrandir', 'Varmahlíð', 'Ásbyrgi', 'Djúpivogur', 'Svartifoss', 'Landmannalaugar', 'Hvolsvöllur', 'Geysir', 'Selfoss', 'Þríhnjúkagígur', 'Reykjavík', 'Laugavegur', 'Laugardalslaug', 'Perlan', 'Kirkjufell']
 places = ['National Museum of Iceland', 'Djúpalón', 'Blue Lagoon', 'Mývatn', 'Þórsmörk', 'Seljalandsfoss', 'Hallgrímskirkja', 'Reykjahlíð', 'Reykjavík', 'Rauðisandur', 'Akureyri', 'Landmannalaugar', 'Þingvellir', 'Lystigarðurinn', 'Ásbyrgi', 'Akureyrarkirkja', 'Perlan', 'Fáskrúðsfjörður', 'Reyðarfjörður', 'Hið íslenzka reðasafn', 'Egilsstaðir', 'Hella', 'Reynisfjara', 'Krafla', 'Þríhnjúkagígur', 'Dimmuborgir', 'Dynjandi', 'Laugarbakki', 'Viðey', 'Húsavík']
+places = ['Breiðdalsvík', 'Hornstrandir', 'Hvolsvöllur', 'Hið íslenzka reðasafn', 'Lystigarðurinn', 'Skógafoss', 'Dimmuborgir', 'Djúpivogur', 'Svartifoss', 'Askja', 'Egilsstaðir', 'Grundartangi', 'Húsavík', 'Borgarnes', 'Þórsmörk', 'Selfoss', 'Alþingishúsið', 'Reykjahlíð', 'Reykjavík', 'Kirkjubæjarklaustur', 'Hallgrímskirkja', 'Blue Lagoon', 'Hella', 'Jökulsárlón', 'Fáskrúðsfjörður', 'Þingvellir', 'Laugavegur', 'Laugarbakki', 'Rauðisandur', 'Varmahlíð', 'Akureyri', 'Ásbyrgi', 'Blönduós', 'Akureyrarkirkja', 'Reyðarfjörður', 'Dynjandi', 'Seljalandsfoss', 'Harpan', 'Gullfoss', 'Dettifoss', 'Mývatn', 'Mosfellsbær', 'Viðey', 'Geysir', 'Reynisfjara', 'Perlan', 'Krafla', 'Kirkjufell', 'Landmannalaugar', 'Vík']
 #2. Initialize generator
 solution_generator = SolutionGenerator(places, nw)
 
@@ -87,22 +88,22 @@ def mutate_op(self, network):
 
 #Setup genetic algorithm
 
-ga = GA(crossover_op, mutate_op, fitness_func, solution_generator, 2048, nw)
+ga = GA(crossover_op, mutate_op, fitness_func, solution_generator, 2048, nw, elitism=1)
 
 
 #print(nw.shortest_path_cost_bf(askja, reykjavik))
 
-#ga.evolve(2)
+ga.evolve(100)
 
-enc_path = nw.greedy(places, encoded = True)
+#enc_path = nw.greedy(places, encoded = True)
 
 #enc_path = nw.exact(places)
 
-exact_path = [(x, 0) for x in enc_path]
+#exact_path = [(x, 0) for x in enc_path]
 
-#visualize_with_path(nw, ga.best().genes)
-visualize_with_path(nw, exact_path)
+visualize_with_path(nw, ga.best().genes)
+#visualize_with_path(nw, exact_path)
 
 
-print(nw.length_of_encoded_path(enc_path))
+#print(nw.length_of_encoded_path(enc_path))
 #print([(nw.get_decoded_node_name_with_encoded_name(x), y) for (x,y) in ga.best().genes])

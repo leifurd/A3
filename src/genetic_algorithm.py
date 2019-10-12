@@ -4,7 +4,7 @@ from individual import Individual
 from random import shuffle
 
 class GA:
-    def __init__(self, crossover, mutate, fitness, solution_generator, population_size, network = None):
+    def __init__(self, crossover, mutate, fitness, solution_generator, population_size, network = None, elitism = 0):
         #Inject function
         Individual.crossover      = crossover
         Individual.mutate         = mutate
@@ -16,6 +16,7 @@ class GA:
         self.population      = Population(network, solution_generator, population_size)
         self.population_size = population_size
         self.best_found      = self.best()
+        self.elitism         = elitism
 
         
 
@@ -27,10 +28,13 @@ class GA:
         #Select the fittest individuals
         fittest_individuals = self.population.select(self.population_size)
         shuffle(fittest_individuals)
-        new_population      = []
+
+
+        new_population      = self.population.get_elite(self.elitism)
 
         #Breed new population randomly
         for i in range(0, len(fittest_individuals)-1, 2):
+            if len(new_population) >= self.population_size: break
             new_population.extend(fittest_individuals[i].breed(fittest_individuals[i+1], self.network))
 
         #Set current population to new population

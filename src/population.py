@@ -18,6 +18,14 @@ class Population:
         self.population      = population
         self.average_fitness = self.__average_fitness()
 
+    def get_elite(self, k):
+        '''
+        Returns the k fittest individuals
+        '''
+        population = sorted(self.population, key = lambda x : x.get_fitness(), reverse = True)
+
+        return [Individual(x.genes[:], self.network) for x in population[:k]]
+
     def select(self, P):
         '''
         Selects P parents from the current population via proportional selection via roulette wheel selection
