@@ -3,7 +3,8 @@ from network import BiNetwork, Edge
 import matplotlib.pyplot as plt
 import pandas as pd
 from matplotlib import gridspec
-
+import matplotlib
+import numpy as np
 
 def create_traces(G, edge_color = '#888', node_color = 'YlGnBu', edge_width = 0.5):
     edge_x = []
@@ -90,7 +91,7 @@ def visualize(G):
     
 
 
-def draw_convergence_figure(average_population_fitness, crossover_operators, mutation_operators, performance):
+def draw_convergence_figure(average_population_fitness, crossover_operators, mutation_operators, performance, execution_time):
     '''
     average_population_fitenss -> k x N array
     crossover_operators -> k array
@@ -106,12 +107,36 @@ def draw_convergence_figure(average_population_fitness, crossover_operators, mut
     df = pd.DataFrame(data)
 
     #Setup plots
-    plt.figure(figsize=(10, 3))
-    gs = gridspec.GridSpec(1, 2, width_ratios=[4, 1]) 
+    
 
+    plt.figure(figsize=(10, 3))
+    gs = gridspec.GridSpec(1, 3, width_ratios=[4, 1, 1]) 
+    
     ax0 = plt.subplot(gs[0]) #Time series
     ax1 = plt.subplot(gs[1]) #Bar chart
-    
+    ax2 = plt.subplot(gs[2]) #Exec chart
+
+    plt.rcParams['font.family'] = 'Helvetica'
+    plt.rcParams['font.sans-serif'] = 'Helvetica'
+    plt.rcParams['axes.edgecolor']='#333F4B'
+    plt.rcParams['axes.linewidth']=0.8
+    plt.rcParams['xtick.color']='#333F4B'
+    plt.rcParams['ytick.color']='#333F4B'
+
+    ax0.spines['top'].set_color('none')
+    ax0.spines['right'].set_color('none')
+    ax0.spines['left'].set_smart_bounds(True)
+    ax0.spines['bottom'].set_smart_bounds(True)
+
+    ax1.spines['top'].set_color('none')
+    ax1.spines['right'].set_color('none')
+    ax1.spines['left'].set_smart_bounds(True)
+    ax1.spines['bottom'].set_smart_bounds(True)
+
+    ax2.spines['top'].set_color('none')
+    ax2.spines['right'].set_color('none')
+    ax2.spines['left'].set_smart_bounds(True)
+    ax2.spines['bottom'].set_smart_bounds(True)
 
     
     for key in data:
@@ -120,17 +145,20 @@ def draw_convergence_figure(average_population_fitness, crossover_operators, mut
             ax0.legend()
 
    
-    ax1.tick_params(labelrotation=90)
-    bar = ax1.bar([key for key in performance], [performance[key] for key in performance], align='center')
+    x = np.arange(len(performance))
+    width = 0.35
+    ax1.tick_params(labelrotation=45)
+    ax2.tick_params(labelrotation=45)
+    bar_perf = ax1.bar([key for key in performance], [performance[key] for key in performance], align='center', label = 'Best Tour')
+    bar_time = ax2.bar([key for key in execution_time], [execution_time[key] for key in execution_time], align='center',label='Execution Time (ms)', color = 'orange')
+    
+    ax0.set_title('Comparison of Operators')
+    ax0.set_ylabel('Average Fitness')
+    ax0.set_xlabel('Generation')
 
-    
-    for rect in bar:
-        height = rect.get_height()
-        
-        ax1.text(rect.get_x() + rect.get_width()/2., height*1.05,
-                '%d' % int(height),
-                ha='center', va='bottom')
-    
+    ax1.set_title('Best Tours')
+    ax2.set_title('Execution Time (ms)')
+
 
     #ax1.set_xticklabels(len(performance), [key for key in performance])
     #ax1.ylabel('Length of Best Tour')
@@ -178,6 +206,7 @@ if __name__ == "__main__":
     co = ['OX', 'OC']
     mut = ['SW', 'SW']
     performance = {'Greedy' : 100, 'OX, SW' : 90, 'OC, SW' : 80}
-    draw_convergence_figure(avg_fitness, co, mut, performance)
+    execution_time = {'Greedy' : 1231, 'OX, SW' : 1241241, 'OC, SW' : 123121}
+    draw_convergence_figure(avg_fitness, co, mut, performance, execution_time)
 
     
