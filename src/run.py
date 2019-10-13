@@ -2,8 +2,10 @@ from genetic_algorithm import GA
 from individual import Individual
 from network import BiNetwork, GeoNode, Edge
 from solution_generator import SolutionGenerator
-from random import shuffle, randint
+from random import shuffle, randint, sample
 from visualize import visualize_with_path
+
+
 import sys
 sys.path.append('models')
 
@@ -35,8 +37,10 @@ N = 30
 
 places = [x.name for x in V]
 shuffle(places)
-places = ['Rauðisandur', 'Hornstrandir', 'Varmahlíð', 'Ásbyrgi', 'Djúpivogur', 'Svartifoss', 'Landmannalaugar', 'Hvolsvöllur', 'Geysir', 'Selfoss', 'Þríhnjúkagígur', 'Reykjavík', 'Laugavegur', 'Laugardalslaug', 'Perlan', 'Kirkjufell']
-places = ['National Museum of Iceland', 'Djúpalón', 'Blue Lagoon', 'Mývatn', 'Þórsmörk', 'Seljalandsfoss', 'Hallgrímskirkja', 'Reykjahlíð', 'Reykjavík', 'Rauðisandur', 'Akureyri', 'Landmannalaugar', 'Þingvellir', 'Lystigarðurinn', 'Ásbyrgi', 'Akureyrarkirkja', 'Perlan', 'Fáskrúðsfjörður', 'Reyðarfjörður', 'Hið íslenzka reðasafn', 'Egilsstaðir', 'Hella', 'Reynisfjara', 'Krafla', 'Þríhnjúkagígur', 'Dimmuborgir', 'Dynjandi', 'Laugarbakki', 'Viðey', 'Húsavík']
+
+#places = ['Rauðisandur', 'Hornstrandir', 'Varmahlíð']
+#places = ['Rauðisandur', 'Hornstrandir', 'Varmahlíð', 'Ásbyrgi', 'Djúpivogur', 'Svartifoss', 'Landmannalaugar', 'Hvolsvöllur', 'Geysir', 'Selfoss', 'Þríhnjúkagígur', 'Reykjavík', 'Laugavegur', 'Laugardalslaug', 'Perlan', 'Kirkjufell']
+#places = ['Húsavík', 'Krafla', 'Dimmuborgir', 'Ásbyrgi', 'Þingvellir', 'Egilsstaðir', 'Þórsmörk', 'Reyðarfjörður', 'Laugarbakki', 'Akureyrarkirkja', 'Þríhnjúkagígur', 'Djúpalón', 'Fáskrúðsfjörður', 'Seljalandsfoss', 'Reynisfjara', 'Hella', 'Reykjahlíð', 'Viðey', 'Reykjavík', 'Akureyri', 'Perlan', 'Dynjandi', 'National Museum of Iceland', 'Landmannalaugar', 'Blue Lagoon', 'Hið íslenzka reðasafn', 'Mývatn', 'Rauðisandur', 'Lystigarðurinn', 'Hallgrímskirkja']
 places = ['Breiðdalsvík', 'Hornstrandir', 'Hvolsvöllur', 'Hið íslenzka reðasafn', 'Lystigarðurinn', 'Skógafoss', 'Dimmuborgir', 'Djúpivogur', 'Svartifoss', 'Askja', 'Egilsstaðir', 'Grundartangi', 'Húsavík', 'Borgarnes', 'Þórsmörk', 'Selfoss', 'Alþingishúsið', 'Reykjahlíð', 'Reykjavík', 'Kirkjubæjarklaustur', 'Hallgrímskirkja', 'Blue Lagoon', 'Hella', 'Jökulsárlón', 'Fáskrúðsfjörður', 'Þingvellir', 'Laugavegur', 'Laugarbakki', 'Rauðisandur', 'Varmahlíð', 'Akureyri', 'Ásbyrgi', 'Blönduós', 'Akureyrarkirkja', 'Reyðarfjörður', 'Dynjandi', 'Seljalandsfoss', 'Harpan', 'Gullfoss', 'Dettifoss', 'Mývatn', 'Mosfellsbær', 'Viðey', 'Geysir', 'Reynisfjara', 'Perlan', 'Krafla', 'Kirkjufell', 'Landmannalaugar', 'Vík']
 #2. Initialize generator
 solution_generator = SolutionGenerator(places, nw)
@@ -73,14 +77,74 @@ def crossover_op(self, other, network):
             offspring.append(gene)
 
     assert len(self.genes) == len(offspring) #sanity check
-
     return Individual(offspring, network)
+
+def create_edge_map(self, other, remaining, network):
+
+	edge_map = {x : set() for x in remaining}
+	
+
+	assert len(self.genes) == len(other.genes) #sanity check
+
+	for i in range(len(self.genes)):
+		if self.genes[i] in remaining:
+			for x in [-1, 1]:
+				adjacent_city = self.genes[(i + x) % len(self.genes)]
+				if adjacent_city in remaining:
+					edge_map[self.genes[i]].add(adjacent_city)
+		if other.genes[i] in remaining:
+			for x in [-1, 1]:
+				adjacent_city = other.genes[(i + x) % len(other.genes)]
+				if adjacent_city in remaining:
+					edge_map[other.genes[i]].add(adjacent_city)
+	return edge_map
+
+def crossover_op_edge_k(self, other, network):
+	'''
+	Potvin Edge REcombination Crossover (5.2)
+	'''
+
+	remaining = set(self.genes)
+
+	offspring = []
+
+	selection = [self.genes[0], other.genes[0]][randint(0,1)]
+	edge_map = create_edge_map(self, other, remaining, network)
+	while True:
+		offspring.append(selection)
+		
+
+		
+		candidates = set(edge_map[selection])
+
+		remaining.remove(selection)
+		if len(remaining) == 0: break
+		for key in edge_map:
+			if selection in edge_map[key]:
+				edge_map[key].remove(selection) #Remove selected from candidates
+		
+		if len(candidates) == 0:
+			selection = sample(remaining, 1)[0]
+			continue
+
+		mn_edge = min([len(edge_map[x]) for x in candidates])
+
+		candidates = [x for x in candidates if len(edge_map[x]) == mn_edge] #reduce candidates
+
+		selection = candidates[randint(0, len(candidates)-1)]
+
+	return Individual(offspring, network)
+
+
+
+
 
 def mutate_op(self, network):
     '''
     Mutate offspring
     The offspring only gets mutated with a certain probability
     '''
+
     if randint(0, 1000) < 50: #~5% chance of mutation this should be changed
         i, j = randint(0, len(self.genes)-1), randint(0, len(self.genes)-1)
         self.genes[i], self.genes[j] = self.genes[j], self.genes[i] #For now only swap order of two genes
@@ -88,12 +152,14 @@ def mutate_op(self, network):
 
 #Setup genetic algorithm
 
-ga = GA(crossover_op, mutate_op, fitness_func, solution_generator, 2048, nw, elitism=1)
+ga = GA(crossover_op_edge_k, mutate_op, fitness_func, solution_generator, 1000, nw, elitism=1)
 
 
 #print(nw.shortest_path_cost_bf(askja, reykjavik))
 
-ga.evolve(100)
+for data in ga.evolve(10):
+	for key in data:
+		print('{0}: {1}'.format(key, data[key]))
 
 #enc_path = nw.greedy(places, encoded = True)
 
@@ -101,7 +167,7 @@ ga.evolve(100)
 
 #exact_path = [(x, 0) for x in enc_path]
 
-visualize_with_path(nw, ga.best().genes)
+#visualize_with_path(nw, ga.best().genes)
 #visualize_with_path(nw, exact_path)
 
 

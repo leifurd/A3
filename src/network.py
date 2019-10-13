@@ -46,6 +46,21 @@ class BiNetwork:
         for key in self.V:
             yield (key, self.__network[key])
 
+    def get_distance_matrix(self, places):
+        '''
+        Returns the distance matrix for places (places is a list of names)
+        '''
+
+        res = []
+
+        for p_from in places:
+            line = []
+            for p_to in places:
+                line.append(self.shortest_path_cost_name(p_from, p_to))
+            res.append(line)
+
+        return res
+        
     def __create_maps(self):
         enc_map, dec_map = {}, {}
 

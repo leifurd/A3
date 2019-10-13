@@ -1,5 +1,7 @@
 import plotly.graph_objects as go
 from network import BiNetwork, Edge
+import matplotlib.pyplot as plt
+import pandas as pd
 
 
 def create_traces(G, edge_color = '#888', node_color = 'YlGnBu', edge_width = 0.5):
@@ -87,7 +89,32 @@ def visualize(G):
     
 
 
-    
+def draw_convergence_figure(average_population_fitness, found_better_solution, crossover_operators, mutation_operators):
+    '''
+    average_population_fitenss -> k x N array
+    found_better_solution -> k x N_found array
+    crossover_operators -> k array
+    mutation_operators -> k array
+
+    Draws a figure with k time series
+    '''
+
+    k = len(average_population_fitness)
+    N = len(average_population_fitness[0])
+    data = {'{0}, {1}'.format(x, y) : average_population_fitness[idx] for idx, (x, y) in enumerate(zip(crossover_operators, mutation_operators))}
+    data['Generation'] = list(range(1, N+1))
+
+    plt.figure(figsize=(10, 3))
+    df = pd.DataFrame(data)
+    for key in data:
+        if key != 'Generation':
+            plt.plot('Generation', key, data=df)
+            plt.legend()
+
+    plt.show()
+
+
+
 
 def visualize_with_path(G, path, full_path = True):
 
@@ -119,5 +146,13 @@ def visualize_with_path(G, path, full_path = True):
     fig.show()
 
 
+if __name__ == "__main__":
+     
+    avg_fitness = [[1, 2, 3, 4, 5, 6], [1, 3, 5, 9, 7, 12]]
+    found_better_solution = [[True, True, False, True, True, False], [True, True, False, True, True, True]]
+    co = ['OX', 'OC']
+    mut = ['SW', 'SW']
+
+    draw_convergence_figure(avg_fitness, found_better_solution, co, mut)
 
     

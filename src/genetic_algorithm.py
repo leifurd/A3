@@ -47,18 +47,22 @@ class GA:
         TODO define epsilon for convergence
         '''
         for _ in range(number_of_generations):
-            print('Evolving generation {0}'.format(self.generation))
             self.__evolve()
-            print('Done!')
-            print('Population size: {0}'.format(len(self.population.population)))
-            print('Average fitness: {0}'.format(self.population.average_fitness))
-            print('Average length of tour: {0}'.format(1.0/self.population.average_fitness))
-            print('Best tour: {0}'.format(1.0/self.best().get_fitness()))
+
+            data = {'Generation Number'      : self.generation,
+                    'Population Size'        : len(self.population.population),
+                    'Average Fitness'        : self.population.average_fitness,
+                    'Best Tour'              : 1.0/self.best().get_fitness(),
+                    'Average Length of Tour' : 1.0/self.population.average_fitness
+                    }
+
 
             b = self.best()
 
             if b.get_fitness() > self.best_found.get_fitness():
                 self.best_found = b
+
+            yield data
             
 
     def best(self):
