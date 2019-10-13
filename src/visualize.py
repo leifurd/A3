@@ -118,20 +118,25 @@ def draw_convergence_figure(average_population_fitness, crossover_operators, mut
             ax0.plot('Generation', key, data=df)
             ax0.legend()
 
-    plt.tight_layout()
+   
 
-    bar = ax1.bar([key for key in performance], [performance[key] for key in performance], align='center', width = 0.75)
+    bar = ax1.barh([key for key in performance], [performance[key] for key in performance], align='center')
 
+    '''
     for rect in bar:
-        height = rect.get_height()
-        ax1.text(rect.get_x() + rect.get_width()/2., 1.05*height,
-                '%d' % int(height),
+        width = rect.get_width()
+        
+        print(rect.get_height())
+        ax1.text(width*1.05, rect.get_y() + rect.get_height()/2.,
+                '%d' % int(width),
                 ha='center', va='bottom')
-
+    '''
+    
     #ax1.set_xticklabels(len(performance), [key for key in performance])
     #ax1.ylabel('Length of Best Tour')
     #ax1.title('Comparison')
 
+    #plt.tight_layout()
     plt.show()
 
 
