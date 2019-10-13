@@ -2,6 +2,7 @@ import plotly.graph_objects as go
 from network import BiNetwork, Edge
 import matplotlib.pyplot as plt
 import pandas as pd
+from matplotlib import gridspec
 
 
 def create_traces(G, edge_color = '#888', node_color = 'YlGnBu', edge_width = 0.5):
@@ -89,10 +90,9 @@ def visualize(G):
     
 
 
-def draw_convergence_figure(average_population_fitness, found_better_solution, crossover_operators, mutation_operators):
+def draw_convergence_figure(average_population_fitness, crossover_operators, mutation_operators, performance):
     '''
     average_population_fitenss -> k x N array
-    found_better_solution -> k x N_found array
     crossover_operators -> k array
     mutation_operators -> k array
 
@@ -103,13 +103,34 @@ def draw_convergence_figure(average_population_fitness, found_better_solution, c
     N = len(average_population_fitness[0])
     data = {'{0}, {1}'.format(x, y) : average_population_fitness[idx] for idx, (x, y) in enumerate(zip(crossover_operators, mutation_operators))}
     data['Generation'] = list(range(1, N+1))
-
-    plt.figure(figsize=(10, 3))
     df = pd.DataFrame(data)
+
+    #Setup plots
+    plt.figure(figsize=(10, 3))
+    gs = gridspec.GridSpec(1, 2, width_ratios=[4, 1]) 
+
+    ax0 = plt.subplot(gs[0]) #Time series
+    ax1 = plt.subplot(gs[1]) #Bar chart
+    
+    
     for key in data:
         if key != 'Generation':
-            plt.plot('Generation', key, data=df)
-            plt.legend()
+            ax0.plot('Generation', key, data=df)
+            ax0.legend()
+
+    plt.tight_layout()
+
+    bar = ax1.bar([key for key in performance], [performance[key] for key in performance], align='center', width = 0.75)
+
+    for rect in bar:
+        height = rect.get_height()
+        ax1.text(rect.get_x() + rect.get_width()/2., 1.05*height,
+                '%d' % int(height),
+                ha='center', va='bottom')
+
+    #ax1.set_xticklabels(len(performance), [key for key in performance])
+    #ax1.ylabel('Length of Best Tour')
+    #ax1.title('Comparison')
 
     plt.show()
 
@@ -149,10 +170,9 @@ def visualize_with_path(G, path, full_path = True):
 if __name__ == "__main__":
      
     avg_fitness = [[1, 2, 3, 4, 5, 6], [1, 3, 5, 9, 7, 12]]
-    found_better_solution = [[True, True, False, True, True, False], [True, True, False, True, True, True]]
     co = ['OX', 'OC']
     mut = ['SW', 'SW']
-
-    draw_convergence_figure(avg_fitness, found_better_solution, co, mut)
+    performance = {'Greedy' : 100, 'OX, SW' : 90, 'OC, SW' : 80}
+    draw_convergence_figure(avg_fitness, co, mut, performance)
 
     
