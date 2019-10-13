@@ -158,7 +158,7 @@ def draw_convergence_figure(average_population_fitness, crossover_operators, mut
     ax0.set_xlabel('Generation')
 
     ax1.set_title('Best Tours')
-    ax2.set_title('Execution Time (m)')
+    ax2.set_title('Execution Time (s)')
 
 
     #ax1.set_xticklabels(len(performance), [key for key in performance])
