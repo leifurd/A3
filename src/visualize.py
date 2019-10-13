@@ -147,17 +147,18 @@ def draw_convergence_figure(average_population_fitness, crossover_operators, mut
    
     x = np.arange(len(performance))
     width = 0.35
+
     ax1.tick_params(labelrotation=45)
     ax2.tick_params(labelrotation=45)
     bar_perf = ax1.bar([key for key in performance], [performance[key] for key in performance], align='center', label = 'Best Tour')
-    bar_time = ax2.bar([key for key in execution_time], [execution_time[key] for key in execution_time], align='center',label='Execution Time (ms)', color = 'orange')
+    bar_time = ax2.bar([key for key in execution_time], [execution_time[key] for key in execution_time], align='center',label='Execution Time (s)', color = 'orange')
     
     ax0.set_title('Comparison of Operators')
-    ax0.set_ylabel('Average Fitness')
+    ax0.set_ylabel('Average Tour Length')
     ax0.set_xlabel('Generation')
 
     ax1.set_title('Best Tours')
-    ax2.set_title('Execution Time (ms)')
+    ax2.set_title('Execution Time (m)')
 
 
     #ax1.set_xticklabels(len(performance), [key for key in performance])
