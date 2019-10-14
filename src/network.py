@@ -38,6 +38,7 @@ class BiNetwork:
         self.E                              = edges
         self.__fw_map                       = None 
         self.__network, self.__network_cost = self.__initialize_network(edges)
+        self.__fly_network, self.__fly_network_cost = self.__initialize_fly_network(vertices)
         self.encode_map, self.decode_map    = self.__create_maps()
         self._floyd_warshall()
         
@@ -94,6 +95,33 @@ class BiNetwork:
             res += self.shortest_path_cost(node_from, node_to)
 
         return res
+
+    def __initialize_fly_network(self, vertices):
+        '''
+        Initializes fly network s.t. each vertice can travel to any other in a straight line
+        '''
+
+        dist = lambda x0, y0, x1, y1 : ((x0 - x1)**2 + (y0 - y1)**2)**0.5 
+
+        n_mp = defaultdict(set)
+        c_mp = defaultdict(dict)
+
+        start_cost = 10000 #The minimum cost of flying
+
+        for node_from in vertices:
+            for node_to in vertices:
+                n_mp[node_from].add(node_to)
+                n_mp[node_to].add(node_from)
+
+                '''
+                Here we could say that cost will be the same if distance is short?
+                '''
+                cost = dist(node_from.x, node_from.y, node_to.x, node_to.y)
+                c_mp[node_from][node_to] = (cost/2, start_cost + 1000*cost)
+                c_mp[node_to][node_from] = (cost/2, start_cost + 1000*cost)
+
+        return (n_mp, c_mp)
+
     def __initialize_network(self, edges):
         '''
         Assumes that A->A exists and has cost of 0
@@ -126,6 +154,13 @@ class BiNetwork:
 
     def shortest_path_cost(self, node_from, node_to):
         return self.__fw_map[node_from][node_to]
+
+    def flying_cost(self, node_from, node_to):
+        '''
+        Returns the flight distance and the cost of flying
+        '''
+
+        return self.__fly_network_cost[node_from][node_to]
 
     
     def shortest_path_cost_bf(self, node_from, node_to):

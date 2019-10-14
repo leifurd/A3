@@ -17,7 +17,6 @@ class GA:
         self.population_size = population_size
         self.best_found      = self.best()
         self.elitism         = elitism
-
         
 
     def __evolve(self):
@@ -41,7 +40,7 @@ class GA:
         self.population.set_population(new_population)
         self.generation += 1
         
-
+    
     def evolve(self, number_of_generations):
         '''
         TODO define epsilon for convergence
@@ -49,18 +48,19 @@ class GA:
         for _ in range(number_of_generations):
             self.__evolve()
 
+            if 1.0/self.best().get_fitness() < 1.0/self.best_found.get_fitness():
+                self.best_found = Individual(self.best().genes[:], self.network)
+
             data = {'Generation Number'      : self.generation,
                     'Population Size'        : len(self.population.population),
                     'Average Fitness'        : self.population.average_fitness,
                     'Best Tour'              : 1.0/self.best().get_fitness(),
+                    'Best Found'             : 1.0/self.best_found.get_fitness(),
                     'Average Length of Tour' : 1.0/self.population.average_fitness
                     }
 
 
-            b = self.best()
-
-            if b.get_fitness() > self.best_found.get_fitness():
-                self.best_found = b
+            
 
             yield data
             

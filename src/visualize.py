@@ -1,12 +1,13 @@
 import plotly.graph_objects as go
-from network import BiNetwork, Edge
+from network import BiNetwork, Edge, GeoNode
 import matplotlib.pyplot as plt
 import pandas as pd
 from matplotlib import gridspec
 import matplotlib
 import numpy as np
+from solution_generator import SolutionGenerator
 
-def create_traces(G, edge_color = '#888', node_color = 'YlGnBu', edge_width = 0.5):
+def create_traces(G, edge_color = '#888', node_color = 'YlGnBu', edge_width = 0.5, add_coloring = False):
     edge_x = []
     edge_y = []
     for edge in G.E:
@@ -37,7 +38,6 @@ def create_traces(G, edge_color = '#888', node_color = 'YlGnBu', edge_width = 0.
         mode='markers',
         hoverinfo='text',
         marker=dict(
-            showscale=True,
             # colorscale options
             #'Greys' | 'YlGnBu' | 'Greens' | 'YlOrRd' | 'Bluered' | 'RdBu' |
             #'Reds' | 'Blues' | 'Picnic' | 'Rainbow' | 'Portland' | 'Jet' |
@@ -46,22 +46,19 @@ def create_traces(G, edge_color = '#888', node_color = 'YlGnBu', edge_width = 0.
             reversescale=True,
             color=[],
             size=10,
-            colorbar=dict(
-                thickness=15,
-                title='Node Connections',
-                xanchor='left',
-                titleside='right'
-            ),
             line_width=2))
 
     
+
     node_adjacencies = []
     node_text = []
     for node, adjacencies in G.adjacency():
         node_adjacencies.append(len(adjacencies))
         node_text.append('# of connections: '+str(len(adjacencies)) + "\nName: " + str(node))
 
-    node_trace.marker.color = node_adjacencies
+
+    if add_coloring:
+        node_trace.marker.color = node_adjacencies
     node_trace.text = node_text
 
     return edge_trace, node_trace
@@ -69,25 +66,45 @@ def create_traces(G, edge_color = '#888', node_color = 'YlGnBu', edge_width = 0.
 def _visualize(edge_trace, node_trace, path_edge_trace = [], path_node_trace = []):
     fig = go.Figure(data=[edge_trace, node_trace],
             layout=go.Layout(
-            title='Network of Tourist Attractions in Iceland',
+            
+            template = 'plotly_white',
             titlefont_size=16,
             showlegend=False,
             hovermode='closest',
             margin=dict(b=20,l=5,r=5,t=40),
             annotations=[ dict(
-                text="Iceland",
+                text="",
                 showarrow=False,
                 xref="paper", yref="paper",
                 x=0.005, y=-0.002 ) ],
             xaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
-            yaxis=dict(showgrid=False, zeroline=False, showticklabels=False))
+            yaxis=dict(showgrid=False, zeroline=False, showticklabels=False)
+                )
             )
+
     return fig
     
 
-def visualize(G):
+def visualize(G, places = None):
+    '''
+    Draws G and sets vertices in places to red
+    '''
     edge_trace, node_trace = create_traces(G)
-    _visualize(edge_trace, node_trace).show()
+    fig = _visualize(edge_trace, node_trace)
+
+    
+    if places != None:
+        V = []
+        for place in places:
+            V.append(G.get_decoded_node_with_encoded_name(G.get_encoded_node_with_name(place)))
+
+        _, second_node_trace = create_traces(BiNetwork(V, []), node_color='reds', add_coloring=True)
+
+        fig.add_trace(second_node_trace)
+            
+
+
+    fig.show()
     
 
 
@@ -175,7 +192,7 @@ def visualize_with_path(G, path, full_path = True):
 
     edge_trace, node_trace = create_traces(G)
 
-    V, E = [], []
+    V, ED, EF  = [], [], []
 
     V.append(G.get_decoded_node_with_encoded_name(path[0][0]))
 
@@ -184,30 +201,57 @@ def visualize_with_path(G, path, full_path = True):
         node_to   = G.get_decoded_node_with_encoded_name(path[i][0])
         
         V.append(node_to)
-        if full_path:
-            shortest_path = G.shortest_path_cost_bf(node_from, node_to)
-            for j in range(len(shortest_path)-1):
-                E.append(Edge(shortest_path[j], shortest_path[j+1], 0)) #set cost to 0 since we are only visualizing
-        else:
-            E.append(Edge(node_from, node_to, 0))#set cost to 0 since we are only visualizing
 
-    path_nw = BiNetwork(V, E)
-    path_edge_trace, path_node_trace =  create_traces(path_nw, edge_color = 'red', node_color = 'Reds', edge_width=0.5)
+        if full_path:
+            if path[i-1][1] == SolutionGenerator.DRIVE:
+                shortest_path = G.shortest_path_cost_bf(node_from, node_to)
+                for j in range(len(shortest_path)-1):
+                    ED.append(Edge(shortest_path[j], shortest_path[j+1], 0)) #set cost to 0 since we are only visualizing
+            elif path[i-1][1] == SolutionGenerator.FLY:
+                EF.append(Edge(node_from, node_to, 0))
+        else:
+            ED.append(Edge(node_from, node_to, 0))#set cost to 0 since we are only visualizing
+
+    drive_path_nw = BiNetwork(V, ED)
+    fly_path_nw   = BiNetwork(V, EF)
+
+    drive_path_edge_trace, _ =  create_traces(drive_path_nw, edge_color = 'red', node_color = 'Reds', edge_width=0.9)
+    fly_path_edge_trace, _   =  create_traces(fly_path_nw, edge_color = 'green', node_color = 'Reds', edge_width=0.9)
 
     fig = _visualize(edge_trace, node_trace)
 
-    fig.add_trace(path_edge_trace)
+    fig.add_trace(drive_path_edge_trace)
+    fig.add_trace(fly_path_edge_trace)
 
     fig.show()
 
 
 if __name__ == "__main__":
-     
-    avg_fitness = [[1, 2, 3, 4, 5, 6], [1, 3, 5, 9, 7, 12]]
-    co = ['OX', 'OC']
-    mut = ['SW', 'SW']
-    performance = {'Greedy' : 100, 'OX, SW' : 90, 'OC, SW' : 80}
-    execution_time = {'Greedy' : 1231, 'OX, SW' : 1241241, 'OC, SW' : 123121}
-    draw_convergence_figure(avg_fitness, co, mut, performance, execution_time)
 
+    import sys
+    sys.path.append('models')
+
+    from geo import get_edges, get_nodes
+
+    places = ['Rauðisandur', 'Hornstrandir', 'Varmahlíð', 'Ásbyrgi', 'Djúpivogur', 'Svartifoss', 'Landmannalaugar', 'Hvolsvöllur', 'Geysir', 'Selfoss', 'Þríhnjúkagígur', 'Reykjavík', 'Laugavegur', 'Laugardalslaug', 'Perlan', 'Kirkjufell']
+    print(len(places))
+    
+    #Create graph
+    nodes    = get_nodes('iceland')
+    edge_map = get_edges('iceland')
+
+    V, E = [], []
+
+    node_map = {}
+    for node in nodes:
+        V.append(GeoNode(node[0], node[2][0], node[2][1]))
+        node_map[node[0]] = V[-1]
+
+    for place_from in edge_map:
+        for place_to in edge_map[place_from]:
+            E.append(Edge(node_map[place_from], node_map[place_to], edge_map[place_from][place_to]))
+
+    nw = BiNetwork(V, E)
+
+    visualize(nw.complete_transform(), places)
     

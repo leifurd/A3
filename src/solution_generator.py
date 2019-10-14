@@ -4,9 +4,10 @@ class SolutionGenerator:
     DRIVE = 0
     FLY   = 1
 
-    def __init__(self, places, network):
+    def __init__(self, places, network, flying = False):
         self.places                      = places
         self.network                     = network
+        self.flying                      = flying
 
 
     def encode_solution(self, solution):
@@ -25,6 +26,9 @@ class SolutionGenerator:
 
     def get_random_decoded_solution(self):
         commute = [SolutionGenerator.DRIVE]
+        if self.flying:
+            commute += [SolutionGenerator.FLY]
+            
         shuffle(self.places)
 
         return [x for x in zip(self.places, [commute[randint(0, len(commute)-1)] for _ in range(len(self.places))])]
