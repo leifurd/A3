@@ -89,10 +89,14 @@ class BiNetwork:
 
         res = 0
         for i in range(len(path)-1):
-            node_from = self.get_decoded_node_with_encoded_name(path[i])
-            node_to   = self.get_decoded_node_with_encoded_name(path[i+1])
+            node_from, t1 = self.get_decoded_node_with_encoded_name(path[i][0]), path[i][1]
+            node_to, t2   = self.get_decoded_node_with_encoded_name(path[i+1][0]), path[i+1][1] 
 
-            res += self.shortest_path_cost(node_from, node_to)
+            if t1 == 1:
+                res += self.flying_cost(node_from, node_to)[0]
+            else:
+                res += self.shortest_path_cost(node_from, node_to)
+            #res += self.shortest_path_cost(node_from, node_to)
 
         return res
 
@@ -244,7 +248,7 @@ class BiNetwork:
 
         return [min_place] + result, cost + min_cost
     
-    def greedy(self, places, encoded = True):
+    def greedy(self, places, encoded = True, budget = None):
         '''
         Gives a greedy solution to visiting all places
         If encoded is flagged, will return the encoded names of the places
@@ -260,7 +264,36 @@ class BiNetwork:
                 min_cost = cost
                 min_path = [starting_place] + result
 
-        return [self.get_encoded_node_with_name(x) for x in min_path]
+        #if budget > 0, find largest distances in tour and fly
+        if budget != None:
+            tour = [(self.get_decoded_node_with_encoded_name(self.get_encoded_node_with_name(x)), 0) for x in min_path]
+
+            
+            while True:
+                fly = False
+                distances = []
+                for i in range(len(tour) -1):
+                    node_from, t1 = tour[i]
+                    node_to, t2   = tour[i+1]
+
+                    if t1 != 1:
+                        distances.append((self.flying_cost(node_from, node_to), i))
+
+                distances = sorted(distances, key = lambda x : x[0][0], reverse = True)
+
+                for (dist, cost), i in distances:
+                    if cost < budget:
+                        budget-= cost
+                        tour[i] = (tour[i][0], 1)
+                        fly = True
+
+                if not fly:
+                    break
+
+
+            return [(self.get_encoded_node_with_node(x), y) for (x,y) in tour]
+
+        return [(self.get_encoded_node_with_name(x), 0) for x in min_path]
 
     def exact(self, places):
         '''
