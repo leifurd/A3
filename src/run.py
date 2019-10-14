@@ -178,14 +178,15 @@ def mutate_op(self, network):
 		self.__fitness = self.fitness(network)
 
 #Setup genetic algorithm
-Individual.budget = 50000
+budget = 50000
+Individual.budget = budget
 
-ga = GA(crossover_op, mutate_op, fitness_func, solution_generator, 1000, nw, elitism=1)
+ga = GA(crossover_op, mutate_op, fitness_func, solution_generator, 1000, nw, elitism=1, budget = budget)
 
 
 #print(nw.shortest_path_cost_bf(askja, reykjavik))
 
-for data in ga.evolve(2000):
+for data in ga.evolve(2):
 	for key in data:
 		print('{0}: {1}'.format(key, data[key]))
 
@@ -196,11 +197,11 @@ enc_path = nw.greedy(places, encoded = True)
 
 #enc_path = nw.exact(places)
 
-exact_path = [(x, 0) for x in enc_path]
+#exact_path = [(x, 0) for x in enc_path]
 
-visualize_with_path(nw, ga.best().genes)
+#visualize_with_path(nw, ga.best().genes)
 #visualize_with_path(nw, exact_path)
 
 
-print(nw.length_of_encoded_path(enc_path))
+#print(nw.length_of_encoded_path(enc_path))
 #print([(nw.get_decoded_node_name_with_encoded_name(x), y) for (x,y) in ga.best().genes])

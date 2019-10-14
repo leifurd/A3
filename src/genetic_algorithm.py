@@ -4,12 +4,12 @@ from individual import Individual
 from random import shuffle
 
 class GA:
-    def __init__(self, crossover, mutate, fitness, solution_generator, population_size, network = None, elitism = 0):
+    def __init__(self, crossover, mutate, fitness, solution_generator, population_size, network = None, elitism = 0, budget = None):
         #Inject function
         Individual.crossover      = crossover
         Individual.mutate         = mutate
         Individual.fitness        = fitness
-
+        Individual.budget         = budget
 
         self.network         = network
         self.generation      = 0
