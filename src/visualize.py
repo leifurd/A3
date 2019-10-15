@@ -66,7 +66,8 @@ def create_traces(G, edge_color = '#888', node_color = 'YlGnBu', edge_width = 0.
 def _visualize(edge_trace, node_trace, path_edge_trace = [], path_node_trace = []):
     fig = go.Figure(data=[edge_trace, node_trace],
             layout=go.Layout(
-            
+            width = 1280,
+            height = 900,
             template = 'plotly_white',
             titlefont_size=16,
             showlegend=False,
@@ -126,7 +127,7 @@ def draw_convergence_figure(average_population_fitness, crossover_operators, mut
     #Setup plots
     
 
-    plt.figure(figsize=(10, 3))
+    plt.figure(figsize=(30, 9))
     gs = gridspec.GridSpec(1, 3, width_ratios=[4, 1, 1]) 
     
     ax0 = plt.subplot(gs[0]) #Time series
@@ -215,8 +216,8 @@ def visualize_with_path(G, path, full_path = True):
     drive_path_nw = BiNetwork(V, ED)
     fly_path_nw   = BiNetwork(V, EF)
 
-    drive_path_edge_trace, _ =  create_traces(drive_path_nw, edge_color = 'red', node_color = 'Reds', edge_width=0.9)
-    fly_path_edge_trace, _   =  create_traces(fly_path_nw, edge_color = 'green', node_color = 'Reds', edge_width=0.9)
+    drive_path_edge_trace, _ =  create_traces(drive_path_nw, edge_color = 'red', node_color = 'Reds', edge_width=2)
+    fly_path_edge_trace, _   =  create_traces(fly_path_nw, edge_color = 'green', node_color = 'Reds', edge_width=2)
 
     fig = _visualize(edge_trace, node_trace)
 
@@ -253,5 +254,6 @@ if __name__ == "__main__":
 
     nw = BiNetwork(V, E)
 
-    visualize(nw.complete_transform(), places)
+    
+    visualize(nw)
     

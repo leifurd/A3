@@ -40,7 +40,7 @@ shuffle(places)
 
 #places = ['Rauðisandur', 'Hornstrandir', 'Egilsstaðir']
 #places = ['Rauðisandur', 'Hornstrandir', 'Varmahlíð', 'Ásbyrgi', 'Djúpivogur', 'Svartifoss', 'Landmannalaugar', 'Hvolsvöllur', 'Geysir', 'Selfoss', 'Þríhnjúkagígur', 'Reykjavík', 'Laugavegur', 'Laugardalslaug', 'Perlan', 'Kirkjufell']
-places = ['Húsavík', 'Krafla', 'Dimmuborgir', 'Ásbyrgi', 'Þingvellir', 'Egilsstaðir', 'Þórsmörk', 'Reyðarfjörður', 'Laugarbakki', 'Akureyrarkirkja', 'Þríhnjúkagígur', 'Djúpalón', 'Fáskrúðsfjörður', 'Seljalandsfoss', 'Reynisfjara', 'Hella', 'Reykjahlíð', 'Viðey', 'Reykjavík', 'Akureyri', 'Perlan', 'Dynjandi', 'National Museum of Iceland', 'Landmannalaugar', 'Blue Lagoon', 'Hið íslenzka reðasafn', 'Mývatn', 'Rauðisandur', 'Lystigarðurinn', 'Hallgrímskirkja']
+places = ['National Museum of Iceland', 'Djúpalón', 'Blue Lagoon', 'Mývatn', 'Þórsmörk', 'Seljalandsfoss', 'Hallgrímskirkja', 'Reykjahlíð', 'Reykjavík', 'Rauðisandur', 'Akureyri', 'Landmannalaugar', 'Þingvellir', 'Lystigarðurinn', 'Ásbyrgi', 'Akureyrarkirkja', 'Perlan', 'Fáskrúðsfjörður', 'Reyðarfjörður', 'Hið íslenzka reðasafn', 'Egilsstaðir', 'Hella', 'Reynisfjara', 'Krafla', 'Þríhnjúkagígur', 'Dimmuborgir', 'Dynjandi', 'Laugarbakki', 'Viðey', 'Húsavík']
 #places = ['Breiðdalsvík', 'Hornstrandir', 'Hvolsvöllur', 'Hið íslenzka reðasafn', 'Lystigarðurinn', 'Skógafoss', 'Dimmuborgir', 'Djúpivogur', 'Svartifoss', 'Askja', 'Egilsstaðir', 'Grundartangi', 'Húsavík', 'Borgarnes', 'Þórsmörk', 'Selfoss', 'Alþingishúsið', 'Reykjahlíð', 'Reykjavík', 'Kirkjubæjarklaustur', 'Hallgrímskirkja', 'Blue Lagoon', 'Hella', 'Jökulsárlón', 'Fáskrúðsfjörður', 'Þingvellir', 'Laugavegur', 'Laugarbakki', 'Rauðisandur', 'Varmahlíð', 'Akureyri', 'Ásbyrgi', 'Blönduós', 'Akureyrarkirkja', 'Reyðarfjörður', 'Dynjandi', 'Seljalandsfoss', 'Harpan', 'Gullfoss', 'Dettifoss', 'Mývatn', 'Mosfellsbær', 'Viðey', 'Geysir', 'Reynisfjara', 'Perlan', 'Krafla', 'Kirkjufell', 'Landmannalaugar', 'Vík']
 #2. Initialize generator
 solution_generator = SolutionGenerator(places, nw, flying = True)
@@ -193,17 +193,18 @@ for data in ga.evolve(2):
 print('Used budget: ', ga.best_found.used_budget, 'Budget left: ', Individual.budget - ga.best_found.used_budget)
 '''
 
-enc_path = nw.greedy(places, encoded = True, budget = 50000)
+#enc_path = nw.greedy(places, encoded = True, budget = 50000)
 
 #enc_path = nw.exact(places)
 
 #exact_path = [(x, 0) for x in enc_path]
 
-#visualize_with_path(nw, ga.best().genes)
+visualize_with_path(nw, ga.best().genes)
+print(1.0/ga.best().get_fitness())
 
-visualize_with_path(nw, enc_path)
+#visualize_with_path(nw, enc_path)
 
 
 
-print(nw.length_of_encoded_path(enc_path))
+#print(nw.length_of_encoded_path(enc_path))
 #print([(nw.get_decoded_node_name_with_encoded_name(x), y) for (x,y) in ga.best().genes])
