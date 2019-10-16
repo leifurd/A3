@@ -57,13 +57,12 @@ ga = GA(crossover_MC, mutate_SW, fitness_func, solution_generator, intial_popula
 
 
 #Run for 
-'''
+
 for data in ga.evolve(1000):
 	for key in data:
 		print('{0}: {1}'.format(key, data[key]))
 
 print('Used budget: ', ga.best_found.used_budget, 'Budget left: ', Individual.budget - ga.best_found.used_budget)
-'''
 
 #Compute greedy for comparison (greedy gives very nice results)
 enc_path = nw.greedy(places, encoded = True, budget = 50000)
