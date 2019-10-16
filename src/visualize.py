@@ -159,7 +159,7 @@ def draw_convergence_figure(average_population_fitness, crossover_operators, mut
     ax2.spines['right'].set_color('none')
     ax2.spines['left'].set_smart_bounds(True)
     ax2.spines['bottom'].set_smart_bounds(True)
-     ax0.set_title('Comparison of Operators', size = 26)
+    ax0.set_title('Comparison of Operators', size = 26)
     ax1.set_title('Best Tours', size = 26)
     ax2.set_title('Execution Time (s)', size = 26)
 
