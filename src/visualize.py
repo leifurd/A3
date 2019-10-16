@@ -173,9 +173,9 @@ def draw_convergence_figure(average_population_fitness, crossover_operators, mut
     x = np.arange(len(performance))
     width = 0.35
 
-    ax0.tick_params(labelsize = 20)
-    ax1.tick_params(labelrotation=45, labelsize = 20)
-    ax2.tick_params(labelrotation=45, labelsize = 20)
+    ax0.tick_params(labelsize = 22)
+    ax1.tick_params(labelrotation=45, labelsize = 22)
+    ax2.tick_params(labelrotation=45, labelsize = 22)
     bar_perf = ax1.bar([key for key in performance], [performance[key] for key in performance], align='center', label = 'Best Tour')
     bar_time = ax2.bar([key for key in execution_time], [execution_time[key] for key in execution_time], align='center',label='Execution Time (s)', color = 'orange')
     
@@ -240,7 +240,7 @@ if __name__ == "__main__":
 
     from geo import get_edges, get_nodes
 
-    places = ['Rauðisandur', 'Hornstrandir', 'Varmahlíð', 'Ásbyrgi', 'Djúpivogur', 'Svartifoss', 'Landmannalaugar', 'Hvolsvöllur', 'Geysir', 'Selfoss', 'Þríhnjúkagígur', 'Reykjavík', 'Laugavegur', 'Laugardalslaug', 'Perlan', 'Kirkjufell']
+    places = ['National Museum of Iceland', 'Djúpalón', 'Blue Lagoon', 'Mývatn', 'Þórsmörk', 'Seljalandsfoss', 'Hallgrímskirkja', 'Reykjahlíð', 'Reykjavík', 'Rauðisandur', 'Akureyri', 'Landmannalaugar', 'Þingvellir', 'Lystigarðurinn', 'Ásbyrgi', 'Akureyrarkirkja', 'Perlan', 'Fáskrúðsfjörður', 'Reyðarfjörður', 'Hið íslenzka reðasafn', 'Egilsstaðir', 'Hella', 'Reynisfjara', 'Krafla', 'Þríhnjúkagígur', 'Dimmuborgir', 'Dynjandi', 'Laugarbakki', 'Viðey', 'Húsavík']
     print(len(places))
     
     #Create graph
@@ -261,5 +261,5 @@ if __name__ == "__main__":
     nw = BiNetwork(V, E)
 
     
-    visualize(nw)
+    visualize(nw, places)
     
