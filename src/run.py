@@ -21,10 +21,10 @@ nw = BiNetwork(V, E)
 #Setup solution generator for initial solution
 
 #1. Pick N random nodes
-N = 30
+#N = 30
 
-places = [x.name for x in V]
-shuffle(places)
+#places = [x.name for x in V]
+#shuffle(places)
 
 #Or pick nodes from one of the below
 
@@ -56,116 +56,7 @@ def fitness_func(self, network):
 
 	return 1.0/res #1/res since we a minimizing
 
-def crossover_op(self, other, network):
-	'''
-	Modified crossover 5.2.1 Potvin
-	'''
-	assert len(self.genes) == len(other.genes) #sanity check
-
-	flying_map = {}
-	for g in self.genes:
-		flying_map[g[0]] = (g[1] == SolutionGenerator.FLY)
-	for g in other.genes:
-		flying_map[g[0]] = flying_map[g[0]] or (g[1] == SolutionGenerator.FLY)
-
-	crossover_point = randint(0, len(self.genes)-1)
-
-	offspring = self.genes[:crossover_point]
-	p1_set    = set([x[0] for x in offspring]) #Just a bit of optimization
-
-	for gene in other.genes:
-		if gene[0] not in p1_set:
-			offspring.append((gene[0], flying_map[gene[0]]))
-
-	assert len(self.genes) == len(offspring) #sanity check
-	return Individual(offspring, network)
-
-def create_edge_map(self, other, remaining, network):
-
-	edge_map = {x : set() for x in remaining}
-	
-
-	assert len(self.genes) == len(other.genes) #sanity check
-
-	for i in range(len(self.genes)):
-		if self.genes[i][0] in remaining:
-			for x in [-1, 1]:
-				adjacent_city = self.genes[(i + x) % len(self.genes)]
-				if adjacent_city[0] in remaining:
-					edge_map[self.genes[i][0]].add(adjacent_city[0])
-		if other.genes[i][0] in remaining:
-			for x in [-1, 1]:
-				adjacent_city = other.genes[(i + x) % len(other.genes)]
-				if adjacent_city[0] in remaining:
-					edge_map[other.genes[i][0]].add(adjacent_city[0])
-	return edge_map
-
-def crossover_op_edge(self, other, network):
-	'''
-	Potvin Edge Recombination Crossover (5.2)
-	'''
-
-	remaining = set([x[0] for x in self.genes])
-
-	offspring = []
-
-	flying_map = {}
-
-	for g in self.genes:
-		flying_map[g[0]] = (g[1] == SolutionGenerator.FLY)
-	for g in other.genes:
-		flying_map[g[0]] = flying_map[g[0]] or (g[1] == SolutionGenerator.FLY)
-
-	selection = [self.genes[0][0], other.genes[0][0]][randint(0,1)]
-	edge_map = create_edge_map(self, other, remaining, network)
-	while True:
-		offspring.append((selection, flying_map[selection]))
-		
-
-		
-		candidates = set(edge_map[selection])
-
-		remaining.remove(selection)
-		if len(remaining) == 0: break
-		for key in edge_map:
-			if selection in edge_map[key]:
-				edge_map[key].remove(selection) #Remove selected from candidates
-		
-		if len(candidates) == 0:
-			selection = sample(remaining, 1)[0]
-			continue
-
-		mn_edge = min([len(edge_map[x]) for x in candidates])
-
-		candidates = [x for x in candidates if len(edge_map[x]) == mn_edge] #reduce candidates
-
-		selection = candidates[randint(0, len(candidates)-1)]
-
-	return Individual(offspring, network)
-
-
-
-def mutate_op(self, network):
-	'''
-	Mutate offspring
-	The offspring only gets mutated with a certain probability
-	'''
-
-	if randint(0, 1000) < 50: #~5% chance of mutation this should be changed
-		i, j = randint(0, len(self.genes)-1), randint(0, len(self.genes)-1)
-		self.genes[i], self.genes[j] = self.genes[j], self.genes[i] #For now only swap order of two genes
-		self.__fitness = self.fitness(network)
-
-	if Individual.budget != None and randint(0, 1000) < 10: #10% chance of flipping drive to fly or fly to drive on a single gene
-		i = randint(0, len(self.genes) -1)
-		
-		if self.genes[i] == SolutionGenerator.FLY:
-			self.genes[i] = (self.genes[i][0], SolutionGenerator.DRIVE)
-		else:
-			self.genes[i] = (self.genes[i][0], SolutionGenerator.FLY)
-		self.used_budget = self.all_used_budget(network)
-		self.reduce(network)
-		self.__fitness = self.fitness(network)
+from operators import crossover_EC, crossover_MC, crossover_OX, mutate_LHC, mutate_SC, mutate_SW
 
 
 #Setup genetic algorithm
@@ -177,7 +68,7 @@ intial_population = 1000 #Size of initial population
 Individual.budget = budget #Set the budget for all solutions
 
 #Pass in the crossover, mutate and fitness functions
-ga = GA(crossover_op, mutate_op, fitness_func, solution_generator, intial_population, nw, elitism=1, budget = budget)
+ga = GA(crossover_MC, mutate_SW, fitness_func, solution_generator, intial_population, nw, elitism=1, budget = budget)
 
 
 #Run for 

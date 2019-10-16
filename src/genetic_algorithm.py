@@ -42,9 +42,6 @@ class GA:
         
     
     def evolve(self, number_of_generations):
-        '''
-        TODO define epsilon for convergence
-        '''
         for _ in range(number_of_generations):
             self.__evolve()
 
