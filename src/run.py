@@ -3,7 +3,7 @@ from individual import Individual
 from network import BiNetwork, GeoNode, Edge
 from solution_generator import SolutionGenerator
 from random import shuffle, randint, sample
-from visualize import visualize_with_path
+from visualize import visualize_with_path, draw_convergence_figure
 
 
 import sys
@@ -199,12 +199,77 @@ print('Used budget: ', ga.best_found.used_budget, 'Budget left: ', Individual.bu
 
 #exact_path = [(x, 0) for x in enc_path]
 
-visualize_with_path(nw, ga.best().genes)
-print(1.0/ga.best().get_fitness())
+#visualize_with_path(nw, ga.best().genes)
+#print(1.0/ga.best().get_fitness())
 
 #visualize_with_path(nw, enc_path)
 
+'''Þingvellir, djupa = [x for x in V if x.name == 'Þingvellir'], [x for x in V if x.name == 'Djúpalón']
+land, ak = [x for x in V if x.name == 'Landmannalaugar'], [x for x in V if x.name == 'Akureyri']
+husavi, asb = [x for x in V if x.name == 'Húsavík'], [x for x in V if x.name == 'Ásbyrgi']
 
+
+l1 = nw.flying_cost(Þingvellir[0], djupa[0])[1]
+l2 = nw.flying_cost(land[0], ak[0])[1]
+l3 = nw.flying_cost(husavi[0], asb[0])[1]
+
+print(l1 + l2 + l3)
+'''
+
+import time 
+crossover_ops = {'OP' : crossover_op }
+mutate_ops   = {'SW' : mutate_op}
+
+BUDGET = 50000
+experiment  = {'Fitness' : [], 'Cross' : [], 'Mutate' : []}
+performance = {}
+execution_time = {}
+solutions = {}
+#Compute greedy performance
+start = time.time()
+enc_path = nw.greedy(places, encoded = True, budget = BUDGET)
+end = time.time()
+
+performance['Greedy'] = nw.length_of_encoded_path(enc_path)
+execution_time['Greedy'] = (end - start)
+solutions['Greedy'] = enc_path
+
+left = len(crossover_ops)*len(mutate_ops)
+generations = 2
+
+for cross_op in crossover_ops:
+  for mut_op in mutate_ops:
+    print(left*generations)
+    Individual.fitness   = fitness_func
+    Individual.mutate    = mutate_ops[mut_op]
+    Individual.crossover = crossover_ops[cross_op]
+    Individual.budget    = BUDGET
+    start = time.time() #start time
+    ga = GA(crossover_ops[cross_op], mutate_ops[mut_op], fitness_func, solution_generator, 1000, nw, elitism = 1, budget = BUDGET)
+    
+    avg_tour_length = []
+    
+    for data in ga.evolve(generations):
+      avg_tour_length.append(data['Average Length of Tour'])
+      
+    end = time.time() #end time
+    experiment['Fitness'].append(avg_tour_length)
+    experiment['Cross'].append(cross_op)
+    experiment['Mutate'].append(mut_op)
+    performance['{0}, {1}'.format(cross_op, mut_op)] = 1.0/ga.best_found.get_fitness()
+    execution_time['{0}, {1}'.format(cross_op, mut_op)] = (end - start)
+    solutions['{0}, {1}'.format(cross_op, mut_op)] = ga.best_found.genes
+    
+    left-=1
+    
+    
+draw_convergence_figure(experiment['Fitness'], experiment['Cross'], experiment['Mutate'], performance, execution_time)
+    
+'''for s in solutions:
+  print(s, 'tour length: ', performance[s])
+  print('exec time:', execution_time[s])
+  visualize_with_path(nw, solutions[s], True)
+'''
 
 #print(nw.length_of_encoded_path(enc_path))
 #print([(nw.get_decoded_node_name_with_encoded_name(x), y) for (x,y) in ga.best().genes])
