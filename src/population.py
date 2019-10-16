@@ -44,3 +44,30 @@ class Population:
         fittest_individuals = [Individual(x.genes[:], self.network) for x in fittest_individuals]
 
         return fittest_individuals
+
+    def _select(self, P):
+        '''
+        Selects P parents from the current population proportional to their rank
+        '''
+
+        fitnessArr = np.zeros((len(self.population)))
+
+        for i in range(len(self.population)):
+            fitnessArr[i] = self.population[i].get_fitness()
+
+
+        #Finds the index of ordered fitness
+        ind = np.argsort(fitnessArr)
+
+        #Sum of the indexes of all individuals
+        indSum = sum(ind)
+
+        selection_probability = ind/indSum
+
+        #Sample P indivduals w. replacement
+        fittest_individuals = [self.population[np.random.choice(len(self.population), p=selection_probability)] for _ in range(len(self.population))]
+
+        #Make sure that the list is copied
+        fittest_individuals = [Individual(x.genes[:], self.network) for x in fittest_individuals]
+
+        return fittest_individuals

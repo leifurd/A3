@@ -1,5 +1,10 @@
 from collections import defaultdict
 from network import BiNetwork, GeoNode, Edge
+import os
+
+abspath = os.path.abspath(__file__)
+dname = os.path.dirname(abspath)
+os.chdir(dname)
 
 def get_nodes(model_name):
     with open('{0}.nodes'.format(model_name), 'r') as f:

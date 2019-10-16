@@ -9,24 +9,12 @@ from visualize import visualize_with_path, draw_convergence_figure
 import sys
 sys.path.append('models')
 
-from geo import get_edges, get_nodes
+from models import get_network_model
+
+nw = get_network_model('iceland')
 
 
-#Create graph
-nodes    = get_nodes('iceland')
-edge_map = get_edges('iceland')
-
-V, E = [], []
-
-node_map = {}
-for node in nodes:
-    V.append(GeoNode(node[0], node[2][0], node[2][1]))
-    node_map[node[0]] = V[-1]
-
-for place_from in edge_map:
-    for place_to in edge_map[place_from]:
-        E.append(Edge(node_map[place_from], node_map[place_to], edge_map[place_from][place_to]))
-
+V, E = nw.V, nw.E
 nw = BiNetwork(V, E)
 
 
@@ -38,12 +26,16 @@ N = 30
 places = [x.name for x in V]
 shuffle(places)
 
+#Or pick nodes from one of the below
+
 #places = ['Rauðisandur', 'Hornstrandir', 'Egilsstaðir']
 #places = ['Rauðisandur', 'Hornstrandir', 'Varmahlíð', 'Ásbyrgi', 'Djúpivogur', 'Svartifoss', 'Landmannalaugar', 'Hvolsvöllur', 'Geysir', 'Selfoss', 'Þríhnjúkagígur', 'Reykjavík', 'Laugavegur', 'Laugardalslaug', 'Perlan', 'Kirkjufell']
 places = ['National Museum of Iceland', 'Djúpalón', 'Blue Lagoon', 'Mývatn', 'Þórsmörk', 'Seljalandsfoss', 'Hallgrímskirkja', 'Reykjahlíð', 'Reykjavík', 'Rauðisandur', 'Akureyri', 'Landmannalaugar', 'Þingvellir', 'Lystigarðurinn', 'Ásbyrgi', 'Akureyrarkirkja', 'Perlan', 'Fáskrúðsfjörður', 'Reyðarfjörður', 'Hið íslenzka reðasafn', 'Egilsstaðir', 'Hella', 'Reynisfjara', 'Krafla', 'Þríhnjúkagígur', 'Dimmuborgir', 'Dynjandi', 'Laugarbakki', 'Viðey', 'Húsavík']
 #places = ['Breiðdalsvík', 'Hornstrandir', 'Hvolsvöllur', 'Hið íslenzka reðasafn', 'Lystigarðurinn', 'Skógafoss', 'Dimmuborgir', 'Djúpivogur', 'Svartifoss', 'Askja', 'Egilsstaðir', 'Grundartangi', 'Húsavík', 'Borgarnes', 'Þórsmörk', 'Selfoss', 'Alþingishúsið', 'Reykjahlíð', 'Reykjavík', 'Kirkjubæjarklaustur', 'Hallgrímskirkja', 'Blue Lagoon', 'Hella', 'Jökulsárlón', 'Fáskrúðsfjörður', 'Þingvellir', 'Laugavegur', 'Laugarbakki', 'Rauðisandur', 'Varmahlíð', 'Akureyri', 'Ásbyrgi', 'Blönduós', 'Akureyrarkirkja', 'Reyðarfjörður', 'Dynjandi', 'Seljalandsfoss', 'Harpan', 'Gullfoss', 'Dettifoss', 'Mývatn', 'Mosfellsbær', 'Viðey', 'Geysir', 'Reynisfjara', 'Perlan', 'Krafla', 'Kirkjufell', 'Landmannalaugar', 'Vík']
+
+
 #2. Initialize generator
-solution_generator = SolutionGenerator(places, nw, flying = True)
+solution_generator = SolutionGenerator(places, nw, flying = True) #Tour is allowed to have flights as commute type
 
 
 #Initialize crossover and mutate operators, aswell as fitness function
@@ -108,9 +100,9 @@ def create_edge_map(self, other, remaining, network):
 					edge_map[other.genes[i][0]].add(adjacent_city[0])
 	return edge_map
 
-def crossover_op_edge_k(self, other, network):
+def crossover_op_edge(self, other, network):
 	'''
-	Potvin Edge REcombination Crossover (5.2)
+	Potvin Edge Recombination Crossover (5.2)
 	'''
 
 	remaining = set([x[0] for x in self.genes])
@@ -153,8 +145,6 @@ def crossover_op_edge_k(self, other, network):
 
 
 
-
-
 def mutate_op(self, network):
 	'''
 	Mutate offspring
@@ -177,24 +167,29 @@ def mutate_op(self, network):
 		self.reduce(network)
 		self.__fitness = self.fitness(network)
 
+
 #Setup genetic algorithm
-budget = 50000
-Individual.budget = budget
 
-ga = GA(crossover_op, mutate_op, fitness_func, solution_generator, 1000, nw, elitism=1, budget = budget)
+budget = 50000 #Amount of icelandic krona a solution is allowed to use
+generations = 1000 #Amount of generations the agorithm should evolve
+intial_population = 1000 #Size of initial population
+
+Individual.budget = budget #Set the budget for all solutions
+
+#Pass in the crossover, mutate and fitness functions
+ga = GA(crossover_op, mutate_op, fitness_func, solution_generator, intial_population, nw, elitism=1, budget = budget)
 
 
-#print(nw.shortest_path_cost_bf(askja, reykjavik))
-
-'''
-for data in ga.evolve(3000):
+#Run for 
+for data in ga.evolve(1000):
 	for key in data:
 		print('{0}: {1}'.format(key, data[key]))
 
 print('Used budget: ', ga.best_found.used_budget, 'Budget left: ', Individual.budget - ga.best_found.used_budget)
-'''
 
-#enc_path = nw.greedy(places, encoded = True, budget = 50000)
+
+#Compute greedy for comparison (greedy gives very nice results)
+enc_path = nw.greedy(places, encoded = True, budget = 50000)
 
 #enc_path = nw.exact(places)
 
@@ -205,17 +200,6 @@ print(1.0/ga.best().get_fitness())
 
 #visualize_with_path(nw, enc_path)
 
-'''Þingvellir, djupa = [x for x in V if x.name == 'Þingvellir'], [x for x in V if x.name == 'Djúpalón']
-land, ak = [x for x in V if x.name == 'Landmannalaugar'], [x for x in V if x.name == 'Akureyri']
-husavi, asb = [x for x in V if x.name == 'Húsavík'], [x for x in V if x.name == 'Ásbyrgi']
-
-
-l1 = nw.flying_cost(Þingvellir[0], djupa[0])[1]
-l2 = nw.flying_cost(land[0], ak[0])[1]
-l3 = nw.flying_cost(husavi[0], asb[0])[1]
-
-print(l1 + l2 + l3)
-'''
 
 
 #print(nw.length_of_encoded_path(enc_path))
