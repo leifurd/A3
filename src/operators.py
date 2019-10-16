@@ -4,6 +4,23 @@ from solution_generator import SolutionGenerator
 from individual import Individual
 
 
+def fitness_func(self, network):
+	'''
+	This is just a test, only driving networks where enabled when this was written
+	'''
+
+	res = 0
+	for i in range(0, len(self.genes)-1):
+		node_from = network.get_decoded_node_with_encoded_name(self.genes[i][0])
+		node_to   = network.get_decoded_node_with_encoded_name(self.genes[i+1][0])
+
+		if self.genes[i][1] == SolutionGenerator.FLY:
+			res += network.flying_cost(node_from, node_to)[0]
+		else:
+			res += network.shortest_path_cost(node_from, node_to)
+
+	return 1.0/res #1/res since we a minimizing
+
 def crossover_MC(self, other, network):
 	'''
 	Modified crossover 5.2.1 Potvin
@@ -30,26 +47,59 @@ def crossover_MC(self, other, network):
   
   
 def crossover_OX(self, other, network):
-  '''
-  Order crossover (OX) 5.2.2 Potvin
-  '''
-  c_point1 = randint(0, len(self.genes)-2)
-  c_point2 = randint(c_point1+1, len(self.genes))
+	'''
+	Order crossover (OX) 5.2.2 Potvin
+	'''
+	c_point1 = randint(0, len(self.genes)-2)
+	c_point2 = randint(c_point1+1, len(self.genes))
 
-  offspring = [None]*len(self.genes)
-  
-  p1_set = set(self.genes[c_point1:c_point2])
-  
-  offspring[c_point1:c_point2] = self.genes[c_point1:c_point2]
-  
-  ins = c_point2
-  for i in range(c_point2, c_point2 + len(self.genes)):
-    idx = i % len(self.genes)
-    if other.genes[idx] not in p1_set:
-      offspring[ins % len(self.genes)] = other.genes[idx]
-      ins +=1
-  
-  return Individual(offspring, network)
+	offspring = [None]*len(self.genes)
+	p1_set = {}
+	for i in range(c_point1, c_point2):
+		p1_set[self.genes[i][0]] = 0
+
+	offspring[c_point1:c_point2] = self.genes[c_point1:c_point2]
+
+	ins = c_point2
+	for i in range(c_point2, c_point2 + len(self.genes)):
+		idx = i % len(self.genes)
+		if other.genes[idx][0] not in p1_set:
+			offspring[ins % len(self.genes)] = other.genes[idx]
+			ins +=1
+	return Individual(offspring, network)
+
+def crossover_OBX(self, other, network):
+	num = randint(0, len(self.genes) -1)
+	subset = sample(range(0, len(self.genes)), num)
+
+	p1_set = {}
+	for i in range(num):
+		p1_set[self.genes[subset[i]][0]] = 1
+
+	posInOther = []
+	for i in range(len(other.genes)):
+		if(other.genes[i][0] in p1_set):
+			posInOther.append(i)
+
+	offspring = [None]*len(self.genes)
+	#print(self.genes)
+	#print(other.genes)
+	for i in range(num):
+		#print("pos in self", subset[i])
+		#print("pos in other", posInOther[i])
+
+		offspring[posInOther[i]] = self.genes[subset[i]]
+
+	ins = 0
+	for i in range(len(self.genes)):
+
+		if other.genes[i][0] not in p1_set:
+			while(offspring[ins] != None):
+				ins+=1
+			offspring[ins] = other.genes[i]
+			ins += 1
+			#print(offspring)
+	return Individual(offspring, network)
 
 def create_edge_map(self, other, remaining, network):
 
@@ -135,79 +185,79 @@ def mutate_SW(self, network):
 		self.used_budget = self.all_used_budget(network)
 		self.reduce(network)
 		self.__fitness = self.fitness(network)
-    
+	
 def mutate_SC(self, network):
-  if randint(0, 1000) < 50: #~5% chance of mutation this should be changed
-    # Two random point chosen
-    i = randint(0, len(self.genes)-2)
-    j = randint(i+1, len(self.genes)-1)
-    # Old order of points
-    oldOrder = self.genes[i:j]
-    # New scrambled order of indexes
-    newOrder = list(range(0, j-i))
-    shuffle(newOrder)
-    # Scrambled indexes used order genes
-    for k in range(i, j):
-      self.genes[k] = oldOrder[newOrder[k-i]]
-    notDone = True
-    for k in range(i, j):
-      if Individual.budget != None and randint(0, 1000) < 50: #5% chance of flipping drive to fly or fly to drive on the scrambled genes
-        notDone = True
-        if self.genes[i] == SolutionGenerator.FLY:
-          self.genes[i] = (self.genes[i][0], SolutionGenerator.DRIVE)
-        else:
-          self.genes[i] = (self.genes[i][0], SolutionGenerator.FLY)
-    self.used_budget = self.all_used_budget(network)
-    self.reduce(network)
-    self.__fitness = self.fitness(network) # Recalculate fitness of mutated individual
-        
-        
+	if randint(0, 1000) < 50: #~5% chance of mutation this should be changed
+		# Two random point chosen
+		i = randint(0, len(self.genes)-2)
+		j = randint(i+1, len(self.genes)-1)
+		# Old order of points
+		oldOrder = self.genes[i:j]
+		# New scrambled order of indexes
+		newOrder = list(range(0, j-i))
+		shuffle(newOrder)
+		# Scrambled indexes used order genes
+		for k in range(i, j):
+			self.genes[k] = oldOrder[newOrder[k-i]]
+		notDone = True
+		for k in range(i, j):
+			if Individual.budget != None and randint(0, 1000) < 50: #5% chance of flipping drive to fly or fly to drive on the scrambled genes
+				notDone = True
+				if self.genes[i] == SolutionGenerator.FLY:
+					self.genes[i] = (self.genes[i][0], SolutionGenerator.DRIVE)
+				else:
+					self.genes[i] = (self.genes[i][0], SolutionGenerator.FLY)
+	self.used_budget = self.all_used_budget(network)
+	self.reduce(network)
+	self.__fitness = self.fitness(network) # Recalculate fitness of mutated individual
+		
+		
 def mutate_LHC(self, network):
-  '''
-  Local Hill-Climbing, 2-opt
-  '''
-  
-  # Chance to change the means of travel for some gene
-  if Individual.budget != None and randint(0, 100) < 10: #10% chance
-      i = randint(0, len(self.genes) -1)
+	'''
+	Local Hill-Climbing, 2-opt
+	'''
 
-      if self.genes[i] == SolutionGenerator.FLY:
-        self.genes[i] = (self.genes[i][0], SolutionGenerator.DRIVE)
-      else:
-        self.genes[i] = (self.genes[i][0], SolutionGenerator.FLY)
-      self.used_budget = self.all_used_budget(network)
-      self.reduce(network)
-      self.__fitness = self.fitness(network)
-      
-  # Chance to mutate via local hill climbing
-  if randint(0, 100) < 5: # 5% chance
-    maxiters = 100 # Max iterations, iterations rarely go above 10
-    iters = 0
-    improved = True
-    best = self # initial best sequence
-    size = len(best.genes)
-    
-    while improved and iters < maxiters:
-      improved = False
-      for i in range(0, size-3):
-          for j in range(i+1, size):
+    # Chance to change the means of travel for some gene
+	if Individual.budget != None and randint(0, 100) < 10: #10% chance
+	    i = randint(0, len(self.genes) -1)
 
-             # New individual created, genes swapped
-              newGuy = Individual(best.genes[:], network)
-              newGuy.genes[i], newGuy.genes[j] = newGuy.genes[j], newGuy.genes[i] 
-              
-               # Calculate the gain 
-              gain = newGuy.fitness(network) - best.fitness(network)
-              
-              if gain > 0: 
-                best = newGuy
-                improved = True
-                break # return to while
-          else:
-            break
-      iters += 1
-              
-    # Genes are set to new local optima
-    self.genes = best.genes
-    
-    self.__fitness = self.fitness(network)
+	    if self.genes[i] == SolutionGenerator.FLY:
+	    	self.genes[i] = (self.genes[i][0], SolutionGenerator.DRIVE)
+	    else:
+		    self.genes[i] = (self.genes[i][0], SolutionGenerator.FLY)
+	    self.used_budget = self.all_used_budget(network)
+	    self.reduce(network)
+	    self.__fitness = self.fitness(network)
+
+	# Chance to mutate via local hill climbing
+	if randint(0, 100) < 5: # 5% chance
+		maxiters = 100 # Max iterations, iterations rarely go above 10
+		iters = 0
+		improved = True
+		best = self # initial best sequence
+		size = len(best.genes)
+	
+		while improved and iters < maxiters:
+			improved = False
+			for i in range(0, size-3):
+				for j in range(i+1, size):
+
+					# New individual created, genes swapped
+					newGuy = Individual(best.genes[:], network)
+					newGuy.genes[i], newGuy.genes[j] = newGuy.genes[j], newGuy.genes[i] 
+					
+					# Calculate the gain 
+					gain = newGuy.fitness(network) - best.fitness(network)
+					
+					if gain > 0: 
+						best = newGuy
+						improved = True
+						break # return to while
+				else:
+					break
+			iters += 1
+			  
+		# Genes are set to new local optima
+		self.genes = best.genes
+		
+		self.__fitness = self.fitness(network)

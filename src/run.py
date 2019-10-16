@@ -38,25 +38,10 @@ places = ['National Museum of Iceland', 'Djúpalón', 'Blue Lagoon', 'Mývatn', 
 solution_generator = SolutionGenerator(places, nw, flying = True) #Tour is allowed to have flights as commute type
 
 
-#Initialize crossover and mutate operators, aswell as fitness function
-def fitness_func(self, network):
-	'''
-	This is just a test, only driving networks where enabled when this was written
-	'''
+#Import crossover and mutate operators, aswell as fitness function
 
-	res = 0
-	for i in range(0, len(self.genes)-1):
-		node_from = network.get_decoded_node_with_encoded_name(self.genes[i][0])
-		node_to   = network.get_decoded_node_with_encoded_name(self.genes[i+1][0])
 
-		if self.genes[i][1] == SolutionGenerator.FLY:
-			res += network.flying_cost(node_from, node_to)[0]
-		else:
-			res += network.shortest_path_cost(node_from, node_to)
-
-	return 1.0/res #1/res since we a minimizing
-
-from operators import crossover_EC, crossover_MC, crossover_OX, mutate_LHC, mutate_SC, mutate_SW
+from operators import crossover_EC, crossover_MC, crossover_OX, crossover_OBX, mutate_LHC, mutate_SC, mutate_SW, fitness_func
 
 
 #Setup genetic algorithm
