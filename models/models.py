@@ -32,7 +32,7 @@ def get_edges(model_name):
     return edge_map
 
 def get_network_model(model_name):
-    #Create graph
+    #Create graph from model
     nodes    = get_nodes(model_name)
     edge_map = get_edges(model_name)
 

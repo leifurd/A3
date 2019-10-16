@@ -11,6 +11,7 @@ os.chdir(dname)
 
 class GeoCode:
     def __init__(self):
+        #Feel free to do many api calls
         self.gmaps = googlemaps.Client(key='AIzaSyAJ9TIsHsrGbw_b_ZbqN6M2xDKdACyYXxs')
 
 
@@ -24,8 +25,6 @@ class GeoCode:
         TILE_SIZE = 1024
         siny = math.sin(lat * math.pi / 180)
 
-        #Truncating to 0.9999 effectively limits latitude to 89.189. This is
-        #about a third of a tile past the edge of the world tile.
         siny = min(max(siny, -0.9999), 0.9999)
 
         return (TILE_SIZE * (0.5 + lng / 360),
@@ -74,7 +73,7 @@ def get_edges(model_name):
 
     return edge_map
 
-'''
+
 def create_randomish_edges(nodes):
 
     #Creates not entirely random edges
@@ -103,23 +102,10 @@ def create_randomish_edges(nodes):
                 break
 
     return edge_map
-'''
 
-'''
-geo = GeoCode()
 
-#geo.get_xy_coordinates('Hallgrímskirkja, Iceland')
+model_name = input("Insert name of model: ")
 
-edges = create_randomish_edges(get_nodes())
-
-with open('edges.model', 'w') as f:
-    for place_from in edges:
-        for place_to in edges[place_from]:
-            f.write('{0}--{1};{2}\n'.format(place_from, place_to, edges[place_from][place_to]))
-
-'''
-
-'''
 geo = GeoCode()
 
 remove_para = lambda place : '' if place == '' or place[0] == '(' else place[0] + remove_para(place[1:])
@@ -128,7 +114,7 @@ with open('places', 'r') as f:
     places = [remove_para(x).strip() for x in f.readlines()]
 
 failures = 0
-with open('nodes.model', 'w') as f:
+with open('{0}.nodes'.format(model_name), 'w') as f:
     f.write('NodeName, NodeType, xy-coord, NodeCost\n')
     for place in places:
         loc = geo.get_xy_coordinates(place)
@@ -142,4 +128,15 @@ with open('nodes.model', 'w') as f:
         except:
             failures+=1
 print("Failures: {0}".format(failures))
-'''
+
+
+geo = GeoCode()
+
+#geo.get_xy_coordinates('Hallgrímskirkja, Iceland')
+
+edges = create_randomish_edges(get_nodes(model_name))
+
+with open('{0}.edges'.format(model_name), 'w') as f:
+    for place_from in edges:
+        for place_to in edges[place_from]:
+            f.write('{0}--{1};{2}\n'.format(place_from, place_to, edges[place_from][place_to]))
