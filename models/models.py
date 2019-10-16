@@ -1,5 +1,6 @@
 from collections import defaultdict
 from network import BiNetwork, GeoNode, Edge
+
 import os
 
 abspath = os.path.abspath(__file__)
@@ -7,7 +8,7 @@ dname = os.path.dirname(abspath)
 os.chdir(dname)
 
 def get_nodes(model_name):
-    with open('{0}.nodes'.format(model_name), 'r') as f:
+    with open('{0}.nodes'.format(model_name), 'r', encoding = 'utf-8') as f:
         nodes = [x.strip() for x in f.readlines()]
 
     res = []
@@ -19,7 +20,7 @@ def get_nodes(model_name):
     return res
 
 def get_edges(model_name):
-    with open('{0}.edges'.format(model_name), 'r') as f:
+    with open('{0}.edges'.format(model_name), 'r', encoding = 'utf-8') as f:
         edges = [x.strip() for x in f.readlines()]
 
     edge_map = defaultdict(lambda : defaultdict(int))

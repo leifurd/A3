@@ -49,7 +49,7 @@ class GeoCode:
 
 
 def get_nodes(model_name):
-    with open('{0}.nodes'.format(model_name), 'r') as f:
+    with open('{0}.nodes'.format(model_name), 'r', encoding = 'utf-8') as f:
         nodes = [x.strip() for x in f.readlines()]
 
     res = []
@@ -61,7 +61,7 @@ def get_nodes(model_name):
     return res
 
 def get_edges(model_name):
-    with open('{0}.edges'.format(model_name), 'r') as f:
+    with open('{0}.edges'.format(model_name), 'r', encoding = 'utf-8') as f:
         edges = [x.strip() for x in f.readlines()]
 
     edge_map = defaultdict(lambda : defaultdict(int))
@@ -110,11 +110,11 @@ geo = GeoCode()
 
 remove_para = lambda place : '' if place == '' or place[0] == '(' else place[0] + remove_para(place[1:])
 
-with open('places', 'r') as f:
+with open('places', 'r', encoding = 'utf-8') as f:
     places = [remove_para(x).strip() for x in f.readlines()]
 
 failures = 0
-with open('{0}.nodes'.format(model_name), 'w') as f:
+with open('{0}.nodes'.format(model_name), 'w', encoding = 'utf-8') as f:
     f.write('NodeName, NodeType, xy-coord, NodeCost\n')
     for place in places:
         loc = geo.get_xy_coordinates(place)
@@ -136,7 +136,7 @@ geo = GeoCode()
 
 edges = create_randomish_edges(get_nodes(model_name))
 
-with open('{0}.edges'.format(model_name), 'w') as f:
+with open('{0}.edges'.format(model_name), 'w', encoding = 'utf-8') as f:
     for place_from in edges:
         for place_to in edges[place_from]:
             f.write('{0}--{1};{2}\n'.format(place_from, place_to, edges[place_from][place_to]))
