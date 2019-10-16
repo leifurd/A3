@@ -18,7 +18,7 @@ There is also a network.py file which encapsulates all graph related processes w
 ## Creating new models
 
 If one is interested in creating new models to try out please replace \models\places with a new list of places.
-A single entry in the place file is of the form "<place>,<country>". Finally run \models\geo.py to generate a geographically correct model of the places,
+A single entry in the place file is of the form "place,country". Finally run \models\geo.py to generate a geographically correct model of the places,
 the edges are however chosen with a nearest neighbour criterion.
 
 ## Running an experiment
