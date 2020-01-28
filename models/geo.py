@@ -12,7 +12,7 @@ os.chdir(dname)
 class GeoCode:
     def __init__(self):
         #Feel free to do many api calls
-        self.gmaps = googlemaps.Client(key='AIzaSyAJ9TIsHsrGbw_b_ZbqN6M2xDKdACyYXxs')
+        self.gmaps = googlemaps.Client(key=api)
 
 
     def __to_xy(self, point):
